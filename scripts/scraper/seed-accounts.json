@@ -1,37 +1,37 @@
 [
   {
     "platform": "xiaohongshu",
-    "accountId": "placeholder_1",
-    "homeUrl": "https://www.xhs.com/user/profile/placeholder1",
-    "note": "示例-潮州本地茶农",
+    "accountId": "5653041576",
+    "homeUrl": "https://www.xhs.com/user/profile/5653041576",
+    "note": "品茶百科 - 单丛茶知识科普账号，每天认识一款茶",
     "isActive": true
   },
   {
     "platform": "xiaohongshu",
-    "accountId": "placeholder_2",
-    "homeUrl": "https://www.xhs.com/user/profile/placeholder2",
-    "note": "示例-单丛茶测评博主",
+    "accountId": "3804537242",
+    "homeUrl": "https://www.xhs.com/user/profile/3804537242",
+    "note": "壹房茶事精制单丛 - 专注单丛茶精制，分享冲泡方法",
     "isActive": true
   },
   {
     "platform": "xiaohongshu",
-    "accountId": "placeholder_3",
-    "homeUrl": "https://www.xhs.com/user/profile/placeholder3",
-    "note": "示例-凤凰山茶商",
+    "accountId": "26564302235",
+    "homeUrl": "https://www.xhs.com/user/profile/26564302235",
+    "note": "观云枞凤凰单丛-阿彬 - 凤凰单丛茶店主，潮汕茶商",
     "isActive": true
   },
   {
     "platform": "xiaohongshu",
-    "accountId": "placeholder_4",
-    "homeUrl": "https://www.xhs.com/user/profile/placeholder4",
-    "note": "示例-茶艺师",
+    "accountId": "496909032",
+    "homeUrl": "https://www.xhs.com/user/profile/496909032",
+    "note": "阿爽单丛茶 - 凤凰单丛知识分享，茶香型科普",
     "isActive": true
   },
   {
     "platform": "xiaohongshu",
-    "accountId": "placeholder_5",
-    "homeUrl": "https://www.xhs.com/user/profile/placeholder5",
-    "note": "示例-单丛茶知识分享",
+    "accountId": "302822505",
+    "homeUrl": "https://www.xhs.com/user/profile/302822505",
+    "note": "鼎晟茶业 - 专业单丛茶供应商，分享八仙单丛等香型",
     "isActive": true
   }
 ]
