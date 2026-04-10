@@ -15,7 +15,7 @@ const sampleAccounts = [
         excerpt: '很多人第一次喝凤凰单丛就被「鸭屎香」的名字劝退，其实这是凤凰山上的一个茶树品种名字，因为叶子像鸭屎而得名。',
         likes: 2869,
         comments: 87,
-        keywords: ['鸭屎香', '入门', '品种科普'],
+        keywords: ['鸭屎香', '品种科普', '入门指南'],
         hotComments: [
           { user: '茶小白001', text: '原来鸭屎香名字是这么来的！涨知识了' },
           { user: '潮汕阿妹', text: '我家那边满山都是这个香' },
@@ -24,14 +24,25 @@ const sampleAccounts = [
       },
       {
         title: '每天认识一款茶——蜜兰香',
-        excerpt: '蜜兰香是凤凰单丛里最经典的一款，既有蜂蜜的甜香，又有兰花的幽香。冲泡时满屋飘香，茶汤入口甘甜，回甘持久。',
+        excerpt: '蜜兰香是凤凰单丛里最经典的一款，既有蜂蜜的甜香，又有兰花的幽香，冲泡时满屋飘香。',
         likes: 1771,
         comments: 52,
-        keywords: ['蜜兰香', '经典', '冲泡技巧'],
+        keywords: ['蜜兰香', '经典香型', '冲泡'],
         hotComments: [
           { user: '茶香一味', text: '蜜兰香真的是入门首选' },
           { user: '深圳茶客', text: '回甘太好了，强烈推荐' },
           { user: '老林说茶', text: '我家常备这款' },
+        ]
+      },
+      {
+        title: '凤凰单丛为什么这么香？制茶工艺大揭秘',
+        excerpt: '单丛茶的香气来自做青环节，通过反复摇青让茶叶边缘碰撞发酵，才能产生独特的花果香。',
+        likes: 1342,
+        comments: 41,
+        keywords: ['制茶工艺', '做青', '香气来源'],
+        hotComments: [
+          { user: '茶农的儿子', text: '我爸做了三十年茶就是这个流程' },
+          { user: '好奇宝宝', text: '原来香是这么做出来的' },
         ]
       }
     ]
@@ -53,6 +64,17 @@ const sampleAccounts = [
           { user: '功夫茶爱好者', text: '85度确实刚好' },
           { user: '茶艺师小王', text: '这个方法很实用' },
         ]
+      },
+      {
+        title: '春茶预售｜自家凤凰山茶园直发',
+        excerpt: '来自凤凰山乌岽村海拔1000米的茶园，今年春茶品质历年最佳，现在预订享首发价。',
+        likes: 456,
+        comments: 18,
+        keywords: ['春茶预售', '乌岽村', '原产地'],
+        hotComments: [
+          { user: '爱喝茶的老李', text: '海拔1000米的好茶' },
+          { user: '茶小白', text: '首发价多少呀' },
+        ]
       }
     ]
   },
@@ -64,7 +86,7 @@ const sampleAccounts = [
     notes: [
       {
         title: '2024年春茶采摘日记｜凤凰山实拍',
-        excerpt: '今年雨水充足，春茶品质特别好。我们从海拔900米的茶园采摘，每一片茶叶都是手工挑选，保证品质。',
+        excerpt: '今年雨水充足，春茶品质特别好。从海拔900米的茶园采摘，每一片茶叶都是手工挑选，保证品质。',
         likes: 645,
         comments: 28,
         keywords: ['春茶', '原产地', '手工采摘'],
@@ -84,7 +106,7 @@ const sampleAccounts = [
     notes: [
       {
         title: '凤凰单丛十大香型，一次说清楚',
-        excerpt: '很多人分不清单丛的香型，其实主要就是十大香型：蜜兰香、芝兰香、玉兰香、桂花香、夜来香、茉莉香、杏仁香、肉桂香、柚花香、姜花香。',
+        excerpt: '很多人分不清单丛的香型，主要就是十大香型：蜜兰香、芝兰香、玉兰香、桂花香、夜来香、茉莉香、杏仁香、肉桂香、柚花香、姜花香。',
         likes: 1203,
         comments: 45,
         keywords: ['香型', '十大香型', '入门科普'],
@@ -104,7 +126,7 @@ const sampleAccounts = [
     notes: [
       {
         title: '为什么懂茶的人都喝凤凰单丛？',
-        excerpt: '凤凰单丛是广东乌龙茶的天花板，它的香气是所有茶类里最丰富、最多变的。一株茶树一种香，这就是凤凰单丛的魅力。',
+        excerpt: '凤凰单丛是广东乌龙茶的天花板，香气是所有茶类里最丰富、最多变的。一株茶树一种香，这就是凤凰单丛的魅力。',
         likes: 534,
         comments: 22,
         keywords: ['行业分析', '品质', '为什么喝'],
@@ -124,12 +146,16 @@ function parseFollowers(s: string): number {
   return match ? parseFloat(match[1]) : 0
 }
 
+// 截取字符串，保留指定字数
+function truncate(str: string, maxLen: number): string {
+  return str.length > maxLen ? str.slice(0, maxLen) + '…' : str
+}
+
 export default function HomePage() {
   const [accounts, setAccounts] = useState<typeof sampleAccounts>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // 尝试加载历史数据
     async function loadData() {
       try {
         const res = await fetch('/api/history')
@@ -142,7 +168,6 @@ export default function HomePage() {
           }
         }
       } catch {}
-      // 回退到示例数据
       setAccounts([...sampleAccounts].sort((a, b) => parseFollowers(b.followers) - parseFollowers(a.followers)))
       setLoading(false)
     }
@@ -191,7 +216,7 @@ export default function HomePage() {
         ) : accounts.length === 0 ? (
           <div className="text-center py-12 text-gray-400">暂无数据</div>
         ) : (
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="space-y-5">
             {accounts.map((account) => (
               <AccountCard key={account.id} account={account} />
             ))}
@@ -209,38 +234,42 @@ export default function HomePage() {
 
 // 单个账号卡片组件
 function AccountCard({ account }: { account: typeof sampleAccounts[0] }) {
-  // 按点赞排序取 TOP 笔记
   const topNotes = [...account.notes]
     .sort((a, b) => b.likes - a.likes)
     .slice(0, 5)
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+    <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
       {/* 账号头部 */}
-      <div className="flex items-start gap-3 mb-4">
-        <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-lg font-bold text-gray-600 flex-shrink-0">
+      <div className="flex items-center gap-3 mb-2">
+        {/* 头像圆标：首字母 + 绿色背景 */}
+        <div className="w-10 h-10 rounded-full bg-green-700 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
           {account.nickname[0]}
         </div>
         <div className="flex-1 min-w-0">
-          <h3 className="font-bold text-gray-900 text-base leading-tight">{account.nickname}</h3>
-          <p className="text-gray-500 text-xs mt-0.5">{account.followers} 粉丝</p>
-          <p className="text-gray-500 text-xs mt-1 leading-relaxed">{account.intro}</p>
+          <div className="flex items-center justify-between gap-2">
+            <h3 className="font-bold text-gray-900">{account.nickname}</h3>
+            <span className="text-gray-500 text-sm flex-shrink-0">粉丝 {account.followers}</span>
+          </div>
+          <p className="text-gray-500 text-sm mt-0.5 leading-snug">{account.intro}</p>
         </div>
       </div>
 
-      {/* 近半月内容 TOP */}
-      <div className="mb-4">
-        <div className="flex items-center gap-1.5 mb-3">
-          <span className="text-xs font-medium text-white bg-green-600 px-2 py-0.5 rounded">
-            近半月内容 TOP
-          </span>
-        </div>
+      {/* 分隔线 */}
+      <div className="border-t border-gray-100 my-3" />
 
-        <div className="space-y-4">
-          {topNotes.map((note, idx) => (
-            <NoteItem key={idx} note={note} />
-          ))}
-        </div>
+      {/* 【近半月内容 TOP】标题 */}
+      <div className="mb-3">
+        <h4 className="text-sm font-bold text-gray-800">
+          【近半月内容 TOP】
+        </h4>
+      </div>
+
+      {/* 热门笔记列表 */}
+      <div className="space-y-4">
+        {topNotes.map((note, idx) => (
+          <NoteItem key={idx} note={note} />
+        ))}
       </div>
     </div>
   )
@@ -249,46 +278,51 @@ function AccountCard({ account }: { account: typeof sampleAccounts[0] }) {
 // 单篇笔记组件
 function NoteItem({ note }: { note: typeof sampleAccounts[0]['notes'][0] }) {
   return (
-    <div className="border-b border-gray-100 last:border-0 pb-3 last:pb-0">
-      {/* 标题 */}
-      <h4 className="text-gray-900 text-sm font-medium leading-snug mb-1.5">
+    <div>
+      {/* 标题 bold */}
+      <h5 className="text-sm font-medium text-gray-900 leading-snug mb-1.5">
         {note.title}
-      </h4>
+      </h5>
 
-      {/* 精华引用 */}
+      {/* 精华引用：灰色斜体，左侧绿线 */}
       <blockquote className="text-gray-500 italic text-sm border-l-2 border-green-600 pl-3 mt-2 mb-2 leading-relaxed">
-        「{note.excerpt.length > 60 ? note.excerpt.slice(0, 60) + '…' : note.excerpt}」
+        「{truncate(note.excerpt, 50)}」
       </blockquote>
 
       {/* 关键词标签 */}
-      <div className="flex flex-wrap gap-1.5 mb-2">
+      <div className="flex flex-wrap gap-1 mb-2">
         {note.keywords.map((kw) => (
-          <span key={kw} className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded">
+          <span key={kw} className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded mr-1">
             {kw}
           </span>
         ))}
       </div>
 
-      {/* 点赞和评论数 */}
-      <div className="flex items-center gap-3 text-xs text-gray-400 mb-2">
-        <span>❤️ {note.likes.toLocaleString()}</span>
-        <span>💬 {note.comments}</span>
+      {/* 点赞/评论 */}
+      <div className="text-gray-400 text-xs mb-2">
+        赞 {note.likes.toLocaleString()} | 评论 {note.comments}
       </div>
 
-      {/* 热评摘录 */}
+      {/* 分隔虚线 */}
+      <div className="border-t border-dashed border-gray-200 my-2" />
+
+      {/* 【热评摘录】 */}
       {note.hotComments.length > 0 && (
-        <div className="bg-gray-50 rounded p-2 space-y-1.5">
-          <p className="text-xs text-gray-400 font-medium mb-1">🔥 热评摘录</p>
-          {note.hotComments.slice(0, 3).map((c, i) => (
-            <div key={i} className="text-xs leading-relaxed">
-              <span className="font-medium text-gray-700">{c.user}:</span>
-              <span className="text-gray-500 ml-1">
-                {c.text.length > 22 ? c.text.slice(0, 22) + '…' : c.text}
-              </span>
-            </div>
-          ))}
+        <div className="mt-2">
+          <p className="text-xs font-medium text-gray-500 mb-1.5">【热评摘录】</p>
+          <div className="space-y-1">
+            {note.hotComments.slice(0, 3).map((c, i) => (
+              <div key={i} className="text-xs text-gray-500 leading-relaxed">
+                <span className="font-medium text-gray-700">{c.user}:</span>{' '}
+                {truncate(c.text, 20)}
+              </div>
+            ))}
+          </div>
         </div>
       )}
+
+      {/* 卡片底部虚线分隔 */}
+      <div className="border-t border-dashed border-gray-200 mt-4" />
     </div>
   )
 }
