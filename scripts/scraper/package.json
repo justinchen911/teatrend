@@ -1,0 +1,14 @@
+{
+  "name": "teatrend-scraper",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "scrape:search": "node xiaohongshu-search.mjs",
+    "scrape:profile": "node xiaohongshu-profile.mjs",
+    "scrape:daily": "node daily-collect.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.42.0",
+    "dotenv": "^16.4.0"
+  }
+}

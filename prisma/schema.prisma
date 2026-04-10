@@ -7,106 +7,103 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// ============================================
-// 用户 & 认证
-// ============================================
-
-model User {
-  id            String         @id @default(cuid())
-  email         String         @unique
-  name          String?
-  avatarUrl     String?
-  createdAt     DateTime       @default(now()) @map("created_at")
-  updatedAt     DateTime       @updatedAt @map("updated_at")
-
-  accounts      Account[]
-  teamMembers   TeamMember[]
-  subscriptions Subscription[]
-  apiKeys       ApiKey[]
-
-  @@map("users")
-}
-
+// 追踪的社交媒体账号
 model Account {
-  id                String  @id @default(cuid())
-  userId            String  @map("user_id")
-  type              String  // e.g. "oauth", "supabase"
-  provider          String  // e.g. "github", "google", "email"
-  providerAccountId String  @map("provider_account_id")
-  refreshToken      String?
-  accessToken       String?
-  expiresAt         Int?    @map("expires_at")
-  tokenType         String? @map("token_type")
-  scope             String?
-  idToken           String? @map("id_token")
+  id            String   @id @default(cuid())
+  platform      String   // xiaohongshu | douyin | weixin_channel
+  accountId     String   // 平台内 ID
+  name          String   // 昵称
+  avatarUrl     String?
+  location      String?  // 所在地
+  positioning   String?  // 账号定位（茶农/茶商/茶艺师/测评博主...）
+  bio           String?  // 简介
+  followersCount Int     @default(0)
+  followingCount Int     @default(0)
+  notesCount    Int      @default(0) // 发布内容数
+  isActive      Boolean  @default(true) // 是否仍在追踪
+  lastSyncedAt  DateTime? // 最后一次采集时间
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 
-  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  posts         Post[]
 
-  @@unique([provider, providerAccountId])
-  @@map("accounts")
+  @@unique([platform, accountId])
+  @@index([platform])
+  @@index([isActive])
+  @@index([followersCount])
 }
 
-// ============================================
-// 团队
-// ============================================
+// 采集到的内容帖子
+model Post {
+  id            String   @id @default(cuid())
+  platform      String   // xiaohongshu | douyin | weixin_channel
+  postId        String   // 平台内内容 ID
+  account       Account  @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  accountId     String
+  title         String   // 标题
+  content       String?  @db.Text // 正文/文案
+  mediaUrls     String?  @db.Text // 图片/视频链接，JSON 数组
+  tags          String?  @db.Text // 标签/话题，JSON 数组
+  likesCount    Int      @default(0)
+  commentsCount Int      @default(0)
+  sharesCount   Int      @default(0)
+  collectsCount Int      @default(0) // 收藏数
+  publishedAt   DateTime? // 原始发布时间
+  collectedAt   DateTime @default(now()) // 采集时间
+  createdAt     DateTime @default(now())
 
-model Team {
-  id          String        @id @default(cuid())
-  name        String
-  slug        String        @unique
-  createdAt   DateTime      @default(now()) @map("created_at")
-
-  members     TeamMember[]
-
-  @@map("teams")
+  @@unique([platform, postId])
+  @@index([accountId])
+  @@index([publishedAt])
+  @@index([likesCount])
+  @@index([platform])
 }
 
-model TeamMember {
-  id        String   @id @default(cuid())
-  teamId    String   @map("team_id")
-  userId    String   @map("user_id")
-  role      String   @default("member") // "owner" | "admin" | "member"
-  createdAt DateTime @default(now()) @map("created_at")
+// 关键词热度趋势（每日聚合）
+model TopicTrend {
+  id             String   @id @default(cuid())
+  keyword        String   // 关键词
+  platform       String
+  date           DateTime @db.Date
+  mentionCount   Int      @default(0)  // 提及次数
+  totalEngagement Int     @default(0)  // 总互动量
+  avgEngagement  Float    @default(0)  // 平均互动量
+  topPostIds     String?  @db.Text     // 关联热门内容 ID，JSON 数组
+  createdAt      DateTime @default(now())
 
-  team      Team     @relation(fields: [teamId], references: [id], onDelete: Cascade)
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@unique([teamId, userId])
-  @@map("team_members")
+  @@unique([keyword, platform, date])
+  @@index([keyword])
+  @@index([date])
+  @@index([platform])
 }
 
-// ============================================
-// 订阅 & 支付
-// ============================================
-
-model Subscription {
+// 每日统计报告
+model DailyReport {
   id               String   @id @default(cuid())
-  userId           String   @map("user_id")
-  plan             String   @default("free") // "free" | "pro" | "enterprise"
-  status           String   @default("active") // "active" | "canceled" | "past_due" | "trialing"
-  stripeCustomerId String?  @map("stripe_customer_id")
-  currentPeriodEnd DateTime? @map("current_period_end")
-  createdAt        DateTime @default(now()) @map("created_at")
-  updatedAt        DateTime @updatedAt @map("updated_at")
+  date             DateTime @db.Date
+  platform         String
+  newAccountsCount Int      @default(0)  // 新增追踪账号数
+  newPostsCount    Int      @default(0)  // 新增内容数
+  topKeywords      String?  @db.Text     // 热门关键词 JSON [{keyword, count}]
+  trendingAccounts String?  @db.Text     // 活跃账号 JSON [{accountId, name, postCount}]
+  aiSuggestions    String?  @db.Text     // AI 选题建议 JSON
+  summary          String?  @db.Text     // 日报摘要
+  createdAt        DateTime @default(now())
 
-  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@map("subscriptions")
+  @@unique([date, platform])
+  @@index([date])
 }
 
-// ============================================
-// API 密钥
-// ============================================
+// 种子账号池（手动维护）
+model SeedAccount {
+  id          String   @id @default(cuid())
+  platform    String   // xiaohongshu | douyin | weixin_channel
+  accountId   String   // 平台内 ID
+  homeUrl     String?  // 主页链接
+  note        String?  // 备注
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 
-model ApiKey {
-  id          String    @id @default(cuid())
-  userId      String    @map("user_id")
-  name        String
-  keyHash     String    @map("key_hash")
-  lastUsedAt  DateTime? @map("last_used_at")
-  createdAt   DateTime  @default(now()) @map("created_at")
-
-  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@map("api_keys")
+  @@unique([platform, accountId])
 }
