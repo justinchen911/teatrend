@@ -1,0 +1,37 @@
+[
+  {
+    "platform": "xiaohongshu",
+    "accountId": "placeholder_1",
+    "homeUrl": "https://www.xhs.com/user/profile/placeholder1",
+    "note": "示例-潮州本地茶农",
+    "isActive": true
+  },
+  {
+    "platform": "xiaohongshu",
+    "accountId": "placeholder_2",
+    "homeUrl": "https://www.xhs.com/user/profile/placeholder2",
+    "note": "示例-单丛茶测评博主",
+    "isActive": true
+  },
+  {
+    "platform": "xiaohongshu",
+    "accountId": "placeholder_3",
+    "homeUrl": "https://www.xhs.com/user/profile/placeholder3",
+    "note": "示例-凤凰山茶商",
+    "isActive": true
+  },
+  {
+    "platform": "xiaohongshu",
+    "accountId": "placeholder_4",
+    "homeUrl": "https://www.xhs.com/user/profile/placeholder4",
+    "note": "示例-茶艺师",
+    "isActive": true
+  },
+  {
+    "platform": "xiaohongshu",
+    "accountId": "placeholder_5",
+    "homeUrl": "https://www.xhs.com/user/profile/placeholder5",
+    "note": "示例-单丛茶知识分享",
+    "isActive": true
+  }
+]
