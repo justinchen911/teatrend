@@ -5,7 +5,7 @@
 
 import { execSync } from 'child_process'
 
-const API_KEY = process.env.TIKKHUB_API_KEY || 'tY4NLMACwHmApl6eO9OkwQz5GAmKdqVs4TWdtEreVP2aqQWSOFKNcD2GNw=='
+const API_KEY = process.env.TIKHUB_API_KEY || 'tY4NLMACwHmApl6eO9OkwQz5GAmKdqVs4TWdtEreVP2aqQWSOFKNcD2GNw=='
 
 function apiGet(url: string): any {
   const cmd = `curl -s -X GET -H "Authorization: Bearer ${API_KEY}" -H "User-Agent: curl/8.1.2" "${url}"`
