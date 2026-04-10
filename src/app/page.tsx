@@ -16,6 +16,7 @@ const sampleAccounts = [
         likes: 2869,
         comments: 87,
         keywords: ['鸭屎香', '品种科普', '入门指南'],
+        publishedAt: '2026-03-15',
         hotComments: [
           { user: '茶小白001', text: '原来鸭屎香名字是这么来的！涨知识了' },
           { user: '潮汕阿妹', text: '我家那边满山都是这个香' },
@@ -28,6 +29,7 @@ const sampleAccounts = [
         likes: 1771,
         comments: 52,
         keywords: ['蜜兰香', '经典香型', '冲泡'],
+        publishedAt: '2026-02-20',
         hotComments: [
           { user: '茶香一味', text: '蜜兰香真的是入门首选' },
           { user: '深圳茶客', text: '回甘太好了，强烈推荐' },
@@ -40,9 +42,21 @@ const sampleAccounts = [
         likes: 1342,
         comments: 41,
         keywords: ['制茶工艺', '做青', '香气来源'],
+        publishedAt: '2026-01-10',
         hotComments: [
           { user: '茶农的儿子', text: '我爸做了三十年茶就是这个流程' },
           { user: '好奇宝宝', text: '原来香是这么做出来的' },
+        ]
+      },
+      {
+        title: '2024年春茶采摘日记｜凤凰山实拍',
+        excerpt: '今年雨水充足，春茶品质特别好。从海拔900米的茶园采摘，每一片茶叶都是手工挑选。',
+        likes: 645,
+        comments: 28,
+        keywords: ['春茶', '原产地', '手工采摘'],
+        publishedAt: '2024-03-15',
+        hotComments: [
+          { user: '茶农小张', text: '海拔900米的茶确实不一样' },
         ]
       }
     ]
@@ -59,6 +73,7 @@ const sampleAccounts = [
         likes: 892,
         comments: 34,
         keywords: ['冲泡技巧', '水温', '实操教程'],
+        publishedAt: '2026-03-28',
         hotComments: [
           { user: '新手喝茶', text: '终于知道为什么我泡的苦了' },
           { user: '功夫茶爱好者', text: '85度确实刚好' },
@@ -71,9 +86,21 @@ const sampleAccounts = [
         likes: 456,
         comments: 18,
         keywords: ['春茶预售', '乌岽村', '原产地'],
+        publishedAt: '2026-02-05',
         hotComments: [
           { user: '爱喝茶的老李', text: '海拔1000米的好茶' },
           { user: '茶小白', text: '首发价多少呀' },
+        ]
+      },
+      {
+        title: '老笔记：2024年单丛评测',
+        excerpt: '2024年的单丛茶评测记录，仅供参考。',
+        likes: 234,
+        comments: 12,
+        keywords: ['评测', '老笔记'],
+        publishedAt: '2024-05-20',
+        hotComments: [
+          { user: '茶友', text: '去年的记录了' },
         ]
       }
     ]
@@ -85,15 +112,27 @@ const sampleAccounts = [
     intro: '凤凰山本地茶商，原产地直发',
     notes: [
       {
-        title: '2024年春茶采摘日记｜凤凰山实拍',
+        title: '2026年春茶采摘日记｜凤凰山实拍',
         excerpt: '今年雨水充足，春茶品质特别好。从海拔900米的茶园采摘，每一片茶叶都是手工挑选，保证品质。',
         likes: 645,
         comments: 28,
         keywords: ['春茶', '原产地', '手工采摘'],
+        publishedAt: '2026-03-20',
         hotComments: [
           { user: '茶农小张', text: '海拔900米的茶确实不一样' },
           { user: '爱喝茶的老李', text: '原产地直发价格怎么样' },
           { user: '茶小白', text: '实拍图好有质感' },
+        ]
+      },
+      {
+        title: '2024年春茶采摘日记｜凤凰山实拍',
+        excerpt: '去年雨水充足，春茶品质特别好。从海拔900米的茶园采摘，每一片茶叶都是手工挑选。',
+        likes: 645,
+        comments: 28,
+        keywords: ['春茶', '原产地', '手工采摘'],
+        publishedAt: '2024-03-15',
+        hotComments: [
+          { user: '茶农小张', text: '海拔900米的茶确实不一样' },
         ]
       }
     ]
@@ -110,6 +149,7 @@ const sampleAccounts = [
         likes: 1203,
         comments: 45,
         keywords: ['香型', '十大香型', '入门科普'],
+        publishedAt: '2026-04-01',
         hotComments: [
           { user: '茶小白001', text: '终于有人整理清楚了' },
           { user: '收藏夹', text: '这个帖子必须收藏' },
@@ -130,10 +170,22 @@ const sampleAccounts = [
         likes: 534,
         comments: 22,
         keywords: ['行业分析', '品质', '为什么喝'],
+        publishedAt: '2025-12-15',
         hotComments: [
           { user: '茶商老陈', text: '说的很中肯' },
           { user: '喝茶养生', text: '确实越喝越上瘾' },
           { user: '茶小白', text: '被种草了' },
+        ]
+      },
+      {
+        title: '2024年单丛市场回顾',
+        excerpt: '2024年单丛茶市场分析报告。',
+        likes: 234,
+        comments: 10,
+        keywords: ['市场分析', '年度回顾'],
+        publishedAt: '2024-12-20',
+        hotComments: [
+          { user: '茶商', text: '去年的数据了' },
         ]
       }
     ]
@@ -151,6 +203,16 @@ function truncate(str: string, maxLen: number): string {
   return str.length > maxLen ? str.slice(0, maxLen) + '…' : str
 }
 
+// 日期过滤：只保留 2025-12-01 及之后的数据
+const cutoff = new Date('2025-12-01')
+
+function filterRecentNotes(notes: typeof sampleAccounts[0]['notes']) {
+  return notes.filter(note => {
+    const d = new Date(note.publishedAt || '2025-01-01')
+    return d >= cutoff
+  })
+}
+
 export default function HomePage() {
   const [accounts, setAccounts] = useState<typeof sampleAccounts>([])
   const [loading, setLoading] = useState(true)
@@ -162,13 +224,29 @@ export default function HomePage() {
         if (res.ok) {
           const data = await res.json()
           if (data.accounts && Array.isArray(data.accounts)) {
-            setAccounts(data.accounts.sort((a: any, b: any) => parseFollowers(b.followers) - parseFollowers(a.followers)))
+            // 过滤每个账号的笔记
+            const filteredAccounts = data.accounts
+              .map((account: any) => ({
+                ...account,
+                notes: filterRecentNotes(account.notes)
+              }))
+              .filter((account: any) => account.notes.length > 0)
+              .sort((a: any, b: any) => parseFollowers(b.followers) - parseFollowers(a.followers))
+            setAccounts(filteredAccounts)
             setLoading(false)
             return
           }
         }
       } catch {}
-      setAccounts([...sampleAccounts].sort((a, b) => parseFollowers(b.followers) - parseFollowers(a.followers)))
+      // fallback 到示例数据，同样过滤
+      const filteredSample = sampleAccounts
+        .map(account => ({
+          ...account,
+          notes: filterRecentNotes(account.notes)
+        }))
+        .filter(account => account.notes.length > 0)
+        .sort((a, b) => parseFollowers(b.followers) - parseFollowers(a.followers))
+      setAccounts(filteredSample)
       setLoading(false)
     }
     loadData()
@@ -194,7 +272,11 @@ export default function HomePage() {
         <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
           <span className="flex items-center gap-1">
             <span className="text-gray-400">📅</span>
-            {new Date().toLocaleDateString('zh-CN', { month: 'long', day: 'numeric' })} 近半月数据
+            {loading ? '...' : 
+              accounts.length > 0 
+                ? `数据范围：2025-12 ~ ${new Date().toLocaleDateString('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit' })}`
+                : '暂无近半年数据'
+            }
           </span>
           <span className="text-gray-300">|</span>
           <span className="flex items-center gap-1">
@@ -234,7 +316,8 @@ export default function HomePage() {
 
 // 单个账号卡片组件
 function AccountCard({ account }: { account: typeof sampleAccounts[0] }) {
-  const topNotes = [...account.notes]
+  const recentNotes = filterRecentNotes(account.notes)
+  const topNotes = [...recentNotes]
     .sort((a, b) => b.likes - a.likes)
     .slice(0, 5)
 
