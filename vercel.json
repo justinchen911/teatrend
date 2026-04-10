@@ -1,8 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
-  "regions": ["hkg"],
-  "env": {
-    "TIKHUB_API_KEY": "@tikhub_api_key"
-  }
+  "regions": ["hkg"]
 }
