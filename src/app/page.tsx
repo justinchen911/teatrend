@@ -203,6 +203,14 @@ function truncate(str: string, maxLen: number): string {
   return str.length > maxLen ? str.slice(0, maxLen) + '…' : str
 }
 
+// 格式化日期为 3月15日 / 12月20日
+function formatDate(dateStr: string): string {
+  const d = new Date(dateStr)
+  const month = d.getMonth() + 1
+  const day = d.getDate()
+  return `${month}月${day}日`
+}
+
 // 日期过滤：只保留 2025-12-01 及之后的数据
 const cutoff = new Date('2025-12-01')
 
@@ -362,10 +370,15 @@ function AccountCard({ account }: { account: typeof sampleAccounts[0] }) {
 function NoteItem({ note }: { note: typeof sampleAccounts[0]['notes'][0] }) {
   return (
     <div>
-      {/* 标题 bold */}
-      <h5 className="text-sm font-medium text-gray-900 leading-snug mb-1.5">
-        {note.title}
-      </h5>
+      {/* 标题 bold + 时间 */}
+      <div className="flex items-start justify-between gap-2 mb-1.5">
+        <h5 className="text-sm font-medium text-gray-900 leading-snug flex-1">
+          {note.title}
+        </h5>
+        <span className="text-xs text-gray-400 flex-shrink-0 mt-0.5">
+          {note.publishedAt ? formatDate(note.publishedAt) : ''}
+        </span>
+      </div>
 
       {/* 精华引用：灰色斜体，左侧绿线 */}
       <blockquote className="text-gray-500 italic text-sm border-l-2 border-green-600 pl-3 mt-2 mb-2 leading-relaxed">
