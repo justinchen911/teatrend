@@ -1,770 +1,1340 @@
 {
   "douyin": [
     {
-      "keyword": "培育更多“中国服务”品牌",
-      "rank": 1,
-      "hot": 0
-    },
-    {
       "keyword": "习近平会见郑丽文",
-      "rank": 2,
-      "hot": 12227878
-    },
-    {
-      "keyword": "3月份CPI同比上涨1.0%",
-      "rank": 3,
-      "hot": 11645818
-    },
-    {
-      "keyword": "中国海上风电实现新突破",
-      "rank": 4,
-      "hot": 11488066
+      "rank": 1,
+      "hot": 0,
+      "platform": "douyin"
     },
     {
       "keyword": "我拍到了超有料的春天",
-      "rank": 5,
-      "hot": 11234193
-    },
-    {
-      "keyword": "普京宣布将停火32小时",
-      "rank": 6,
-      "hot": 10546670
+      "rank": 2,
+      "hot": 12107394,
+      "platform": "douyin"
     },
     {
       "keyword": "去春天里遛遛自己",
-      "rank": 7,
-      "hot": 10331543
+      "rank": 3,
+      "hot": 11976930,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "加快建设分级诊疗体系的若干措施",
+      "rank": 4,
+      "hot": 11101968,
+      "platform": "douyin"
     },
     {
       "keyword": "春天是最好的心理委员",
-      "rank": 8,
-      "hot": 9157497
-    },
-    {
-      "keyword": "如果春风有形状",
-      "rank": 9,
-      "hot": 9139000
-    },
-    {
-      "keyword": "小树本就该在森林里长大",
-      "rank": 10,
-      "hot": 9138996
+      "rank": 5,
+      "hot": 11099451,
+      "platform": "douyin"
     },
     {
       "keyword": "玉兰花开友谊常在",
-      "rank": 11,
-      "hot": 9133676
+      "rank": 6,
+      "hot": 10212253,
+      "platform": "douyin"
     },
     {
-      "keyword": "留子美食挑战赛还是太权威了",
+      "keyword": "利用外挂当黄牛打击处理不留情",
+      "rank": 7,
+      "hot": 10200388,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "小树本就该在森林里长大",
+      "rank": 8,
+      "hot": 9126656,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "这一刻被丁达尔治愈了",
+      "rank": 9,
+      "hot": 9118331,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "人工智能将纳入教师资格考试",
+      "rank": 10,
+      "hot": 9107126,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "香港首批稳定币牌照将公布",
+      "rank": 11,
+      "hot": 8964828,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "3名中国裁判入选世界杯裁判名单",
       "rank": 12,
-      "hot": 9123871
+      "hot": 8849161,
+      "platform": "douyin"
     },
     {
       "keyword": "往西湖倒漂白粉是杀鱼护荷吗",
       "rank": 13,
-      "hot": 8739881
-    },
-    {
-      "keyword": "和朋友约个color eat",
-      "rank": 14,
-      "hot": 8485450
+      "hot": 8686008,
+      "platform": "douyin"
     },
     {
       "keyword": "王者荣耀世界上线",
+      "rank": 14,
+      "hot": 8339480,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "普京宣布将停火32小时",
       "rank": 15,
-      "hot": 8357568
+      "hot": 8075445,
+      "platform": "douyin"
     },
     {
-      "keyword": "莫氏鸡煲郑重声明",
+      "keyword": "和朋友约个color eat",
       "rank": 16,
-      "hot": 7818852
+      "hot": 8055916,
+      "platform": "douyin"
     },
     {
-      "keyword": "这一刻被丁达尔治愈了",
+      "keyword": "你是迟来的欢喜大结局",
       "rank": 17,
-      "hot": 7793087
+      "hot": 7809317,
+      "platform": "douyin"
     },
     {
-      "keyword": "人工智能将纳入教师资格考试",
+      "keyword": "销声匿迹的女孩们都在打一场硬仗",
       "rank": 18,
-      "hot": 7792701
-    },
-    {
-      "keyword": "3名中国裁判入选世界杯裁判名单",
-      "rank": 19,
-      "hot": 7792431
-    },
-    {
-      "keyword": "南海海域进行重大活动禁止驶入",
-      "rank": 20,
-      "hot": 7791325
+      "hot": 7778542,
+      "platform": "douyin"
     },
     {
       "keyword": "拨开天空的乌云手势舞挑战",
+      "rank": 19,
+      "hot": 7760634,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "冰湖重生观后感",
+      "rank": 20,
+      "hot": 7756117,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "我还不想做一个大人",
       "rank": 21,
-      "hot": 7730109
+      "hot": 7739109,
+      "platform": "douyin"
     },
     {
       "keyword": "我见识到我自己的厉害了",
       "rank": 22,
-      "hot": 7726622
-    },
-    {
-      "keyword": "莫氏鸡煲老板终于可以歇一歇了",
-      "rank": 23,
-      "hot": 7724275
-    },
-    {
-      "keyword": "我还不想做一个大人",
-      "rank": 24,
-      "hot": 7720135
-    },
-    {
-      "keyword": "钢铁森林左右为难的女主",
-      "rank": 25,
-      "hot": 7715720
-    },
-    {
-      "keyword": "销声匿迹的女孩们都在打一场硬仗",
-      "rank": 26,
-      "hot": 7707858
-    },
-    {
-      "keyword": "冰湖重生观后感",
-      "rank": 27,
-      "hot": 7697390
-    },
-    {
-      "keyword": "今年苏超真的还有弱队吗",
-      "rank": 28,
-      "hot": 7680390
+      "hot": 7725109,
+      "platform": "douyin"
     },
     {
       "keyword": "燕云十六声世界武侠",
-      "rank": 29,
-      "hot": 7676446
+      "rank": 23,
+      "hot": 7719502,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "今年苏超真的还有弱队吗",
+      "rank": 24,
+      "hot": 7719333,
+      "platform": "douyin"
     },
     {
       "keyword": "工作是为了更好地生活",
-      "rank": 30,
-      "hot": 7671370
+      "rank": 25,
+      "hot": 7717922,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "如果春风有形状",
+      "rank": 26,
+      "hot": 7717732,
+      "platform": "douyin"
     },
     {
       "keyword": "情侣户外转场要这样拍才够酷",
-      "rank": 31,
-      "hot": 7655862
+      "rank": 27,
+      "hot": 7714880,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "钢铁森林左右为难的女主",
+      "rank": 28,
+      "hot": 7712733,
+      "platform": "douyin"
     },
     {
       "keyword": "别睡了铁子起来折腾吧",
-      "rank": 32,
-      "hot": 7655619
+      "rank": 29,
+      "hot": 7707449,
+      "platform": "douyin"
     },
     {
-      "keyword": "Wait清唱挑战",
-      "rank": 33,
-      "hot": 7633453
+      "keyword": "第一次感觉到公交车在难过",
+      "rank": 30,
+      "hot": 7705903,
+      "platform": "douyin"
     },
     {
-      "keyword": "明星设计师爆改徐如蓝",
-      "rank": 34,
-      "hot": 7631424
-    },
-    {
-      "keyword": "这世界突然填满色彩",
-      "rank": 35,
-      "hot": 7628997
-    },
-    {
-      "keyword": "三角洲制式券攻略",
-      "rank": 36,
-      "hot": 7620447
-    },
-    {
-      "keyword": "浪姐小考名场面",
-      "rank": 37,
-      "hot": 7618522
-    },
-    {
-      "keyword": "介绍一下我的狗狗家族成员",
-      "rank": 38,
-      "hot": 7610913
+      "keyword": "留子美食挑战赛还是太权威了",
+      "rank": 31,
+      "hot": 7700337,
+      "platform": "douyin"
     },
     {
       "keyword": "妈您不懂现在的年轻人都这么穿",
+      "rank": 32,
+      "hot": 7695691,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "魔力歌先生二公双人对决",
+      "rank": 33,
+      "hot": 7662691,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "贺思慕闪现开大救段胥",
+      "rank": 34,
+      "hot": 7657704,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "张真源鼓励开思源参加超越班",
+      "rank": 35,
+      "hot": 7655623,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "原来我真能花100万",
+      "rank": 36,
+      "hot": 7650647,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "生活中的那又怎样",
+      "rank": 37,
+      "hot": 7643547,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "Wait清唱挑战",
+      "rank": 38,
+      "hot": 7642608,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "三角洲制式券攻略",
       "rank": 39,
-      "hot": 7609001
+      "hot": 7641686,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "浪姐小考名场面",
+      "rank": 40,
+      "hot": 7641328,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "介绍一下我的狗狗家族成员",
+      "rank": 41,
+      "hot": 7635928,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "这世界突然填满色彩",
+      "rank": 42,
+      "hot": 7635210,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "阿凡提怎么天天都这么开心",
+      "rank": 43,
+      "hot": 7633091,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "巴掌遮阳帽主打一个抽象",
+      "rank": 44,
+      "hot": 7631741,
+      "platform": "douyin"
     },
     {
       "keyword": "火影玩家雷霆语言包",
-      "rank": 40,
-      "hot": 7247889
-    },
-    {
-      "keyword": "邓紫棋台北演唱会",
-      "rank": 41,
-      "hot": 7234170
-    },
-    {
-      "keyword": "离开朴成训谁还逗我笑",
-      "rank": 42,
-      "hot": 7220614
-    },
-    {
-      "keyword": "拉下第一场生日气球雨",
-      "rank": 43,
-      "hot": 7210743
-    },
-    {
-      "keyword": "综艺嘉宾也开始换乘了",
-      "rank": 44,
-      "hot": 7200661
-    },
-    {
-      "keyword": "乐评人解析布瑞吉新专",
       "rank": 45,
-      "hot": 7196982
+      "hot": 7624981,
+      "platform": "douyin"
     },
     {
       "keyword": "蜜语纪没有善男信女",
       "rank": 46,
-      "hot": 7168568
+      "hot": 7623295,
+      "platform": "douyin"
     },
     {
       "keyword": "月亮月亮我向你许愿",
       "rank": 47,
-      "hot": 7161002
+      "hot": 7619686,
+      "platform": "douyin"
     },
     {
-      "keyword": "紧急联络人翻唱",
+      "keyword": "综艺嘉宾也开始换乘了",
       "rank": 48,
-      "hot": 7081062
-    },
-    {
-      "keyword": "这次爱与被爱终于同时发生了",
-      "rank": 49,
-      "hot": 7057453
-    },
-    {
-      "keyword": "抖音第0届拼豆大赛",
-      "rank": 50,
-      "hot": 7027377
+      "hot": 7619184,
+      "platform": "douyin"
     },
     {
       "keyword": "钢铁森林江寒声以身入局",
+      "rank": 49,
+      "hot": 7618669,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "拉下第一场生日气球雨",
+      "rank": 50,
+      "hot": 7609491,
+      "platform": "douyin"
+    },
+    {
+      "keyword": "离开朴成训谁还逗我笑",
       "rank": 51,
-      "hot": 7019073
+      "hot": 7517938,
+      "platform": "douyin"
     }
   ],
   "weibo": [
     {
-      "keyword": "总书记谈为民造福是最大政绩",
+      "keyword": "习近平在京会见郑丽文",
       "rank": 1,
-      "hot": ""
-    },
-    {
-      "keyword": "#十日终焉开机#",
-      "rank": 2,
-      "hot": ""
-    },
-    {
-      "keyword": "#婆婆得知儿子被海葬状告儿媳孙女#",
-      "rank": 3,
-      "hot": ""
-    },
-    {
-      "keyword": "#赏花经济开出四季春#",
-      "rank": 4,
-      "hot": ""
-    },
-    {
-      "keyword": "#在全世界偶遇中国符号#",
-      "rank": 5,
-      "hot": ""
-    },
-    {
-      "keyword": "#胡先煦官宣十日终焉#",
-      "rank": 6,
-      "hot": ""
-    },
-    {
-      "keyword": "#男子杀害22岁前女友藏床底开冷气#",
-      "rank": 7,
-      "hot": ""
-    },
-    {
-      "keyword": "#李在明转发以色列士兵虐童视频#",
-      "rank": 8,
-      "hot": ""
-    },
-    {
-      "keyword": "#伊朗最高领袖发表最新声明#",
-      "rank": 9,
-      "hot": ""
-    },
-    {
-      "keyword": "#浪姐曾邀请孟子义被拒绝了#",
-      "rank": 10,
-      "hot": ""
-    },
-    {
-      "keyword": "#李斌称闪充再快也比换电慢#",
-      "rank": 11,
-      "hot": ""
-    },
-    {
-      "keyword": "#班费一年三四千还说家长是自愿的#",
-      "rank": 12,
-      "hot": ""
-    },
-    {
-      "keyword": "#医生分析黄子韬嘴唇发紫原因#",
-      "rank": 13,
-      "hot": ""
-    },
-    {
-      "keyword": "#十日终焉首发阵容#",
-      "rank": 14,
-      "hot": ""
-    },
-    {
-      "keyword": "用人民币感受日本物价",
-      "rank": 15,
-      "hot": ""
-    },
-    {
-      "keyword": "十日终焉",
-      "rank": 16,
-      "hot": ""
-    },
-    {
-      "keyword": "#马頔说李纯很假#",
-      "rank": 17,
-      "hot": ""
-    },
-    {
-      "keyword": "#詹姆斯罚球线内一步暴扣#",
-      "rank": 18,
-      "hot": ""
-    },
-    {
-      "keyword": "#黄子韬最新回应嘴唇发紫#",
-      "rank": 19,
-      "hot": ""
-    },
-    {
-      "keyword": "#官方回应奔驰豪车被当陪葬品#",
-      "rank": 20,
-      "hot": ""
+      "hot": "",
+      "platform": "weibo"
     },
     {
       "keyword": "#小米食堂发布小米冰激凌#",
-      "rank": 21,
-      "hot": ""
-    },
-    {
-      "keyword": "#莫氏鸡煲老板说一天只花20发财没用#",
-      "rank": 22,
-      "hot": ""
-    },
-    {
-      "keyword": "#程晓玥回应当年分手#",
-      "rank": 23,
-      "hot": ""
-    },
-    {
-      "keyword": "#刘琳琳回应长得像张凌赫#",
-      "rank": 24,
-      "hot": ""
-    },
-    {
-      "keyword": "#研究发现血型和疾病的发生有相关性#",
-      "rank": 25,
-      "hot": ""
-    },
-    {
-      "keyword": "#肖战十日终焉十面皆杀#",
-      "rank": 26,
-      "hot": ""
-    },
-    {
-      "keyword": "#老人生前埋20万现金叮嘱留儿女#",
-      "rank": 27,
-      "hot": ""
-    },
-    {
-      "keyword": "#AI写作年赚200万夫妻被封号#",
-      "rank": 28,
-      "hot": ""
-    },
-    {
-      "keyword": "#母亲成植物人获赔116万兄弟起争执#",
-      "rank": 29,
-      "hot": ""
-    },
-    {
-      "keyword": "#亲爱的客栈全员晒8年前照片#",
-      "rank": 30,
-      "hot": ""
-    },
-    {
-      "keyword": "楚乔传",
-      "rank": 31,
-      "hot": ""
-    },
-    {
-      "keyword": "#两岸关系发展的4点意见#",
-      "rank": 32,
-      "hot": ""
-    },
-    {
-      "keyword": "#孙杨0比3宇田幸矢#",
-      "rank": 33,
-      "hot": ""
-    },
-    {
-      "keyword": "#全军第一支常规弹道导弹部队#",
-      "rank": 34,
-      "hot": ""
-    },
-    {
-      "keyword": "#男子杀害4岁女儿后报溺水假警#",
-      "rank": 35,
-      "hot": ""
-    },
-    {
-      "keyword": "#杨紫小夭女性角色热度TOP1#",
-      "rank": 36,
-      "hot": ""
-    },
-    {
-      "keyword": "#黄景瑜王玉雯是王子奇介绍的吗#",
-      "rank": 37,
-      "hot": ""
-    },
-    {
-      "keyword": "#卫健委回应卫生院工作人员上班化妆#",
-      "rank": 38,
-      "hot": ""
-    },
-    {
-      "keyword": "当你不小心坐了商场按摩椅",
-      "rank": 39,
-      "hot": ""
-    },
-    {
-      "keyword": "留学生吐槽欧洲比二手烟更严重的问题",
-      "rank": 40,
-      "hot": ""
-    },
-    {
-      "keyword": "#杨紫在腾讯破三万率100%#",
-      "rank": 41,
-      "hot": ""
-    },
-    {
-      "keyword": "#两岸同胞同属中华民族#",
-      "rank": 42,
-      "hot": ""
-    },
-    {
-      "keyword": "#十日终焉发布齐夏角色海报#",
-      "rank": 43,
-      "hot": ""
-    },
-    {
-      "keyword": "#王者荣耀世界开服曲上线#",
-      "rank": 44,
-      "hot": ""
-    },
-    {
-      "keyword": "#疑似李楷灿恋爱#",
-      "rank": 45,
-      "hot": ""
-    },
-    {
-      "keyword": "#王一博武术指导来超越班了#",
-      "rank": 46,
-      "hot": ""
-    },
-    {
-      "keyword": "#确保有平等学习AI的机会#",
-      "rank": 47,
-      "hot": ""
-    },
-    {
-      "keyword": "#初三女生被5名舍友殴打校长被停职#",
-      "rank": 48,
-      "hot": ""
-    },
-    {
-      "keyword": "#库里穿詹姆斯的鞋#",
-      "rank": 49,
-      "hot": ""
-    },
-    {
-      "keyword": "#黄友政2比3普卡#",
-      "rank": 50,
-      "hot": ""
-    },
-    {
-      "keyword": "#梁文锋回应DeepSeekV4发布时间#",
-      "rank": 51,
-      "hot": ""
-    },
-    {
-      "keyword": "#张凌赫的夯爆时刻还在持续#",
-      "rank": 52,
-      "hot": ""
-    },
-    {
-      "keyword": "#曾沛慈原倍速唱跳一半一半#",
-      "rank": 53,
-      "hot": ""
-    },
-    {
-      "keyword": "郑丽文北京",
-      "rank": 54,
-      "hot": ""
-    },
-    {
-      "keyword": "#39所高校强基计划招生简章发布#",
-      "rank": 55,
-      "hot": ""
-    },
-    {
-      "keyword": "#阿里确认HappyHorse系旗下模型#",
-      "rank": 56,
-      "hot": ""
-    },
-    {
-      "keyword": "#十日终焉官宣毛晓慧演肖冉#",
-      "rank": 57,
-      "hot": ""
-    },
-    {
-      "keyword": "#终焉之地已被注册公司名#",
-      "rank": 58,
-      "hot": ""
-    },
-    {
-      "keyword": "sdti",
-      "rank": 59,
-      "hot": ""
-    },
-    {
-      "keyword": "#李小冉已经鞠了很多躬了#",
-      "rank": 60,
-      "hot": ""
-    },
-    {
-      "keyword": "#SBTI没有心理学只有真心话#",
-      "rank": 61,
-      "hot": ""
-    },
-    {
-      "keyword": "#我叫齐夏我要开始说谎了#",
-      "rank": 62,
-      "hot": ""
-    },
-    {
-      "keyword": "#第一次见回复这么多的剧#",
-      "rank": 63,
-      "hot": ""
-    },
-    {
-      "keyword": "#谢娜给张杰约了按摩他不去#",
-      "rank": 64,
-      "hot": ""
-    },
-    {
-      "keyword": "#SBTI被网友质疑为AI生成#",
-      "rank": 65,
-      "hot": ""
-    },
-    {
-      "keyword": "#新世纪福音战士#",
-      "rank": 66,
-      "hot": ""
-    },
-    {
-      "keyword": "#马思超说王鹤棣沈月长大了#",
-      "rank": 67,
-      "hot": ""
-    },
-    {
-      "keyword": "#有线耳机最近为何突然翻红#",
-      "rank": 68,
-      "hot": ""
-    },
-    {
-      "keyword": "#警方抓获20名网约车司机#",
-      "rank": 69,
-      "hot": ""
-    },
-    {
-      "keyword": "#毛晓慧回应十日终焉演肖冉#",
-      "rank": 70,
-      "hot": ""
-    },
-    {
-      "keyword": "#肖战毛晓慧合作十日终焉#",
-      "rank": 71,
-      "hot": ""
+      "rank": 2,
+      "hot": "",
+      "platform": "weibo"
     },
     {
       "keyword": "#男子追求女技师被拒举报浴场涉黄#",
+      "rank": 3,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#高质量发展中国行#",
+      "rank": 4,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#微博文化交流之夜解锁魅力澳门#",
+      "rank": 5,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#肖战毛晓慧合作十日终焉#",
+      "rank": 6,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#日本外交蓝皮书降级中日关系#",
+      "rank": 7,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#男子杀害4岁女儿后报溺水假警#",
+      "rank": 8,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#T1樱花季限定萌友#",
+      "rank": 9,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#李晟十日终焉选角好贴脸#",
+      "rank": 10,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#痔疮手术9天后死亡医院只赔1万#",
+      "rank": 11,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "我奶的联系人备注",
+      "rank": 12,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#伊朗最高领袖发表最新声明#",
+      "rank": 13,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#边伯贤离开INB100#",
+      "rank": 14,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#十日终焉开机#",
+      "rank": 15,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "猪的抑郁症表现行为",
+      "rank": 16,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#毛晓慧领衔主演十日终焉#",
+      "rank": 17,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#医生分析黄子韬嘴唇发紫原因#",
+      "rank": 18,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#研究发现血型和疾病的发生有相关性#",
+      "rank": 19,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#边伯贤金珉锡金钟大解约#",
+      "rank": 20,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#谢娜给张杰约按摩被拒#",
+      "rank": 21,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#樊振东弃赛不是退缩是规划#",
+      "rank": 22,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#莫氏鸡煲员工吃了10多天外卖#",
+      "rank": 23,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "十日终焉",
+      "rank": 24,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#奥迪E7X媒体闭门沟通会泄密#",
+      "rank": 25,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#浪姐曾邀请孟子义被拒绝了#",
+      "rank": 26,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#肖战十日终焉登世趋#",
+      "rank": 27,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#民政局回应用真奔驰车陪葬#",
+      "rank": 28,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#小米冰淇淋真有小米#",
+      "rank": 29,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#马頔说李纯很假#",
+      "rank": 30,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#金子涵想拥有自己的家庭#",
+      "rank": 31,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#银行网点招人要求男185cm女175cm#",
+      "rank": 32,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#李现帮我拍了拍立得#",
+      "rank": 33,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#鱼油瓶身全英文客服电话却以400开头#",
+      "rank": 34,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#罗永浩谈奔驰豪车被当陪葬品#",
+      "rank": 35,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#央视曝光越南相亲真相#",
+      "rank": 36,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#妻子称丈夫杀害4岁女儿是为骗保#",
+      "rank": 37,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#杨紫在腾讯破三万率100%#",
+      "rank": 38,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#沈月晒8年前照片#",
+      "rank": 39,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#美国男子不满工资烧毁10亿元货物#",
+      "rank": 40,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "小猫反复确认能不能出去玩",
+      "rank": 41,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "浪姐",
+      "rank": 42,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "用人民币感受日本物价",
+      "rank": 43,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#老人生前埋20万现金叮嘱留儿女#",
+      "rank": 44,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#曝华为14周销量超苹果成第一#",
+      "rank": 45,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "种地吧",
+      "rank": 46,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#张维伊吃汉堡馒头4天减2.6斤#",
+      "rank": 47,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#小米冰淇淋延续汽车命名方式#",
+      "rank": 48,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "楚乔传",
+      "rank": 49,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#谢娜剧透张杰演唱会有惊喜#",
+      "rank": 50,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "这小猫怎么长得像个挂件",
+      "rank": 51,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#魏建军内部会议痛斥定语技术营销#",
+      "rank": 52,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "安徽省考",
+      "rank": 53,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#吞噬星空决战原始星定档#",
+      "rank": 54,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "sdti",
+      "rank": 55,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#鸟中大熊猫黑鹳连续两年打卡贵州#",
+      "rank": 56,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#A股存储芯片股集体大涨#",
+      "rank": 57,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#女子睡觉被15斤猫咪压致手腕骨折#",
+      "rank": 58,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#国泰君安国际涨超20%#",
+      "rank": 59,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#李小冉的乘风工位被姐姐们投喂堆满#",
+      "rank": 60,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#女子成植物人获赔116万银行卡被挂失#",
+      "rank": 61,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#镜子里的十个肖战齐夏#",
+      "rank": 62,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#李小冉已经鞠了很多躬了#",
+      "rank": 63,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#走亲走近走到一起#",
+      "rank": 64,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#古巴主席谴责美国#",
+      "rank": 65,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#新娘回应入场遇抢喜大妈被伴娘摁住#",
+      "rank": 66,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#因为他才有了SBTI测试#",
+      "rank": 67,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "一些戒掉拧巴的小tips",
+      "rank": 68,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "有兽焉一线工作兽员的辛苦",
+      "rank": 69,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#迎接美伊谈判伊斯兰堡红区封闭#",
+      "rank": 70,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#曾沛慈原倍速唱跳一半一半#",
+      "rank": 71,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#曝CBX离开INB100#",
       "rank": 72,
-      "hot": ""
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "#华为Pura90系列外观曝光#",
+      "rank": 73,
+      "hot": "",
+      "platform": "weibo"
     },
     {
       "keyword": "曝黄景瑜王玉雯恋情",
-      "rank": 73,
-      "hot": ""
+      "rank": 74,
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "金子涵说这七年没和任何人发生性关系",
+      "rank": 75,
+      "hot": "",
+      "platform": "weibo"
     },
     {
       "keyword": "程晓玥回应当年分手",
-      "rank": 74,
-      "hot": ""
-    },
-    {
-      "keyword": "十日终焉开机",
-      "rank": 75,
-      "hot": ""
-    },
-    {
-      "keyword": "曝两对顶流cp已经be",
       "rank": 76,
-      "hot": ""
+      "hot": "",
+      "platform": "weibo"
     },
     {
-      "keyword": "王玉雯 杨玏",
+      "keyword": "刘琳琳回应长得像张凌赫",
       "rank": 77,
-      "hot": ""
+      "hot": "",
+      "platform": "weibo"
     },
     {
-      "keyword": "曝胡先煦十日终焉第一季只有一天戏份",
+      "keyword": "潘玮柏带火面馆网友说天塌了",
       "rank": 78,
-      "hot": ""
+      "hot": "",
+      "platform": "weibo"
     },
     {
-      "keyword": "梓渝晒猫",
+      "keyword": "鞠婧祎剧宣小孩误入大人场",
       "rank": 79,
-      "hot": ""
+      "hot": "",
+      "platform": "weibo"
     },
     {
-      "keyword": "苏醒说SBTI测试不准",
+      "keyword": "黄子韬最新回应嘴唇发紫",
       "rank": 80,
-      "hot": ""
+      "hot": "",
+      "platform": "weibo"
     },
     {
-      "keyword": "金子涵美貌单出不是王牌是死牌",
+      "keyword": "原来王楚然早期长这样啊",
       "rank": 81,
-      "hot": ""
+      "hot": "",
+      "platform": "weibo"
+    },
+    {
+      "keyword": "胡彦斌说终于有人为我身高发声",
+      "rank": 82,
+      "hot": "",
+      "platform": "weibo"
     }
   ],
   "bilibili": [
     {
-      "keyword": "习近平会见郑丽文",
-      "rank": 1,
-      "hot": "http://i0.hdslb.com/bfs/activity-plat/static/20221213/eaf2dd702d7cc14d8d9511190245d057/lrx9rnKo24.png"
-    },
-    {
       "keyword": "我国超导领域两种全新材料问世",
-      "rank": 2,
-      "hot": "http://i0.hdslb.com/bfs/activity-plat/static/20221213/eaf2dd702d7cc14d8d9511190245d057/lrx9rnKo24.png"
+      "rank": 1,
+      "hot": "http://i0.hdslb.com/bfs/activity-plat/static/20221213/eaf2dd702d7cc14d8d9511190245d057/lrx9rnKo24.png",
+      "platform": "bilibili"
     },
     {
-      "keyword": "2026年强基计划报名开启",
+      "keyword": "3月我国CPI上涨说明了什么",
+      "rank": 2,
+      "hot": "http://i0.hdslb.com/bfs/activity-plat/static/20221213/eaf2dd702d7cc14d8d9511190245d057/lrx9rnKo24.png",
+      "platform": "bilibili"
+    },
+    {
+      "keyword": "有兽焉",
       "rank": 3,
-      "hot": "http://i0.hdslb.com/bfs/activity-plat/static/20221213/eaf2dd702d7cc14d8d9511190245d057/lrx9rnKo24.png"
+      "hot": "http://i0.hdslb.com/bfs/activity-plat/static/20240304/fbb6ffcfd09815bd66290b6b7bde1196/OBQYPHMTcv.png",
+      "platform": "bilibili"
     },
     {
       "keyword": "AI红利和普通人有何关系",
       "rank": 4,
-      "hot": "http://i0.hdslb.com/bfs/activity-plat/static/20221213/eaf2dd702d7cc14d8d9511190245d057/lrx9rnKo24.png"
+      "hot": "http://i0.hdslb.com/bfs/activity-plat/static/20221213/eaf2dd702d7cc14d8d9511190245d057/lrx9rnKo24.png",
+      "platform": "bilibili"
     },
     {
-      "keyword": "西班牙首相访华有何目的",
+      "keyword": "省Token神器效果如何",
       "rank": 5,
-      "hot": "http://i0.hdslb.com/bfs/activity-plat/static/20221118/eaf2dd702d7cc14d8d9511190245d057/UF7B1wVKT2.png"
+      "hot": "http://i0.hdslb.com/bfs/activity-plat/static/20221118/eaf2dd702d7cc14d8d9511190245d057/UF7B1wVKT2.png",
+      "platform": "bilibili"
     },
     {
       "keyword": "网警打掉利用外挂抢票犯罪团伙",
       "rank": 6,
-      "hot": ""
+      "hot": "",
+      "platform": "bilibili"
     },
     {
-      "keyword": "3月我国CPI上涨说明了什么",
+      "keyword": "王者荣耀世界公测PV",
       "rank": 7,
-      "hot": "http://i0.hdslb.com/bfs/activity-plat/static/20221118/eaf2dd702d7cc14d8d9511190245d057/UF7B1wVKT2.png"
+      "hot": "http://i0.hdslb.com/bfs/activity-plat/static/20221118/eaf2dd702d7cc14d8d9511190245d057/UF7B1wVKT2.png",
+      "platform": "bilibili"
     },
     {
-      "keyword": "AI创作真的无门槛吗",
+      "keyword": "烽火联赛春季赛",
       "rank": 8,
-      "hot": "http://i0.hdslb.com/bfs/activity-plat/static/20240304/fbb6ffcfd09815bd66290b6b7bde1196/OBQYPHMTcv.png"
+      "hot": "https://i0.hdslb.com/bfs/activity-plat/static/20251027/aafcb8031fd171c428daaa9b45867226/VaxAnHMq6w.gif",
+      "platform": "bilibili"
     },
     {
-      "keyword": "有兽焉",
+      "keyword": "西班牙首相访华有何目的",
       "rank": 9,
-      "hot": "http://i0.hdslb.com/bfs/activity-plat/static/20240304/fbb6ffcfd09815bd66290b6b7bde1196/OBQYPHMTcv.png"
+      "hot": "",
+      "platform": "bilibili"
     },
     {
-      "keyword": "深空彼岸",
+      "keyword": "美前高官称防止以方破坏停火",
       "rank": 10,
-      "hot": "http://i0.hdslb.com/bfs/activity-plat/static/20240304/fbb6ffcfd09815bd66290b6b7bde1196/OBQYPHMTcv.png"
+      "hot": "",
+      "platform": "bilibili"
     },
     {
       "keyword": "美国年轻人为何被锁死一生",
       "rank": 11,
-      "hot": ""
-    },
-    {
-      "keyword": "NIP WBG",
-      "rank": 12,
-      "hot": "http://i0.hdslb.com/bfs/activity-plat/static/20221213/eaf2dd702d7cc14d8d9511190245d057/lrx9rnKo24.png"
+      "hot": "",
+      "platform": "bilibili"
     },
     {
       "keyword": "COA",
+      "rank": 12,
+      "hot": "https://i0.hdslb.com/bfs/activity-plat/static/20251027/aafcb8031fd171c428daaa9b45867226/VaxAnHMq6w.gif",
+      "platform": "bilibili"
+    },
+    {
+      "keyword": "赛博朋克2078",
       "rank": 13,
-      "hot": "https://i0.hdslb.com/bfs/activity-plat/static/20251027/aafcb8031fd171c428daaa9b45867226/VaxAnHMq6w.gif"
+      "hot": "http://i0.hdslb.com/bfs/activity-plat/static/20221117/eaf2dd702d7cc14d8d9511190245d057/EeuqbMwao9.png",
+      "platform": "bilibili"
+    },
+    {
+      "keyword": "往西湖倒漂白粉是杀鱼护荷吗",
+      "rank": 14,
+      "hot": "",
+      "platform": "bilibili"
+    },
+    {
+      "keyword": "南方4月夜里为何这么热",
+      "rank": 15,
+      "hot": "http://i0.hdslb.com/bfs/activity-plat/static/20221118/eaf2dd702d7cc14d8d9511190245d057/UF7B1wVKT2.png",
+      "platform": "bilibili"
     },
     {
       "keyword": "中国首艘18万立方米LNG运输船完工",
-      "rank": 14,
-      "hot": ""
-    },
-    {
-      "keyword": "饥荒异域公布预告",
-      "rank": 15,
-      "hot": ""
+      "rank": 16,
+      "hot": "",
+      "platform": "bilibili"
     },
     {
       "keyword": "我国成功发射卫星互联网低轨21组卫星",
-      "rank": 16,
-      "hot": ""
+      "rank": 17,
+      "hot": "",
+      "platform": "bilibili"
+    },
+    {
+      "keyword": "2万字详解凡人修仙传",
+      "rank": 18,
+      "hot": "",
+      "platform": "bilibili"
     },
     {
       "keyword": "一拳打过来 不要往后躲",
-      "rank": 17,
-      "hot": "http://i0.hdslb.com/bfs/activity-plat/static/20221117/eaf2dd702d7cc14d8d9511190245d057/EeuqbMwao9.png"
-    },
-    {
-      "keyword": "美前高官称防止以方破坏停火",
-      "rank": 18,
-      "hot": ""
-    },
-    {
-      "keyword": "一个名叫招娣的女孩",
       "rank": 19,
-      "hot": "http://i0.hdslb.com/bfs/activity-plat/static/20240304/fbb6ffcfd09815bd66290b6b7bde1196/0ZVm0aB2HV.png"
+      "hot": "http://i0.hdslb.com/bfs/activity-plat/static/20221117/eaf2dd702d7cc14d8d9511190245d057/EeuqbMwao9.png",
+      "platform": "bilibili"
     },
     {
-      "keyword": "挑战用GLM-5.1实现全自动开发",
+      "keyword": "周深王者荣耀世界开服曲",
       "rank": 20,
-      "hot": ""
+      "hot": "",
+      "platform": "bilibili"
+    }
+  ],
+  "xiaohongshu": [
+    {
+      "keyword": "单丛茶",
+      "title": "每天认识一款茶——凤凰单丛",
+      "desc": "凤凰单丛，产自广东潮州凤凰山，是中国乌龙茶里的“香气王者”。它源自300多年的老茶树群，不同茶树有不同天然香型，被茶友称",
+      "author": "品茶百科",
+      "likes": 1771,
+      "note_id": "6922ef6b000000001e02d056",
+      "page": 1,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单丛茶",
+      "title": "茶知识| 一张图教你学会凤凰单丛十大香型",
+      "desc": "大家一起来学学凤凰单丛十大香型简单口诀： 三兰加两桂姜杏夜茉黄[红色心形R][红色心形R] 有些茶友喝了一辈子的单丛茶也",
+      "author": "阿爽单丛茶",
+      "likes": 44,
+      "note_id": "68315373000000002301630d",
+      "page": 1,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单丛茶",
+      "title": "推荐一个好喝的凤凰单枞要一个良心商家拒绝商家直销！你们都在哪买的凤凰单丛？",
+      "desc": "推荐一个好喝的凤凰单枞要一个良心商家拒绝商家直销！你们都在哪买的凤凰单丛",
+      "author": "踏实",
+      "likes": 36,
+      "note_id": "68eb045a000000000302eae0",
+      "page": 1,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单丛茶",
+      "title": "凤凰单丛 | 闻如香水的茶叶❓",
+      "desc": "🍵凤凰单丛又名\"广东水仙\"，属条形茶，为历史名茶，是凤凰水仙种的优异单株，因单株采收，单株制作，故称单丛；而凤凰单丛是",
+      "author": "静檀茶坊-生态龙井已上市",
+      "likes": 513,
+      "note_id": "685113ed0000000021009108",
+      "page": 1,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单丛茶",
+      "title": "鸭屎香 奶味香",
+      "desc": "老枞鸭屎香#鸭屎香  #好喝的茶  #凤凰单丛茶",
+      "author": "凤凰单丛茶",
+      "likes": 3,
+      "note_id": "6855f920000000000b01e96b",
+      "page": 1,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单丛茶",
+      "title": "冲泡单丛拢共分几步",
+      "desc": "不少买茶的茶友都是新手。之前做过一个示范视频，关于茶水比，萃取原理，冲泡技法等等。现在回看总有些不足。不够细致。 单丛为",
+      "author": "壹房茶事精制单丛",
+      "likes": 93,
+      "note_id": "69493206000000001f00e5fd",
+      "page": 1,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单丛茶",
+      "title": "沉浸式泡茶~",
+      "desc": "繁忙中寻一份轻松自在，最简单易行的就是为自己泡一壶热茶。 ﻿#凤凰单丛茶 ﻿ ﻿#乌龙茶 ﻿ ﻿#潮州工夫茶 ﻿ ﻿#泡",
+      "author": "小鱼爱喝茶",
+      "likes": 257,
+      "note_id": "67403fa0000000000202e2f7",
+      "page": 1,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单丛茶",
+      "title": "凤凰单丛🍃鸭屎香",
+      "desc": "宝子们，今天必须给你们安利凤凰单丛中的宝藏——鸭屎香👏 🌱 名字由来：虽然叫鸭屎香，但跟鸭屎可没半毛钱关系哦。传说是",
+      "author": "小田的喝茶日记",
+      "likes": 27,
+      "note_id": "67fc80bf000000001b026cdd",
+      "page": 1,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单丛茶",
+      "title": "三十多年的老单丛",
+      "desc": "压箱底的拿出来 几十年前的土质 气候 生态都是现在不能比的 老茶陈韵 野性 霸道 喝一点 少一点了 #喝茶  #凤凰单丛",
+      "author": "又喝",
+      "likes": 15,
+      "note_id": "670f4418000000001402cd8c",
+      "page": 1,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单丛茶",
+      "title": "凤凰单丛求推荐",
+      "desc": "质量稳定能长期复购的哈#凤凰单丛茶",
+      "author": "30000",
+      "likes": 11,
+      "note_id": "69ba593a0000000023015b22",
+      "page": 1,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单丛茶",
+      "title": "适合单从喝凤凰单丛的茶友！",
+      "desc": "#茶叶冲泡方式  #传播茶文化  #茶文化  #分享茶知识传播茶文化  #茶文化爱好者  #茶知识  @薯条小助手 @知",
+      "author": "卖单丛茶的小妹",
+      "likes": 114,
+      "note_id": "6944ce52000000001e02d875",
+      "page": 1,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单丛茶",
+      "title": "【免费领取】凤凰单丛品鉴装|包含6款高货香型",
+      "desc": "凤凰单丛六大经典香型品鉴装免费送[派对R][派对R] ❗️只需要付邮费就能体验到正宗凤凰单丛的魅力 包含6款高货香型，斤",
+      "author": "茶颜观色单丛小店铺",
+      "likes": 927,
+      "note_id": "682839dd000000000c038325",
+      "page": 1,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单丛茶",
+      "title": "这个卖29.9真的还没人看一下吗？",
+      "desc": "谁懂啊！这袋蜜兰香的含金量真的被低估了… 自家凤凰山茶园的蜜兰香单丛，没有中间商赚差价 新号开业只想攒个人气，29.9一",
+      "author": "曾实在单丛茶",
+      "likes": 13,
+      "note_id": "69c686cd0000000021006185",
+      "page": 1,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单丛茶",
+      "title": "茶知识｜一文读懂凤凰单丛入门到精通",
+      "desc": "一起来看看吧~💕 #茶知识  #分享茶知识传播茶文化  #茶文化  #茶  #茶叶  #泡一壶好茶  #茶饮  #茶生",
+      "author": "茶叶百科",
+      "likes": 2869,
+      "note_id": "66bdf0ca000000001e01b4a9",
+      "page": 1,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单丛茶",
+      "title": "T『25-491』单丛.妮家有茶六雪雷叩柴",
+      "desc": "单丛，茶中香水。 不管别人怎么评茶， 我的评价标准是： 第一：看汤感，或清爽，或胶着，总有一种风格，以及这种的持久度和变",
+      "author": "Moon梦游ing",
+      "likes": 25,
+      "note_id": "6885bee9000000001c036cc2",
+      "page": 1,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "凤凰单丛",
+      "title": "青岛｜这里有最正宗的凤凰单丛",
+      "desc": "曾几何时，被凤凰单丛伤透了心——茶博会上苦不堪言、味同嚼蜡，小红书上买茶样买到香精茶，白月光凹富后卖出天价…… 很长一段",
+      "author": "木推瓜籽",
+      "likes": 0,
+      "note_id": "69d8acce000000001a0250bf",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "凤凰单丛",
+      "title": "胖东来鸭屎香好好喝！！6款凤凰单丛yyds",
+      "desc": "谁还没喝过胖东来的凤凰单丛我真的会伤心😭尤其是鸭屎香，一口直接沦陷，越喝越上头！ 刚入口是很清爽的兰花香，尾调又带着淡",
+      "author": "你怎么知道我超幸运",
+      "likes": 0,
+      "note_id": "69d84c0a0000000022002a50",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "凤凰单丛",
+      "title": "6泡凤凰单丛茶样送你喝👏👏运费你自己出！！",
+      "desc": "凤凰单丛六大经典香型品鉴装免费送[派对R][派对R] ❗️只需要付邮费就能体验到正宗凤凰单丛的魅力 包含6款高货香型，斤",
+      "author": "七凰茶叶",
+      "likes": 3,
+      "note_id": "69bfe502000000001f0045c1",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "凤凰单丛",
+      "title": "凤凰单丛品系盘点❗️知道3种以上算你厉害",
+      "desc": "🌿凤凰单丛茶现有80多个品系，有以叶态命名的，如山茄叶、柚叶、竹叶、锯朵仔等；有以香气命名的，如蜜兰香、黄枝香、芝兰香",
+      "author": "山野追风人（仅此一号）",
+      "likes": 6,
+      "note_id": "67c7f3050000000029036577",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "凤凰单丛",
+      "title": "凤凰单丛 很一般",
+      "desc": "今天第一次尝到了凤凰单丛， 感觉相当一般..[石化R",
+      "author": "HankHK",
+      "likes": 124,
+      "note_id": "68f34c38000000000301268a",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "凤凰单丛",
+      "title": "今日夜茶",
+      "desc": "大哥的手法一般人学不会[偷笑R]高冲低斟，清晰的银花香浮现，粉橙色的茶汤，入口甜柔顺滑，汤感细腻，两颊生津感持续不断。中",
+      "author": "孜孜",
+      "likes": 63,
+      "note_id": "687511b8000000001001353d",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "凤凰单丛",
+      "title": "夜茶——此时情绪此时天，无事小神仙",
+      "desc": "窗外寒风簌簌🌬️ 屋内茶烟袅袅 紫砂壶在掌心泛着温润的光 投一撮潮州凤凰单丛🍃 “鸭屎香”这个名字虽野 开盖却涌出兰",
+      "author": "清风与茶",
+      "likes": 100,
+      "note_id": "69270202000000000d0361f1",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "凤凰单丛",
+      "title": "每日一茶 | 今日喝凤凰单丛🌥鸭屎香",
+      "desc": "凤凰单丛，产自广东潮汕，被誉为“茶中香水”，属于半发酵乌龙茶；凤凰单丛茶现有80多个品系，以叶态命名的，如山茄叶、柚叶",
+      "author": "茶🌿晓晓",
+      "likes": 42,
+      "note_id": "66e963d0000000002603d3c5",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "凤凰单丛",
+      "title": "凤凰单丛茶 | 一座小镇茶叶的故事",
+      "desc": "- 凤凰镇是“中国乌龙茶之乡”，凤凰单丛茶为国家地理标志产品，以香气高扬、滋味醇厚著称，素有“茶中香水”美誉。 #家乡风",
+      "author": "超级大鱿慧",
+      "likes": 49,
+      "note_id": "67ff165f000000001c0124de",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "凤凰单丛",
+      "title": "凤起茶海，一眼看尽山野的绿",
+      "desc": "🌿一盏单丛，藏尽潮州千山灵韵 不是所有乌龙，都叫凤凰单丛 一树一香，百种风味，天然自成“茶中香水” 干茶乌褐油润，汤色",
+      "author": "爱喝茶的丸子妈妈",
+      "likes": 1,
+      "note_id": "69b1394b000000002202ed6f",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "凤凰单丛",
+      "title": "每天认识一款茶~凤凰单枞",
+      "desc": "茶中香水——凤凰单枞的独特魅力 在广东乌龙茶的谱系中，凤凰单枞以“茶中香水”之名独树一帜，其源自潮州凤凰山，由凤凰水仙变",
+      "author": "茶事修狗铺1994",
+      "likes": 49,
+      "note_id": "690d1bdf0000000007001b0e",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "凤凰单丛",
+      "title": "哪里能买到正宗凤凰单丛",
+      "desc": "去潮汕旅游店老板泡给我们喝的，感觉特别好喝 到🍑上搜了一下价格不一，怕被骗，求指导 #凤凰单丛茶  #鸭屎香  #茶叶",
+      "author": "てりは",
+      "likes": 14,
+      "note_id": "6963b979000000000b013513",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "凤凰单丛",
+      "title": "求推荐好喝的凤凰单丛",
+      "desc": "这天气太热了，好想喝点香香的茶呀#凤凰单丛茶  #茶叶推荐  #不踩雷  #一入茶坑深似海  #口粮茶  #茶文化爱好者",
+      "author": "朵朵",
+      "likes": 46,
+      "note_id": "68736b360000000012022f99",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单枞茶",
+      "title": "什么是单丛茶？",
+      "desc": "说到中国最香的茶，你会想到什么？今天周周的茶叶科普栏目要聊的这款茶，被称为 “茶中香水”。它光是香型就有上百种，它就是来",
+      "author": "周周茶室",
+      "likes": 237,
+      "note_id": "698db0c0000000001a01d600",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单枞茶",
+      "title": "来，说说凤凰单丛为啥贵？",
+      "desc": "#新人报道  #半山有约  #千山雪  #召唤茶友  #凤凰单丛茶  #凤凰单枞茶  #茶知识  #鸭屎香  #茶叶",
+      "author": "『半山有约』",
+      "likes": 4,
+      "note_id": "69d7d1d8000000001a020fbd",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单枞茶",
+      "title": "大家凤凰单丛都是哪里买的，分享一下私藏的店铺吧[微笑R]#喝茶 #凤凰单丛",
+      "desc": "大家凤凰单丛都是哪里买的，分享一下私藏的店铺吧[微笑R]#喝茶  #凤凰单丛",
+      "author": "七个鸭梨",
+      "likes": 182,
+      "note_id": "68728920000000000b02fb17",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单枞茶",
+      "title": "什么是凤凰单丛茶？从入门到精通",
+      "desc": "#茶叶  #茶知识  #召唤茶友  #凤凰单丛茶  #乌龙茶  #传播茶文化和茶知识  #蜜兰香  #茶文化传播者",
+      "author": "桂浩说茶",
+      "likes": 158,
+      "note_id": "69b3a7290000000028009fea",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单枞茶",
+      "title": "茶香和猫猫治愈的晚上",
+      "desc": "#沉浸式喝茶的快乐  #喝杯茶放个松  #小野兔子  #喝茶氛围感拉满  #喝茶的小角落  #茶桌上的生活  #单枞茶",
+      "author": "樱桃小栾子",
+      "likes": 29,
+      "note_id": "69d7b3a7000000002003ac08",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单枞茶",
+      "title": "为什么我看不上单丛品牌茶？",
+      "desc": "区别于岩茶，我总是说： 在自己没有渠道和多次认证的前提下 岩茶还是多相信品牌。 而关于单丛，我也总说： 没有看得上的单丛",
+      "author": "骚锐评茶",
+      "likes": 81,
+      "note_id": "683b458f000000000f032d22",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单枞茶",
+      "title": "开心的像花一样#御先堂的微瑕",
+      "desc": "忘记拆的快递就是盲盒，打开盲盒是#御先堂 #东方红单枞茶  和一个赠品微瑕豆绿竹节杯。杯子的颜色我太喜欢了，就像春天来了",
+      "author": "佳瑞",
+      "likes": 6,
+      "note_id": "69d751da000000002202574b",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单枞茶",
+      "title": "🍵超值购！鸭屎香单枞茶大降价",
+      "desc": "500g凤凰单枞茶礼盒装 花香型，保质期730天 日常品饮，适合家庭分享 活动期间价格很友好 #凤凰单枞茶  #鸭屎香茶",
+      "author": "秋博源晴空湾食品店",
+      "likes": 0,
+      "note_id": "69d35e5f000000001d01a21d",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单枞茶",
+      "title": "凤凰单丛毛茶",
+      "desc": "",
+      "author": "半天妖",
+      "likes": 4,
+      "note_id": "69cf0eef000000001a028db7",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单枞茶",
+      "title": "凤凰单枞哪个香型最好喝 #不懂就问有问必答  #万能的小红书  #凤凰单丛茶  #想喝就喝的茶  #",
+      "desc": "凤凰单枞哪个香型最好喝 #不懂就问有问必答  #万能的小红书  #凤凰单丛茶  #想喝就喝的茶  #召唤茶友",
+      "author": "胖妞妞",
+      "likes": 47,
+      "note_id": "67c7a95b000000001203e490",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单枞茶",
+      "title": "买茶这一块谁都不服（口粮茶篇） #茶叶 #口粮茶 #携楼兰鸭屎香 #携楼兰凤凰单丛 #乌龙茶 #绿茶",
+      "desc": "买茶这一块谁都不服（口粮茶篇） #茶叶 #口粮茶 #携楼兰鸭屎香 #携楼兰凤凰单丛 #乌龙茶 #绿茶 #红茶",
+      "author": "-5",
+      "likes": 1,
+      "note_id": "69d71dde0000000022001568",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单枞茶",
+      "title": "全网寻100位嘴刁茶友！0元领单丛茶样试喝",
+      "desc": "买单丛最怕什么？怕花冤枉钱买到又苦又涩的假货！😠 我是潮州凤凰镇茶农，守着自家茶园，最听不得别人说单丛不好喝。那是因为",
+      "author": "凤凰单丛茶百科",
+      "likes": 8,
+      "note_id": "69cb906c0000000023025889",
+      "page": 2,
+      "source": "xiaohongshu"
+    },
+    {
+      "keyword": "单枞茶",
+      "title": "凤凰单枞鸭屎香",
+      "desc": "一杯鸭屎香高级清雅，入口醇厚甘爽，微甜不腻。 #绽放古茶  #凤凰单丛茶  #鸭屎香",
+      "author": "jiajia",
+      "likes": 3,
+      "note_id": "69b0388e0000000008033112",
+      "page": 2,
+      "source": "xiaohongshu"
     }
   ],
   "tea": [],
-  "fetched_at": "2026-04-10T14:31:58.281589"
+  "fetched_at": "2026-04-10T16:07:35.840569"
 }

@@ -17,10 +17,15 @@ os.makedirs(HISTORY_DIR, exist_ok=True)
 
 HEADERS = {'Authorization': f'Bearer {API_KEY}', 'User-Agent': 'curl/8.1.2'}
 
-TEA_KWS = ['茶', '单丛', '凤凰', '乌龙', '岩茶', '铁观音', '普洱', '白茶', '红茶',
-           '绿茶', '潮汕', '工夫茶', '潮州', '茶叶', '茶道', '茶文化', '泡茶', '喝茶']
+TEA_KWS = ['单丛', '凤凰', '单枞', '茶', '工夫茶', '潮州', '潮汕', '鸭屎', '蜜兰', '芝兰']
 
-XHS_V1_KEYWORDS = ['单丛茶', '凤凰单丛', '单枞茶']
+XHS_V1_KEYWORDS = [
+    '凤凰单丛', '单丛茶', '单枞茶',      # 核心词
+    '潮州茶叶', '潮州茶', '凤凰茶',        # 地域词
+    '鸭屎香', '蜜兰香', '芝兰香',          # 香型（凤凰单丛特色）
+    '工夫茶', '潮汕工夫茶',               # 泡茶文化
+    '乌龙茶', '广东乌龙',                 # 大类扩展
+]
 XHS_V1_PAGES = 2
 XHS_V1_RETRIES = 2
 
@@ -157,15 +162,16 @@ def filterTea(topics):
     return [t for t in topics if any(k in t.get('keyword', '') for k in TEA_KWS)]
 
 
-# ─── 格式化报告 ─────────────────────────────────────────────
+# ─── 格式化报告（精简版：只保留小红书）──────────────────────────
 def formatReport(douyin, weibo, bilibili, xhs_notes, tea_hot):
     now = datetime.now().strftime('%m月%d日 %H:%M')
     lines = [
         f"🍵 TeaTrend 每日播报 {now}",
         "=" * 28,
-        f"📊 今日概况 | 抖音 {len(douyin)} | 微博 {len(weibo)} | B站 {len(bilibili)} | 小红书 {len(xhs_notes)}篇",
+        f"📕 今日采集小红书笔记 {len(xhs_notes)} 篇",
     ]
-    # 小红书 TOP5
+
+    # 小红书 TOP5（按热度排序）
     if xhs_notes:
         sorted_notes = sorted(xhs_notes, key=lambda x: x['likes'], reverse=True)
         lines.append(f"\n📕 小红书单丛笔记 TOP5（按热度）:")
@@ -173,22 +179,9 @@ def formatReport(douyin, weibo, bilibili, xhs_notes, tea_hot):
             likes_str = f"{n['likes']//10000}w+" if n['likes'] >= 10000 else str(n['likes'])
             lines.append(f"  [{n['author']}] {n['title'][:28]}")
             lines.append(f"    赞 {likes_str} | {n['keyword']}")
-    # 茶热搜
-    if tea_hot:
-        lines.append(f"\n🔥 平台茶热搜 {len(tea_hot)} 条:")
-        by_platform = {}
-        for t in tea_hot:
-            by_platform.setdefault(t.get('platform', 'other'), []).append(t)
-        for plat, items in by_platform.items():
-            icon = {'douyin': '🎵', 'weibo': '💬', 'bilibili': '📺'}.get(plat, '📌')
-            for t in items[:2]:
-                lines.append(f"  {icon} {t['keyword']}")
     else:
-        lines.append("\n🌿 今日暂无茶热搜（正常，热搜竞争激烈）")
-        if weibo:
-            lines.append("\n💬 微博实时热搜 TOP3:")
-            for t in weibo[:3]:
-                lines.append(f"  · {t['keyword']}")
+        lines.append("\n📕 今日暂无采集到数据")
+
     lines.append("\n⏰ 关注 TeaTrend，发现茶赛道每一次爆发 🐸")
     return '\n'.join(lines)
 
