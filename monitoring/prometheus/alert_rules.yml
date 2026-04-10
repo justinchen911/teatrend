@@ -1,0 +1,52 @@
+groups:
+  - name: saas-alerts
+    rules:
+      # P0 - 服务挂了
+      - alert: ServiceDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: P0
+        annotations:
+          summary: "服务 {{ $labels.job }} 宕机"
+          description: "实例 {{ $labels.instance }} 已宕机超过 1 分钟"
+
+      # P0 - HTTP 错误率飙升
+      - alert: HighErrorRate
+        expr: rate(http_requests_total{status=~"5.."}[5m]) / rate(http_requests_total[5m]) > 0.05
+        for: 2m
+        labels:
+          severity: P0
+        annotations:
+          summary: "5xx 错误率超过 5%"
+          description: "当前 5xx 错误率 {{ $value | humanizePercentage }}"
+
+      # P1 - 响应时间过慢
+      - alert: HighLatency
+        expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 2
+        for: 5m
+        labels:
+          severity: P1
+        annotations:
+          summary: "P95 延迟超过 2 秒"
+          description: "当前 P95 延迟 {{ $value }}s"
+
+      # P1 - CPU 使用率过高
+      - alert: HighCPU
+        expr: process_cpu_seconds > 0.8
+        for: 5m
+        labels:
+          severity: P1
+        annotations:
+          summary: "CPU 使用率过高"
+          description: "进程 {{ $labels.job }} CPU 使用率 {{ $value }}"
+
+      # P2 - 内存接近上限
+      - alert: HighMemory
+        expr: process_resident_memory_bytes > 1073741824
+        for: 10m
+        labels:
+          severity: P2
+        annotations:
+          summary: "内存使用超过 1GB"
+          description: "进程 {{ $labels.job }} 内存 {{ $value | humanize }}B"
