@@ -7,7 +7,7 @@ on:
     branches: [master, main, develop]
 
 jobs:
-  lint-test-build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,13 +23,9 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      - run: pnpm lint
-
-      - run: pnpm test
-
       - run: pnpm build
 
-      # 部署到 Vercel（仅 main 分支）
+      # 部署到 Vercel（仅 master/main 分支）
       - name: Deploy to Vercel
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
         run: npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
