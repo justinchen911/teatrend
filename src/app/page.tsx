@@ -203,7 +203,7 @@ function truncate(str: string, maxLen: number): string {
   return str.length > maxLen ? str.slice(0, maxLen) + '…' : str
 }
 
-// 格式化日期为 3月15日 / 12月20日
+// 格式化日期为 3月15日
 function formatDate(dateStr: string): string {
   const d = new Date(dateStr)
   const month = d.getMonth() + 1
@@ -211,8 +211,9 @@ function formatDate(dateStr: string): string {
   return `${month}月${day}日`
 }
 
-// 日期过滤：只保留 2025-12-01 及之后的数据
-const cutoff = new Date('2025-12-01')
+// 近半月截止日期
+const cutoff = new Date()
+cutoff.setDate(cutoff.getDate() - 15)
 
 function filterRecentNotes(notes: typeof sampleAccounts[0]['notes']) {
   return notes.filter(note => {
@@ -282,8 +283,8 @@ export default function HomePage() {
             <span className="text-gray-400">📅</span>
             {loading ? '...' : 
               accounts.length > 0 
-                ? `数据范围：2025-12 ~ ${new Date().toLocaleDateString('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit' })}`
-                : '暂无近半年数据'
+                ? `近半月：${formatDate(cutoff.toISOString())} ~ ${new Date().toLocaleDateString('zh-CN', { month: '2-digit', day: '2-digit' })}`
+                : '暂无近半月数据'
             }
           </span>
           <span className="text-gray-300">|</span>
@@ -325,35 +326,54 @@ export default function HomePage() {
 // 单个账号卡片组件
 function AccountCard({ account }: { account: typeof sampleAccounts[0] }) {
   const recentNotes = filterRecentNotes(account.notes)
+  // 近半月最热3条，按阅读+点赞+评论综合权重排序
   const topNotes = [...recentNotes]
-    .sort((a, b) => b.likes - a.likes)
-    .slice(0, 5)
+    .sort((a, b) => {
+      const scoreA = (a.likes || 0) * 1 + (a.comments || 0) * 5
+      const scoreB = (b.likes || 0) * 1 + (b.comments || 0) * 5
+      return scoreB - scoreA
+    })
+    .slice(0, 3)
 
   return (
     <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
       {/* 账号头部 */}
       <div className="flex items-center gap-3 mb-2">
-        {/* 头像圆标：首字母 + 绿色背景 */}
-        <div className="w-10 h-10 rounded-full bg-green-700 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
+        {/* 真实头像：优先用 avatar URL，无则首字母兜底 */}
+        {(account as any).avatar ? (
+          <img
+            src={(account as any).avatar}
+            alt={account.nickname}
+            className="w-10 h-10 rounded-full object-cover flex-shrink-0 bg-gray-100"
+            onError={(e) => {
+              const target = e.currentTarget
+              target.style.display = 'none'
+              const fallback = target.nextElementSibling as HTMLElement
+              if (fallback) fallback.style.display = 'flex'
+            }}
+          />
+        ) : null}
+        <div className="w-10 h-10 rounded-full bg-green-700 text-white flex items-center justify-center font-bold text-lg flex-shrink-0"
+          style={{ display: (account as any).avatar ? 'none' : 'flex' }}>
           {account.nickname[0]}
         </div>
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between gap-2">
-            <h3 className="font-bold text-gray-900">{account.nickname}</h3>
+            <h3 className="font-bold text-gray-900 truncate max-w-[60%]">{account.nickname}</h3>
             <span className="text-gray-500 text-sm flex-shrink-0">粉丝 {account.followers}</span>
           </div>
-          <p className="text-gray-500 text-sm mt-0.5 leading-snug">{account.intro}</p>
+          <p className="text-gray-500 text-sm mt-0.5 leading-snug truncate">{account.intro}</p>
         </div>
       </div>
 
       {/* 分隔线 */}
       <div className="border-t border-gray-100 my-3" />
 
-      {/* 【近半月内容 TOP】标题 */}
+      {/* 顶部：TOP3 小标签 */}
       <div className="mb-3">
-        <h4 className="text-sm font-bold text-gray-800">
-          【近半月内容 TOP】
-        </h4>
+        <span className="text-xs font-bold text-green-700 bg-green-50 px-2 py-0.5 rounded">
+          🔥 TOP 3 内容
+        </span>
       </div>
 
       {/* 热门笔记列表 */}
@@ -380,9 +400,9 @@ function NoteItem({ note }: { note: typeof sampleAccounts[0]['notes'][0] }) {
         </span>
       </div>
 
-      {/* 精华引用：灰色斜体，左侧绿线 */}
-      <blockquote className="text-gray-500 italic text-sm border-l-2 border-green-600 pl-3 mt-2 mb-2 leading-relaxed">
-        「{truncate(note.excerpt, 50)}」
+      {/* 精华引用：灰色，左侧绿线，最多100字 */}
+      <blockquote className="text-gray-600 text-sm border-l-2 border-green-600 pl-3 mt-2 mb-2 leading-relaxed">
+        {truncate(note.excerpt, 100)}
       </blockquote>
 
       {/* 关键词标签 */}
@@ -394,26 +414,24 @@ function NoteItem({ note }: { note: typeof sampleAccounts[0]['notes'][0] }) {
         ))}
       </div>
 
-      {/* 点赞/评论 */}
-      <div className="text-gray-400 text-xs mb-2">
-        赞 {note.likes.toLocaleString()} | 评论 {note.comments}
+      {/* 点赞/评论数 */}
+      <div className="flex items-center gap-3 text-gray-400 text-xs mb-2">
+        <span>👍 {note.likes.toLocaleString()}</span>
+        <span>💬 {note.comments.toLocaleString()}</span>
+        {note.hotComments.length > 0 && (
+          <span className="text-orange-500 font-medium">🔥 热评 {note.hotComments.length}条</span>
+        )}
       </div>
-
-      {/* 分隔虚线 */}
-      <div className="border-t border-dashed border-gray-200 my-2" />
 
       {/* 【热评摘录】 */}
       {note.hotComments.length > 0 && (
-        <div className="mt-2">
-          <p className="text-xs font-medium text-gray-500 mb-1.5">【热评摘录】</p>
-          <div className="space-y-1">
-            {note.hotComments.slice(0, 3).map((c, i) => (
-              <div key={i} className="text-xs text-gray-500 leading-relaxed">
-                <span className="font-medium text-gray-700">{c.user}:</span>{' '}
-                {truncate(c.text, 20)}
-              </div>
-            ))}
-          </div>
+        <div className="mt-2 bg-orange-50 rounded-lg p-3 space-y-1.5">
+          {note.hotComments.slice(0, 3).map((c, i) => (
+            <div key={i} className="text-xs text-gray-700 leading-relaxed">
+              <span className="font-medium text-orange-600">{c.user}</span>{' '}
+              <span className="text-gray-500">·</span> {c.text}
+            </div>
+          ))}
         </div>
       )}
 
