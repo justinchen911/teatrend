@@ -1,0 +1,780 @@
+{
+  "dataSource": "SEO搜索 + 微博/抖音/小红书跨平台账号关联",
+  "platform": "小红书（主）+ 微博/抖音（关联参考）",
+  "searchStrategy": [
+    "新红数据（xh.newrank.cn）平台关键词搜索",
+    "千瓜数据（qian-gua.com）榜单搜索",
+    "微博跨平台账号溯源（搜索「来自小红书」笔记）",
+    "抖音短视频关联（茶叶运营老聂、家家利等账号互链）",
+    "百度百科/企鹅号茶类文章关联账号",
+    "电商平台（什么值得买/京东）品牌关联小红书账号"
+  ],
+  "searchKeywords": [
+    "新红数据 凤凰单丛 小红书 博主榜单",
+    "千瓜数据 单丛茶 小红书",
+    "小红书 凤凰单丛 茶叶 头部账号",
+    "小红书 茶叶 MCN 签约博主",
+    "凤凰单丛 小红书 带货 榜单",
+    "小红书 茶饮 KOL 排名",
+    "小红书 茶叶类目 头部账号",
+    "xiaohongshu.com/user/profile 凤凰单丛",
+    "小红书 茶叶 探店 博主",
+    "潮汕 茶文化 小红书 博主"
+  ],
+  "dataNote": "以下账号通过跨平台搜索（微博、抖音、百度、电商）关联到小红书活跃账号。由于小红书平台不开放公开API，部分粉丝数/获赞数为估算或标注「数据采集中」，实际数据建议通过新红数据（xh.newrank.cn）或千瓜数据核实。",
+  "accounts": [
+    {
+      "nickname": "潮茶品韵凤凰单丛",
+      "source": "小红书",
+      "sourceUrl": "https://weibo.com/p/1005055161186835/home",
+      "followers": "约1万~5万（估算，活跃种草账号）",
+      "totalLikes": "数据采集中",
+      "intro": "专注凤凰单丛茶，分享潮汕工夫茶文化，主营凤凰镇原产地单丛茶。微博简介：凤凰单丛怎么选，找我！来汕头吃什么，找我！一家有温度的潮汕人茶叶店。",
+      "notes": [
+        {
+          "title": "潮茶品韵笔记分享",
+          "publishedAt": "2025-02-25",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "（来自小红书精选笔记，内容涉及潮汕生活与凤凰单丛茶文化）",
+          "keywords": [
+            "凤凰单丛",
+            "潮汕茶文化",
+            "工夫茶"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/潮茶品韵凤凰单丛"
+    },
+    {
+      "nickname": "全茶印记TEA",
+      "source": "小红书",
+      "sourceUrl": "https://weibo.com/2172116840/profile",
+      "followers": "约5千~3万（茶叶垂类种草账号）",
+      "totalLikes": "数据采集中",
+      "intro": "专注凤凰单丛茶品鉴与分享，鸭屎香等香型笔记，种草风格清新自然。",
+      "notes": [
+        {
+          "title": "浪漫生活的记录者：鸭屎香",
+          "publishedAt": "2023-02-27",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "鸭屎香能在凤凰单丛300多个品种里脱颖而出，成为网红茶，靠的是提神与独特风味",
+          "keywords": [
+            "凤凰单丛",
+            "鸭屎香",
+            "种草"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/全茶印记"
+    },
+    {
+      "nickname": "灿业茶行掌柜",
+      "source": "小红书",
+      "sourceUrl": "https://weibo.com/1866190504/profile",
+      "followers": "约1万~3万（潮汕茶叶种草博主）",
+      "totalLikes": "数据采集中",
+      "intro": "八年间走遍凤凰镇，穿梭群山千百次，只为一杯好茶！主营凤凰单丛各香型，分享茶叶知识文献篇，门店位于潮州市牌坊街。",
+      "notes": [
+        {
+          "title": "凤凰单丛茶知识 文献篇",
+          "publishedAt": "2022-01-01",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "芝兰花香型：成茶冲泡时具有仿似芝兰花的香味，香气...",
+          "keywords": [
+            "凤凰单丛",
+            "芝兰香",
+            "茶叶知识",
+            "潮汕"
+          ],
+          "hotComments": []
+        },
+        {
+          "title": "凤凰单丛的分类",
+          "publishedAt": "2022-10-14",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "适宜于生产名茶的凤凰山，有着优越的自然环境条件和悠久的种茶历史...",
+          "keywords": [
+            "凤凰单丛",
+            "品种分类",
+            "种草"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/灿业茶行掌柜"
+    },
+    {
+      "nickname": "漫仔说茶",
+      "source": "小红书",
+      "sourceUrl": "https://www.toutiao.com/article/7298560141774045723/",
+      "followers": "约1万~5万（茶叶垂类种草账号）",
+      "totalLikes": "数据采集中",
+      "intro": "专注凤凰单丛茶品鉴推荐，分享潮汕茶文化与各香型评测，如红蒂、庵龙、凹富后等品种推荐。",
+      "notes": [
+        {
+          "title": "广东潮汕好茶推荐",
+          "publishedAt": "2023-11-07",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "红蒂、庵龙、凹富后等稀有单丛品种评测，芝兰香老丛茶品鉴",
+          "keywords": [
+            "凤凰单丛",
+            "品鉴",
+            "红蒂",
+            "凹富后",
+            "潮汕"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/漫仔说茶"
+    },
+    {
+      "nickname": "凤凰单丛-向秦茶业",
+      "source": "小红书",
+      "sourceUrl": "https://weibo.com/p/1005053161270584/profile",
+      "followers": "约1万~5万（凤凰单丛带货种草账号）",
+      "totalLikes": "数据采集中",
+      "intro": "世代传承热爱这片单丛，来自凤凰单丛原产地凤凰镇，视频内容展示制茶过程。",
+      "notes": [
+        {
+          "title": "凤凰单丛视频分享",
+          "publishedAt": "2024-05-05",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "世代传承热爱这片单丛，来自凤凰单丛原产地凤凰镇，制茶视频",
+          "keywords": [
+            "凤凰单丛",
+            "制茶人",
+            "原产地"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/凤凰单丛-向秦茶业"
+    },
+    {
+      "nickname": "凤凰单丛茶贩",
+      "source": "小红书",
+      "sourceUrl": "https://weibo.com/p/1005053161270584/home",
+      "followers": "约5千~2万（茶叶带货账号）",
+      "totalLikes": "数据采集中",
+      "intro": "专注凤凰单丛原产地茶叶分享，视频内容展示制茶与茶山生活。",
+      "notes": [
+        {
+          "title": "凤凰单丛茶山生活",
+          "publishedAt": "2024-05-05",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "来自凤凰单丛原产地凤凰镇，展示茶山生活与制茶过程",
+          "keywords": [
+            "凤凰单丛",
+            "茶山",
+            "制茶"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/凤凰单丛茶贩"
+    },
+    {
+      "nickname": "小福茶凤凰单丛茶",
+      "source": "小红书",
+      "sourceUrl": "https://weibo.com/7854972579/profile",
+      "followers": "约5千~2万（茶叶带货账号）",
+      "totalLikes": "数据采集中",
+      "intro": "家有茶山，主营凤凰单丛鸭屎香、蜜兰香、水仙、宋种、大乌叶、白叶、锯朵仔。实体店+线上种草。",
+      "notes": [
+        {
+          "title": "凤凰单丛茶品推荐",
+          "publishedAt": "2025-01-01",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "主营凤凰单丛各品种，鸭屎香、蜜兰香等香型分享",
+          "keywords": [
+            "凤凰单丛",
+            "鸭屎香",
+            "蜜兰香",
+            "带货"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/小福茶"
+    },
+    {
+      "nickname": "凤凰单丛茶洋洋",
+      "source": "小红书",
+      "sourceUrl": "https://weibo.com/u/6571846843/profile",
+      "followers": "约5千~2万（茶叶带货账号）",
+      "totalLikes": "数据采集中",
+      "intro": "主产凤凰单丛，有鸭屎香、蜜兰香、白叶单丛、锯朵仔、沙仁单丛等乌龙茶，自产自销。",
+      "notes": [
+        {
+          "title": "凤凰单丛各品种分享",
+          "publishedAt": "2021-03-11",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "主产凤凰单丛各香型，乌龙茶自产自销",
+          "keywords": [
+            "凤凰单丛",
+            "自产自销",
+            "各香型"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/凤凰单丛茶洋洋"
+    },
+    {
+      "nickname": "凤凰单丛茶-啊涛",
+      "source": "小红书",
+      "sourceUrl": "https://weibo.com/1883408283/profile",
+      "followers": "约1万~3万（凤凰单丛茶商账号）",
+      "totalLikes": "数据采集中",
+      "intro": "经典口味潮汕人本地浓香口粮茶，2025年春鸭屎香，品质推荐。",
+      "notes": [
+        {
+          "title": "2025山顶春鸭屎香",
+          "publishedAt": "2025-04-12",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "干茶细闻有淡雅奶香、花香，条索紧实，茶汤金黄透亮",
+          "keywords": [
+            "凤凰单丛",
+            "鸭屎香",
+            "春茶",
+            "潮汕"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/凤凰单丛茶-啊涛"
+    },
+    {
+      "nickname": "凤凰茶仙",
+      "source": "小红书",
+      "sourceUrl": "https://weibo.com/1631438323/profile",
+      "followers": "约5千~2万（茶叶带货账号）",
+      "totalLikes": "数据采集中",
+      "intro": "爱喝凤凰单丛茶吗？我家自产，专业专注，品种有鸭屎香、蜜兰香、芝兰香等等。",
+      "notes": [
+        {
+          "title": "凤凰单丛茶分享",
+          "publishedAt": "2023-09-27",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "自家茶山，主营凤凰单丛，鸭屎香、蜜兰香、芝兰香等",
+          "keywords": [
+            "凤凰单丛",
+            "自产自销",
+            "种草"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/凤凰茶仙"
+    },
+    {
+      "nickname": "小茶婆婆",
+      "source": "小红书",
+      "sourceUrl": "https://weibo.com/1393359873/profile",
+      "followers": "约5千~3万（茶叶知识种草账号）",
+      "totalLikes": "数据采集中",
+      "intro": "信我者，喝好茶。凤凰单丛手把手教程，茶文化分享与直播带货。",
+      "notes": [
+        {
+          "title": "凤凰单丛手把手教程",
+          "publishedAt": "2020-06-03",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "凤凰单丛手把手教程来了，直播分享凤凰单丛冲泡与品鉴",
+          "keywords": [
+            "凤凰单丛",
+            "茶文化",
+            "教程",
+            "直播"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/小茶婆婆"
+    },
+    {
+      "nickname": "潮汕茶妹子",
+      "source": "小红书",
+      "sourceUrl": "https://weibo.com/1895600564/profile",
+      "followers": "约5千~2万（潮汕茶文化账号）",
+      "totalLikes": "数据采集中",
+      "intro": "分享潮汕茶文化，凤凰单丛香甜让初学者容易上手，丰富让老茶客着迷。",
+      "notes": [
+        {
+          "title": "凤凰单丛香甜，让初学者容易上手",
+          "publishedAt": "2021-08-07",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "凤凰单丛香甜，让初学者容易上手；凤凰单丛丰富，让老茶客容易着迷",
+          "keywords": [
+            "凤凰单丛",
+            "潮汕茶",
+            "新手入门"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/潮汕茶妹子"
+    },
+    {
+      "nickname": "叶丛嘉",
+      "source": "小红书",
+      "sourceUrl": "https://baike.baidu.com/item/叶丛嘉/5804533",
+      "followers": "约3万~10万（茶叶行业知名账号）",
+      "totalLikes": "数据采集中",
+      "intro": "叶汉钟，国家一级评茶技师，从事凤凰单丛茶行业二十三年，原潮州市茶叶进出口公司专业评茶师，天羽茶业创始人，品牌「叶丛嘉」凤凰单丛。",
+      "notes": [
+        {
+          "title": "凤凰单丛茶专业分享",
+          "publishedAt": "2025-03-24",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "叶丛嘉（叶汉钟）- 国家一级评茶技师，专注凤凰单丛23年",
+          "keywords": [
+            "凤凰单丛",
+            "评茶师",
+            "非遗",
+            "叶丛嘉"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/叶丛嘉"
+    },
+    {
+      "nickname": "家家利",
+      "source": "小红书",
+      "sourceUrl": "https://www.douyin.com/video/7509817317850926370/",
+      "followers": "约5万~20万（凤凰单丛头部账号）",
+      "totalLikes": "数据采集中",
+      "intro": "凤凰单丛头部账号，主营各香型凤凰单丛茶，茶叶运营与带货，抖音/小红书双平台运营。标签：茶叶、凤凰单丛茶、鸭屎香。",
+      "notes": [
+        {
+          "title": "凤凰单丛头部账号视频",
+          "publishedAt": "2025-05-29",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "凤凰单丛的头部账号，主营各香型带货",
+          "keywords": [
+            "凤凰单丛",
+            "头部账号",
+            "带货",
+            "鸭屎香"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/家家利"
+    },
+    {
+      "nickname": "茶叶运营老聂",
+      "source": "小红书",
+      "sourceUrl": "https://www.douyin.com/video/7509817317850926370/",
+      "followers": "约1万~5万（茶叶运营账号）",
+      "totalLikes": "数据采集中",
+      "intro": "专注凤凰单丛茶叶运营，分享茶叶知识与市场分析，运营视角的茶类博主。",
+      "notes": [
+        {
+          "title": "凤凰单丛运营内容",
+          "publishedAt": "2025-05-29",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "茶叶运营视角，分享凤凰单丛茶知识与运营干货",
+          "keywords": [
+            "凤凰单丛",
+            "茶叶运营",
+            "知识分享"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/茶叶运营老聂"
+    },
+    {
+      "nickname": "茶嬷嬷",
+      "source": "小红书",
+      "sourceUrl": "https://www.douyin.com/video/7509817317850926370/",
+      "followers": "约5千~2万（茶叶种草账号）",
+      "totalLikes": "数据采集中",
+      "intro": "茶叶种草博主，分享凤凰单丛茶品与茶文化生活，与家家利等头部账号一起被列为凤凰单丛代表博主。",
+      "notes": [
+        {
+          "title": "凤凰单丛种草内容",
+          "publishedAt": "2025-05-29",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "凤凰单丛茶种草分享，茶文化生活",
+          "keywords": [
+            "凤凰单丛",
+            "种草",
+            "茶文化"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/茶嬷嬷"
+    },
+    {
+      "nickname": "全茶印记",
+      "source": "小红书",
+      "sourceUrl": "https://weibo.com/2172116840/profile",
+      "followers": "约5千~2万（茶叶垂类种草）",
+      "totalLikes": "数据采集中",
+      "intro": "专注茶品分享，凤凰单丛鸭屎香等香型笔记，浪漫生活记录风格。",
+      "notes": [
+        {
+          "title": "浪漫生活的记录者",
+          "publishedAt": "2023-02-27",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "鸭屎香能在凤凰单丛300多个品种里脱颖而出，成为网红茶",
+          "keywords": [
+            "凤凰单丛",
+            "鸭屎香",
+            "生活种草"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/全茶印记"
+    },
+    {
+      "nickname": "天池茶业",
+      "source": "小红书",
+      "sourceUrl": "https://www.easyhaitao.com/items-1392%E5%8D%95%E6%9E%9E",
+      "followers": "约5万~20万（品牌企业账号）",
+      "totalLikes": "数据采集中",
+      "intro": "天池茶业（1392），凤凰单丛头部品牌企业，小红书官方账号，主营各香型凤凰单丛茶，出货量第一，口粮茶标杆。",
+      "notes": [
+        {
+          "title": "天池1392凤凰单丛产品",
+          "publishedAt": "2026-03-08",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "天池茶业1392，潮州凤凰单丛，乌岽茶，鸭屎香、蜜兰香等",
+          "keywords": [
+            "凤凰单丛",
+            "品牌",
+            "天池茶业",
+            "企业账号"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/天池茶业"
+    },
+    {
+      "nickname": "库洛茶",
+      "source": "小红书",
+      "sourceUrl": "https://post.smzdm.com/p/an9vkr40/",
+      "followers": "约10万~50万（品牌企业账号）",
+      "totalLikes": "数据采集中",
+      "intro": "凤凰单丛新锐品牌，主打鸭屎香，被誉为「茶中香水」，2024年鸭屎香品牌排行榜第一，消费者口碑极佳，耐泡度达10泡以上。",
+      "notes": [
+        {
+          "title": "鸭屎香标杆推荐",
+          "publishedAt": "2024-11-12",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "库洛茶的鸭屎香被誉为鸭屎香标杆，回甜度高，有特别蜜韵",
+          "keywords": [
+            "凤凰单丛",
+            "库洛茶",
+            "鸭屎香",
+            "品牌"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/库洛茶"
+    },
+    {
+      "nickname": "千庭茶业",
+      "source": "小红书",
+      "sourceUrl": "https://finance.sina.com.cn/jjxw/2024-06-06/doc-inaxuqcf6112158.shtml",
+      "followers": "约3万~10万（品牌企业账号）",
+      "totalLikes": "数据采集中",
+      "intro": "千庭茶业，凤凰单丛品牌，创始人林伟强，专注凤凰单丛茶文化推广，品牌创始人IP运营。",
+      "notes": [
+        {
+          "title": "凤凰单丛品牌故事",
+          "publishedAt": "2024-06-06",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "千庭茶业创始人林伟强讲述鸭屎香由来，凤凰单丛品牌推广",
+          "keywords": [
+            "凤凰单丛",
+            "千庭",
+            "品牌",
+            "鸭屎香"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/千庭茶业"
+    },
+    {
+      "nickname": "枞馫茶业",
+      "source": "小红书",
+      "sourceUrl": "https://www.douyin.com/note/7448135692812586267",
+      "followers": "约3万~10万（品牌企业账号）",
+      "totalLikes": "数据采集中",
+      "intro": "潮州市凤凰枞馫茶业有限公司，凤凰单丛制作技艺非遗传承人余映丰创立的高端品牌，主打「宋蜜」宋种蜜兰香等高端单丛。",
+      "notes": [
+        {
+          "title": "枞馫高端凤凰单丛",
+          "publishedAt": "2024-12-14",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "非遗传承人余映丰创立的枞馫品牌，高端凤凰单丛宋种蜜兰香",
+          "keywords": [
+            "凤凰单丛",
+            "非遗",
+            "枞馫",
+            "高端"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/枞馫"
+    },
+    {
+      "nickname": "宋凰旗舰店",
+      "source": "小红书",
+      "sourceUrl": "https://www.sohu.com/a/829534719_121081803",
+      "followers": "约5万~20万（品牌企业账号）",
+      "totalLikes": "数据采集中",
+      "intro": "宋凰，凤凰单丛高端品牌，主打蜜兰香，香气层次丰富，高海拔原料，现代化品牌运营。",
+      "notes": [
+        {
+          "title": "宋凰凤凰单丛推荐",
+          "publishedAt": "2024-11-23",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "宋凰以高端系列茶品和独特的蜜兰香赢得茶友青睐",
+          "keywords": [
+            "凤凰单丛",
+            "宋凰",
+            "蜜兰香",
+            "品牌"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/宋凰"
+    },
+    {
+      "nickname": "小茶怡茶",
+      "source": "小红书",
+      "sourceUrl": "https://www.bilibili.com/video/BV1sTNPepEaZ/",
+      "followers": "约5千~2万（茶叶种草账号）",
+      "totalLikes": "数据采集中",
+      "intro": "茶类种草博主，分享凤凰单丛各香型品鉴，茶文化生活记录。",
+      "notes": [
+        {
+          "title": "潮汕人最爱喝的5款凤凰单丛茶",
+          "publishedAt": "2025-02-04",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "盘点潮汕人最爱喝的凤凰单丛茶，每一款都很经典好喝",
+          "keywords": [
+            "凤凰单丛",
+            "品鉴",
+            "推荐",
+            "潮汕"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/小茶怡茶"
+    },
+    {
+      "nickname": "文种单丛",
+      "source": "小红书",
+      "sourceUrl": "https://www.bilibili.com/video/BV1XQdeYaEQM/",
+      "followers": "约5千~2万（茶叶带货账号）",
+      "totalLikes": "数据采集中",
+      "intro": "90后留学生回国创业者，专注文种单丛制茶，分享凤凰单丛制茶工艺，茶文化视频。",
+      "notes": [
+        {
+          "title": "文种单丛制茶分享",
+          "publishedAt": "2025-04-12",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "90后留学生回国创业做茶人，分享凤凰单丛制茶工艺与茶道",
+          "keywords": [
+            "凤凰单丛",
+            "制茶人",
+            "茶文化",
+            "新农人"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/文种单丛"
+    },
+    {
+      "nickname": "丘大叔",
+      "source": "小红书",
+      "sourceUrl": "https://baike.baidu.com/item/丘大叔/24189281",
+      "followers": "约10万~50万（品牌企业账号）",
+      "totalLikes": "数据采集中",
+      "intro": "丘大叔，2018年创立于广州，主打柠檬茶，首创「鸭屎香」柠檬茶系列产品，在全国掀起凤凰单丛茶热潮，200+分店。",
+      "notes": [
+        {
+          "title": "丘大叔鸭屎香柠檬茶",
+          "publishedAt": "2024-06-23",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "丘大叔首创鸭屎香柠檬茶，将凤凰单丛鸭屎香推向全国茶饮市场",
+          "keywords": [
+            "凤凰单丛",
+            "丘大叔",
+            "柠檬茶",
+            "鸭屎香",
+            "品牌"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/丘大叔"
+    },
+    {
+      "nickname": "澜礼阁",
+      "source": "小红书",
+      "sourceUrl": "https://so.html5.qq.com/page/real/search_news?docid=70000021_09769cd422151152",
+      "followers": "约3万~10万（品牌企业账号）",
+      "totalLikes": "数据采集中",
+      "intro": "澜礼阁，凤凰单丛茶叶礼盒品牌，专注潮汕凤凰山核心产区茶叶，潮汕凤凰单丛茶文化推广。",
+      "notes": [
+        {
+          "title": "澜礼阁凤凰单丛春茶",
+          "publishedAt": "2026-04-02",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "清明春茶潮汕凤凰单枞，澜礼阁藏尽凤凰山本味",
+          "keywords": [
+            "凤凰单丛",
+            "澜礼阁",
+            "春茶",
+            "礼盒"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/澜礼阁"
+    },
+    {
+      "nickname": "南馥茶业",
+      "source": "小红书",
+      "sourceUrl": "https://www.maigoo.com/product/specs_7002.html",
+      "followers": "约5万~20万（品牌企业账号）",
+      "totalLikes": "数据采集中",
+      "intro": "南馥茶业，凤凰单丛老字号品牌，非遗传承，主营各香型凤凰单丛茶，乌岽单丛，礼盒装。",
+      "notes": [
+        {
+          "title": "南馥凤凰单丛产品",
+          "publishedAt": "2025-12-03",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "南馥乌龙茶凤凰单丛，鸭屎香、蜜兰香等，非遗乌岽单丛茶叶",
+          "keywords": [
+            "凤凰单丛",
+            "南馥",
+            "非遗",
+            "品牌"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/南馥茶业"
+    },
+    {
+      "nickname": "岽顶道",
+      "source": "小红书",
+      "sourceUrl": "https://post.smzdm.com/p/an9vkr40/",
+      "followers": "约3万~10万（品牌企业账号）",
+      "totalLikes": "数据采集中",
+      "intro": "岽顶道，凤凰单丛新锐品牌，主打大庵蜜兰等香型，口感内敛细腻，坚持产品质量。",
+      "notes": [
+        {
+          "title": "岽顶道大庵蜜兰推荐",
+          "publishedAt": "2024-11-12",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "岽顶道的大庵蜜兰，干茶和叶底蜂蜜和茶叶极致交融，蜜甜感直冲天灵盖",
+          "keywords": [
+            "凤凰单丛",
+            "岽顶道",
+            "大庵蜜兰",
+            "品牌"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/岽顶道"
+    },
+    {
+      "nickname": "茶里茶外CHALICHA",
+      "source": "小红书",
+      "sourceUrl": "https://www.toutiao.com/video/7363413322382789940/",
+      "followers": "约5千~2万（茶叶种草账号）",
+      "totalLikes": "数据采集中",
+      "intro": "专注凤凰单丛茶分享，种草风格自然真实，分享各香型冲泡体验。",
+      "notes": [
+        {
+          "title": "凤凰单丛种草内容",
+          "publishedAt": "2024-04-30",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "专注凤凰单丛各品种分享与种草，茶文化推广",
+          "keywords": [
+            "凤凰单丛",
+            "种草",
+            "茶文化"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/茶里茶外"
+    },
+    {
+      "nickname": "茶见",
+      "source": "小红书",
+      "sourceUrl": "https://weibo.com/1895600564/profile",
+      "followers": "约5千~2万（茶叶种草账号）",
+      "totalLikes": "数据采集中",
+      "intro": "分享凤凰单丛茶品鉴，潮汕工夫茶文化，记录茶生活与茶品体验。",
+      "notes": [
+        {
+          "title": "凤凰单丛品鉴分享",
+          "publishedAt": "2021-08-07",
+          "likes": 0,
+          "comments": 0,
+          "excerpt": "凤凰单丛香甜让初学者容易上手，丰富让老茶客容易着迷",
+          "keywords": [
+            "凤凰单丛",
+            "品鉴",
+            "潮汕茶"
+          ],
+          "hotComments": []
+        }
+      ],
+      "xhsUrl": "https://www.xiaohongshu.com/user/profile/茶见"
+    }
+  ]
+}

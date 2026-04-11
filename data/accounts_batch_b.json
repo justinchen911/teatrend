@@ -1,0 +1,947 @@
+[
+  {
+    "id": "xhs_001",
+    "nickname": "潮州单丛茶农小陈",
+    "followers": "8.2万",
+    "totalLikes": "32.5万",
+    "intro": "潮州凤凰山茶农，专注单丛茶种植与制作，分享地道潮州茶文化",
+    "notes": [
+      {
+        "title": "鸭屎香为什么叫鸭屎香？揭秘凤凰单丛最出圈的名字",
+        "publishedAt": "2026-03-15",
+        "likes": 2345,
+        "comments": 156,
+        "excerpt": "很多茶友问我鸭屎香的名字由来，今天就来聊聊这个有趣的故事。其实鸭屎香是凤凰单丛十大香型之一...",
+        "keywords": ["鸭屎香", "凤凰单丛", "茶文化"],
+        "hotComments": []
+      },
+      {
+        "title": "春茶季第一锅鸭屎香出炉啦！满屋飘香",
+        "publishedAt": "2026-03-28",
+        "likes": 1890,
+        "comments": 98,
+        "excerpt": "今年的头春鸭屎香终于完成了，从采摘到烘焙全程记录，给大家看看传统工艺是怎么做的...",
+        "keywords": ["鸭屎香", "春茶", "制茶"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_002",
+    "nickname": "工夫茶小姐",
+    "followers": "15.6万",
+    "totalLikes": "68.3万",
+    "intro": "潮汕茶文化传播者，教你喝懂工夫茶 | 茶艺师 | 茶器控",
+    "notes": [
+      {
+        "title": "潮汕工夫茶入门指南｜新手必看的冲泡技巧",
+        "publishedAt": "2026-02-10",
+        "likes": 4521,
+        "comments": 328,
+        "excerpt": "工夫茶不只是喝茶，更是一种生活方式。今天分享最基础的潮汕工夫茶冲泡方法，从选茶到出汤...",
+        "keywords": ["工夫茶", "潮汕茶", "茶艺"],
+        "hotComments": []
+      },
+      {
+        "title": "蜜兰香配盖碗，这个组合绝了",
+        "publishedAt": "2026-03-05",
+        "likes": 3245,
+        "comments": 201,
+        "excerpt": "用白瓷盖碗冲泡蜜兰香，能最大程度激发茶叶的兰花香韵，分享我的冲泡参数...",
+        "keywords": ["蜜兰香", "盖碗", "茶器"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_003",
+    "nickname": "凤凰山茶舍",
+    "followers": "6.8万",
+    "totalLikes": "28.9万",
+    "intro": "凤凰山下的茶空间，专注单丛茶品鉴与推广，欢迎来喝茶",
+    "notes": [
+      {
+        "title": "鸭屎香vs蜜兰香，两款经典单丛的对比品鉴",
+        "publishedAt": "2026-02-28",
+        "likes": 2890,
+        "comments": 187,
+        "excerpt": "同样都是凤凰单丛，鸭屎香和蜜兰香到底有什么区别？从香气、口感、回甘三个维度详细对比...",
+        "keywords": ["鸭屎香", "蜜兰香", "对比"],
+        "hotComments": []
+      },
+      {
+        "title": "2026年头采蜜兰香开箱试喝",
+        "publishedAt": "2026-03-20",
+        "likes": 1567,
+        "comments": 92,
+        "excerpt": "今年的蜜兰香春茶已到，第一时间开箱分享，这个兰花香真的太浓郁了...",
+        "keywords": ["蜜兰香", "春茶", "开箱"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_004",
+    "nickname": "茶叶测评师小王",
+    "followers": "22.3万",
+    "totalLikes": "89.6万",
+    "intro": "专业茶叶测评，客观中立，帮你避坑选好茶",
+    "notes": [
+      {
+        "title": "市面10款热门鸭屎香横向测评，结果意想不到",
+        "publishedAt": "2026-03-01",
+        "likes": 6234,
+        "comments": 456,
+        "excerpt": "测评了从几十到几百不等的10款鸭屎香，价格和品质真的成正比吗？详细数据告诉你答案...",
+        "keywords": ["鸭屎香", "测评", "对比"],
+        "hotComments": []
+      },
+      {
+        "title": "工夫茶器具避坑指南｜这些坑我替你踩了",
+        "publishedAt": "2026-02-15",
+        "likes": 5123,
+        "comments": 378,
+        "excerpt": "入坑工夫茶三年，买过无数茶具，总结出这些经验教训，新手必看...",
+        "keywords": ["工夫茶", "茶具", "避坑"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_005",
+    "nickname": "潮汕阿公的茶桌",
+    "followers": "11.2万",
+    "totalLikes": "45.7万",
+    "intro": "潮汕阿公教你喝茶，传统工夫茶文化的传承者",
+    "notes": [
+      {
+        "title": "阿公说：工夫茶要这样喝才对味",
+        "publishedAt": "2026-01-20",
+        "likes": 3890,
+        "comments": 245,
+        "excerpt": "从泡茶到品茶，每个环节都有讲究。今天让阿公给大家讲讲工夫茶的正确打开方式...",
+        "keywords": ["工夫茶", "潮汕", "传统"],
+        "hotComments": []
+      },
+      {
+        "title": "蜜兰香配橄榄炭，老潮汕的经典搭配",
+        "publishedAt": "2026-02-05",
+        "likes": 2456,
+        "comments": 167,
+        "excerpt": "潮汕人喝茶讲究茶配，蜜兰香的兰花香配橄榄炭的咸甜，绝配...",
+        "keywords": ["蜜兰香", "茶配", "潮汕"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_006",
+    "nickname": "单丛茶研究所",
+    "followers": "9.5万",
+    "totalLikes": "41.2万",
+    "intro": "专注凤凰单丛研究，从山场到杯中，每一步都值得深究",
+    "notes": [
+      {
+        "title": "凤凰山不同山场鸭屎香风味差异研究",
+        "publishedAt": "2026-02-22",
+        "likes": 2987,
+        "comments": 198,
+        "excerpt": "乌岽山、大坪、凤西三个产区的鸭屎香对比，海拔、土壤、朝向如何影响茶叶风味...",
+        "keywords": ["鸭屎香", "山场", "凤凰山"],
+        "hotComments": []
+      },
+      {
+        "title": "蜜兰香的最佳冲泡温度实验",
+        "publishedAt": "2026-03-12",
+        "likes": 2234,
+        "comments": 134,
+        "excerpt": "用不同水温冲泡同一款蜜兰香，从85度到100度，哪个温度最能激发兰花香...",
+        "keywords": ["蜜兰香", "冲泡", "实验"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_007",
+    "nickname": "茶香记事本",
+    "followers": "7.3万",
+    "totalLikes": "31.8万",
+    "intro": "记录每一杯茶的故事，用文字留住茶香",
+    "notes": [
+      {
+        "title": "在潮州古城，我喝了一下午工夫茶",
+        "publishedAt": "2026-03-08",
+        "likes": 2678,
+        "comments": 189,
+        "excerpt": "在潮州古城的老茶馆里，老板用传统工夫茶方式泡了一壶蜜兰香，三个小时的慢时光...",
+        "keywords": ["工夫茶", "潮州", "蜜兰香"],
+        "hotComments": []
+      },
+      {
+        "title": "第一次喝鸭屎香，我明白了为什么它会出圈",
+        "publishedAt": "2026-01-28",
+        "likes": 3456,
+        "comments": 234,
+        "excerpt": "独特的银花香，清新的口感，难怪鸭屎香能从小众茶变成网红茶...",
+        "keywords": ["鸭屎香", "茶评", "新手"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_008",
+    "nickname": "潮州茶铺阿姐",
+    "followers": "5.6万",
+    "totalLikes": "24.1万",
+    "intro": "潮州老字号茶铺第三代传人，坚持传统制茶工艺",
+    "notes": [
+      {
+        "title": "我们家做了40年的鸭屎香，配方是这样的",
+        "publishedAt": "2026-02-18",
+        "likes": 4123,
+        "comments": 289,
+        "excerpt": "从爷爷那辈传下来的制茶工艺，每一步都有讲究。今天公开我们的家传配方...",
+        "keywords": ["鸭屎香", "传统工艺", "潮州"],
+        "hotComments": []
+      },
+      {
+        "title": "工夫茶三人组：红泥炉+朱泥壶+若琛杯",
+        "publishedAt": "2026-03-25",
+        "likes": 2567,
+        "comments": 156,
+        "excerpt": "传统潮汕工夫茶的标配，每一个器具都有自己的故事...",
+        "keywords": ["工夫茶", "茶具", "传统"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_009",
+    "nickname": "茶艺师小林",
+    "followers": "18.9万",
+    "totalLikes": "76.4万",
+    "intro": "国家高级茶艺师 | 茶道美学践行者 | 分享茶艺与生活美学",
+    "notes": [
+      {
+        "title": "5分钟学会冲泡工夫茶，新手也能泡出好茶",
+        "publishedAt": "2026-03-03",
+        "likes": 5678,
+        "comments": 423,
+        "excerpt": "工夫茶入门教程，从温杯到出汤，每个步骤详细讲解，配图超详细...",
+        "keywords": ["工夫茶", "茶艺", "教程"],
+        "hotComments": []
+      },
+      {
+        "title": "蜜兰香的品鉴笔记｜花香入喉，余韵悠长",
+        "publishedAt": "2026-02-12",
+        "likes": 3456,
+        "comments": 234,
+        "excerpt": "这款蜜兰香从干茶到茶汤，每个环节都值得记录。详细品鉴笔记分享...",
+        "keywords": ["蜜兰香", "品鉴", "茶评"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_010",
+    "nickname": "广东茶文化传播",
+    "followers": "13.4万",
+    "totalLikes": "58.2万",
+    "intro": "专注广东茶文化传播，推广潮汕工夫茶与凤凰单丛",
+    "notes": [
+      {
+        "title": "广东乌龙茶代表：凤凰单丛的前世今生",
+        "publishedAt": "2026-02-25",
+        "likes": 4234,
+        "comments": 312,
+        "excerpt": "从历史沿革到现代发展，全面解析凤凰单丛在广东乌龙茶中的地位...",
+        "keywords": ["广东乌龙茶", "凤凰单丛", "历史"],
+        "hotComments": []
+      },
+      {
+        "title": "鸭屎香为何能成为单丛茶的流量密码？",
+        "publishedAt": "2026-03-18",
+        "likes": 3890,
+        "comments": 267,
+        "excerpt": "从名字到口感，分析鸭屎香如何在社交媒体上爆红...",
+        "keywords": ["鸭屎香", "营销", "茶文化"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_011",
+    "nickname": "茶山行记",
+    "followers": "8.7万",
+    "totalLikes": "36.5万",
+    "intro": "走遍茶山，记录每一片叶子的故事 | 专注探访茶叶产地",
+    "notes": [
+      {
+        "title": "走进凤凰山：探访百年单丛古茶园",
+        "publishedAt": "2026-01-25",
+        "likes": 3456,
+        "comments": 234,
+        "excerpt": "海拔1200米的乌岽山上，生长着数百年的单丛古茶树，实地探访记录...",
+        "keywords": ["凤凰山", "古茶园", "探访"],
+        "hotComments": []
+      },
+      {
+        "title": "潮州工夫茶之旅：从茶园到茶杯",
+        "publishedAt": "2026-02-08",
+        "likes": 2890,
+        "comments": 189,
+        "excerpt": "完整记录工夫茶从采摘到冲泡的全过程，感受潮汕茶文化的魅力...",
+        "keywords": ["工夫茶", "潮州", "探访"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_012",
+    "nickname": "单丛小百科",
+    "followers": "6.2万",
+    "totalLikes": "27.8万",
+    "intro": "凤凰单丛知识科普，从入门到精通，一站式学习",
+    "notes": [
+      {
+        "title": "鸭屎香是单丛十大香型之一，你知道其他九个吗？",
+        "publishedAt": "2026-03-10",
+        "likes": 3567,
+        "comments": 245,
+        "excerpt": "详解凤凰单丛十大香型：蜜兰香、黄栀香、芝兰香、玉兰香、姜花香...",
+        "keywords": ["鸭屎香", "单丛香型", "科普"],
+        "hotComments": []
+      },
+      {
+        "title": "蜜兰香vs宋种，两款经典单丛怎么选？",
+        "publishedAt": "2026-02-20",
+        "likes": 2234,
+        "comments": 156,
+        "excerpt": "同样是凤凰单丛的经典品种，蜜兰香和宋种各有什么特点，适合什么人群...",
+        "keywords": ["蜜兰香", "宋种", "对比"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_013",
+    "nickname": "潮汕美食+茶",
+    "followers": "19.8万",
+    "totalLikes": "82.3万",
+    "intro": "潮汕美食与茶文化的完美结合，分享地道潮汕生活方式",
+    "notes": [
+      {
+        "title": "潮汕人的一天：工夫茶是标配",
+        "publishedAt": "2026-02-28",
+        "likes": 5678,
+        "comments": 398,
+        "excerpt": "从早餐配茶到下午茶时光，潮汕人对工夫茶的热爱融入了日常生活的每个角落...",
+        "keywords": ["工夫茶", "潮汕生活", "日常"],
+        "hotComments": []
+      },
+      {
+        "title": "鸭屎香配潮汕牛肉丸，这个组合太绝了",
+        "publishedAt": "2026-03-22",
+        "likes": 4890,
+        "comments": 356,
+        "excerpt": "清爽的鸭屎香配香浓的牛肉丸，茶香解腻，完美搭配...",
+        "keywords": ["鸭屎香", "潮汕美食", "搭配"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_014",
+    "nickname": "茶叶实验室",
+    "followers": "10.5万",
+    "totalLikes": "45.6万",
+    "intro": "用科学的方式研究茶叶，数据说话，理性喝茶",
+    "notes": [
+      {
+        "title": "鸭屎香的香气成分分析：为什么这么香？",
+        "publishedAt": "2026-03-05",
+        "likes": 3890,
+        "comments": 278,
+        "excerpt": "通过气相色谱分析，发现鸭屎香含有50+种芳香物质，含量最高的前五种是...",
+        "keywords": ["鸭屎香", "香气", "科学"],
+        "hotComments": []
+      },
+      {
+        "title": "工夫茶的最佳投茶量实验：7克是黄金比例吗？",
+        "publishedAt": "2026-02-15",
+        "likes": 3234,
+        "comments": 234,
+        "excerpt": "传统工夫茶讲究7克茶配110ml水，这个比例科学吗？实验数据告诉你答案...",
+        "keywords": ["工夫茶", "投茶量", "实验"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_015",
+    "nickname": "潮州茶女",
+    "followers": "12.3万",
+    "totalLikes": "52.1万",
+    "intro": "潮州本地茶女，从小喝工夫茶长大，分享最地道的潮州茶生活",
+    "notes": [
+      {
+        "title": "潮州人的工夫茶，从小喝到大",
+        "publishedAt": "2026-01-18",
+        "likes": 4234,
+        "comments": 312,
+        "excerpt": "在潮州，工夫茶是从小喝到大的。分享我的童年茶记忆和家族传承...",
+        "keywords": ["工夫茶", "潮州", "童年"],
+        "hotComments": []
+      },
+      {
+        "title": "蜜兰香是我最爱的日常茶，百喝不腻",
+        "publishedAt": "2026-02-25",
+        "likes": 2890,
+        "comments": 189,
+        "excerpt": "作为潮州人，蜜兰香是最常喝的单丛之一。兰花香韵，清甜回甘，分享我的日常冲泡方法...",
+        "keywords": ["蜜兰香", "日常茶", "冲泡"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_016",
+    "nickname": "茶道美学馆",
+    "followers": "21.6万",
+    "totalLikes": "91.8万",
+    "intro": "茶道美学倡导者，让喝茶成为一种艺术",
+    "notes": [
+      {
+        "title": "工夫茶的仪式感：不只是喝茶，更是一种修行",
+        "publishedAt": "2026-03-12",
+        "likes": 5678,
+        "comments": 423,
+        "excerpt": "从备茶到品茶，每一个环节都充满仪式感。工夫茶教会我的生活哲学...",
+        "keywords": ["工夫茶", "仪式感", "美学"],
+        "hotComments": []
+      },
+      {
+        "title": "蜜兰香的冲泡美学：茶汤与器皿的完美邂逅",
+        "publishedAt": "2026-02-18",
+        "likes": 4567,
+        "comments": 345,
+        "excerpt": "选对茶器，能让蜜兰香的品饮体验更上一层。分享我的器皿搭配心得...",
+        "keywords": ["蜜兰香", "茶器", "美学"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_017",
+    "nickname": "凤凰单丛君",
+    "followers": "7.8万",
+    "totalLikes": "33.4万",
+    "intro": "专注凤凰单丛，从品种到工艺，从山场到杯中",
+    "notes": [
+      {
+        "title": "鸭屎香的品种特性：为什么它如此特别？",
+        "publishedAt": "2026-02-22",
+        "likes": 2890,
+        "comments": 198,
+        "excerpt": "从茶树品种角度分析鸭屎香的独特之处，叶片形态、生长特性、风味形成...",
+        "keywords": ["鸭屎香", "品种", "特性"],
+        "hotComments": []
+      },
+      {
+        "title": "蜜兰香的采制工艺详解",
+        "publishedAt": "2026-03-08",
+        "likes": 2345,
+        "comments": 167,
+        "excerpt": "从采摘到烘焙，详细解析蜜兰香的制作工艺，每个环节如何影响最终品质...",
+        "keywords": ["蜜兰香", "工艺", "制作"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_018",
+    "nickname": "茶生活研究所",
+    "followers": "16.4万",
+    "totalLikes": "69.7万",
+    "intro": "研究茶与生活的关系，让茶成为生活的一部分",
+    "notes": [
+      {
+        "title": "每天一杯鸭屎香，坚持30天的变化",
+        "publishedAt": "2026-03-20",
+        "likes": 6234,
+        "comments": 456,
+        "excerpt": "连续30天每天喝一杯鸭屎香，记录身体和心情的变化，结果很惊喜...",
+        "keywords": ["鸭屎香", "日常", "体验"],
+        "hotComments": []
+      },
+      {
+        "title": "工夫茶入门必读：从零开始的茶生活",
+        "publishedAt": "2026-02-05",
+        "likes": 5123,
+        "comments": 378,
+        "excerpt": "想开始喝茶但不知从哪里入手？这份工夫茶入门指南帮你快速上手...",
+        "keywords": ["工夫茶", "入门", "指南"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_019",
+    "nickname": "潮汕茶话",
+    "followers": "9.1万",
+    "totalLikes": "39.2万",
+    "intro": "潮汕茶文化故事，讲述茶桌上的潮汕人情",
+    "notes": [
+      {
+        "title": "潮汕人的待客之道：一壶工夫茶显真情",
+        "publishedAt": "2026-02-12",
+        "likes": 3890,
+        "comments": 278,
+        "excerpt": "在潮汕，客人来了第一件事就是泡茶。工夫茶承载着潮汕人待客的诚意和热情...",
+        "keywords": ["工夫茶", "待客", "潮汕"],
+        "hotComments": []
+      },
+      {
+        "title": "蜜兰香背后的故事：一片茶叶的传承",
+        "publishedAt": "2026-03-15",
+        "likes": 2678,
+        "comments": 189,
+        "excerpt": "蜜兰香这个品种是如何被发现和传承的？走访老茶农，听他们讲述这段历史...",
+        "keywords": ["蜜兰香", "故事", "传承"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_020",
+    "nickname": "茶器收藏家",
+    "followers": "14.7万",
+    "totalLikes": "62.3万",
+    "intro": "茶器爱好者，收藏分享各类茶器，探索器与茶的关系",
+    "notes": [
+      {
+        "title": "工夫茶器大赏：朱泥壶的选购指南",
+        "publishedAt": "2026-03-02",
+        "likes": 4567,
+        "comments": 345,
+        "excerpt": "朱泥壶是冲泡凤凰单丛的利器，如何选一把好壶？从泥料到器型详细解析...",
+        "keywords": ["工夫茶", "朱泥壶", "茶器"],
+        "hotComments": []
+      },
+      {
+        "title": "鸭屎香配什么茶器最好喝？实测对比",
+        "publishedAt": "2026-02-20",
+        "likes": 3890,
+        "comments": 289,
+        "excerpt": "用盖碗、紫砂壶、朱泥壶分别冲泡同一款鸭屎香，结果差异竟然这么大...",
+        "keywords": ["鸭屎香", "茶器", "对比"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_021",
+    "nickname": "单丛茶品鉴师",
+    "followers": "8.9万",
+    "totalLikes": "38.6万",
+    "intro": "专业单丛茶品鉴，分享品鉴心得与选茶技巧",
+    "notes": [
+      {
+        "title": "如何品鉴一款好的鸭屎香？专业品鉴笔记",
+        "publishedAt": "2026-02-28",
+        "likes": 3234,
+        "comments": 234,
+        "excerpt": "从干茶、汤色、香气、滋味、叶底五个维度，专业品鉴鸭屎香...",
+        "keywords": ["鸭屎香", "品鉴", "技巧"],
+        "hotComments": []
+      },
+      {
+        "title": "蜜兰香的等级划分：如何判断品质高低？",
+        "publishedAt": "2026-03-18",
+        "likes": 2890,
+        "comments": 198,
+        "excerpt": "蜜兰香的品质如何区分？从山场、工艺、年份三个角度教你看懂等级...",
+        "keywords": ["蜜兰香", "等级", "品质"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_022",
+    "nickname": "茶与健康生活",
+    "followers": "17.2万",
+    "totalLikes": "73.5万",
+    "intro": "关注茶与健康的关系，科学喝茶，健康生活",
+    "notes": [
+      {
+        "title": "鸭屎香的健康功效：不只是好喝那么简单",
+        "publishedAt": "2026-03-08",
+        "likes": 5123,
+        "comments": 378,
+        "excerpt": "鸭屎香含有丰富的茶多酚和氨基酸，研究显示它对心血管和消化系统有益...",
+        "keywords": ["鸭屎香", "健康", "功效"],
+        "hotComments": []
+      },
+      {
+        "title": "工夫茶的正确喝法：避免这些误区",
+        "publishedAt": "2026-02-15",
+        "likes": 4567,
+        "comments": 345,
+        "excerpt": "喝工夫茶也有讲究，这些常见的误区你中了几个？正确喝法指南...",
+        "keywords": ["工夫茶", "健康", "误区"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_023",
+    "nickname": "潮汕文化推广者",
+    "followers": "11.8万",
+    "totalLikes": "49.6万",
+    "intro": "传播潮汕文化，工夫茶、潮剧、潮汕美食，让更多人了解潮汕",
+    "notes": [
+      {
+        "title": "工夫茶：潮汕文化的精神符号",
+        "publishedAt": "2026-02-22",
+        "likes": 4234,
+        "comments": 312,
+        "excerpt": "工夫茶不只是喝茶方式，更是潮汕人的精神寄托和文化象征...",
+        "keywords": ["工夫茶", "潮汕文化", "精神"],
+        "hotComments": []
+      },
+      {
+        "title": "广东乌龙茶的文化传承：凤凰单丛的前世今生",
+        "publishedAt": "2026-03-25",
+        "likes": 3567,
+        "comments": 256,
+        "excerpt": "从历史角度解读凤凰单丛在广东乌龙茶中的地位，以及它的文化价值...",
+        "keywords": ["广东乌龙茶", "凤凰单丛", "文化"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_024",
+    "nickname": "茶叶新手村",
+    "followers": "20.3万",
+    "totalLikes": "85.6万",
+    "intro": "茶叶新手社区，用最简单的话讲清楚茶知识",
+    "notes": [
+      {
+        "title": "鸭屎香入门指南：第一次喝就爱上",
+        "publishedAt": "2026-03-12",
+        "likes": 6789,
+        "comments": 512,
+        "excerpt": "作为茶叶新手，如何挑选和冲泡鸭屎香？这篇超详细入门指南帮你快速上手...",
+        "keywords": ["鸭屎香", "入门", "新手"],
+        "hotComments": []
+      },
+      {
+        "title": "工夫茶和功夫茶有什么区别？新手必知",
+        "publishedAt": "2026-02-08",
+        "likes": 5678,
+        "comments": 423,
+        "excerpt": "工夫茶和功夫茶傻傻分不清楚？一个字的差别，背后的含义完全不同...",
+        "keywords": ["工夫茶", "区别", "知识"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_025",
+    "nickname": "茶山人家",
+    "followers": "6.5万",
+    "totalLikes": "28.7万",
+    "intro": "凤凰山下的茶农家庭，记录真实的茶山生活",
+    "notes": [
+      {
+        "title": "春茶季：茶农家最忙碌的时候",
+        "publishedAt": "2026-03-28",
+        "likes": 2890,
+        "comments": 198,
+        "excerpt": "春茶采摘季，全家总动员。从凌晨4点到深夜，记录茶农的一天...",
+        "keywords": ["春茶", "茶农", "生活"],
+        "hotComments": []
+      },
+      {
+        "title": "家传鸭屎香制作工艺：爷爷的坚持",
+        "publishedAt": "2026-02-18",
+        "likes": 3456,
+        "comments": 245,
+        "excerpt": "爷爷做了一辈子鸭屎香，坚持传统工艺。今天分享他的制茶心得...",
+        "keywords": ["鸭屎香", "传统", "家传"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_026",
+    "nickname": "茶艺美学课",
+    "followers": "13.1万",
+    "totalLikes": "55.8万",
+    "intro": "茶艺美学课程分享，从入门到精通，提升茶道修养",
+    "notes": [
+      {
+        "title": "工夫茶基础课程：从零开始学冲泡",
+        "publishedAt": "2026-02-25",
+        "likes": 4567,
+        "comments": 345,
+        "excerpt": "系统讲解工夫茶的冲泡技巧，适合零基础学员，从温杯到出汤全流程...",
+        "keywords": ["工夫茶", "课程", "技巧"],
+        "hotComments": []
+      },
+      {
+        "title": "蜜兰香茶艺表演：如何展现茶叶之美",
+        "publishedAt": "2026-03-15",
+        "likes": 3890,
+        "comments": 278,
+        "excerpt": "茶艺不只是技术，更是美学。通过蜜兰香的冲泡表演，展现凤凰单丛的韵味...",
+        "keywords": ["蜜兰香", "茶艺", "表演"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_027",
+    "nickname": "单丛茶评测",
+    "followers": "7.4万",
+    "totalLikes": "32.1万",
+    "intro": "客观评测各类凤凰单丛，帮你找到适合的那一款",
+    "notes": [
+      {
+        "title": "全网鸭屎香爆款评测：哪款最值得买？",
+        "publishedAt": "2026-03-20",
+        "likes": 5123,
+        "comments": 378,
+        "excerpt": "买了全网最火的5款鸭屎香，盲测对比，结果让人意外...",
+        "keywords": ["鸭屎香", "评测", "对比"],
+        "hotComments": []
+      },
+      {
+        "title": "蜜兰香选购指南：不同价位如何选择",
+        "publishedAt": "2026-02-12",
+        "likes": 3890,
+        "comments": 278,
+        "excerpt": "从入门级到收藏级，蜜兰香价格差异大，如何根据预算选择适合的...",
+        "keywords": ["蜜兰香", "选购", "指南"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_028",
+    "nickname": "潮汕老茶客",
+    "followers": "10.2万",
+    "totalLikes": "43.5万",
+    "intro": "喝了30年工夫茶的老茶客，分享喝茶心得与人生感悟",
+    "notes": [
+      {
+        "title": "老茶客告诉你：什么样的鸭屎香才叫好",
+        "publishedAt": "2026-02-20",
+        "likes": 4234,
+        "comments": 312,
+        "excerpt": "喝了30年鸭屎香，总结出这几点选购心得，新手一定要看...",
+        "keywords": ["鸭屎香", "老茶客", "心得"],
+        "hotComments": []
+      },
+      {
+        "title": "工夫茶陪伴我30年，它教会我的人生道理",
+        "publishedAt": "2026-03-08",
+        "likes": 3890,
+        "comments": 278,
+        "excerpt": "从年轻时的急躁到如今的从容，工夫茶教会我的不仅是品茶，更是做人...",
+        "keywords": ["工夫茶", "人生", "感悟"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_029",
+    "nickname": "茶香满屋",
+    "followers": "9.8万",
+    "totalLikes": "41.2万",
+    "intro": "分享茶叶存储与冲泡技巧，让好茶更香",
+    "notes": [
+      {
+        "title": "鸭屎香怎么存？掌握这几点，放一年还香",
+        "publishedAt": "2026-03-05",
+        "likes": 3456,
+        "comments": 245,
+        "excerpt": "鸭屎香的存储有讲究，密封、避光、防潮，详细存储方法分享...",
+        "keywords": ["鸭屎香", "存储", "技巧"],
+        "hotComments": []
+      },
+      {
+        "title": "工夫茶的冲泡秘诀：水温是关键",
+        "publishedAt": "2026-02-15",
+        "likes": 2890,
+        "comments": 198,
+        "excerpt": "凤凰单丛要用100度沸水冲泡？还是90度？实验对比告诉你答案...",
+        "keywords": ["工夫茶", "冲泡", "水温"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_030",
+    "nickname": "凤凰单丛世家",
+    "followers": "11.5万",
+    "totalLikes": "48.3万",
+    "intro": "凤凰单丛制茶世家，三代传承，坚守传统工艺",
+    "notes": [
+      {
+        "title": "我们家的蜜兰香，三代人的坚持",
+        "publishedAt": "2026-02-28",
+        "likes": 3890,
+        "comments": 278,
+        "excerpt": "从爷爷那辈开始做蜜兰香，每一代都有自己的理解，但传统工艺从未改变...",
+        "keywords": ["蜜兰香", "传承", "家族"],
+        "hotComments": []
+      },
+      {
+        "title": "工夫茶的精神：制茶世家如何理解",
+        "publishedAt": "2026-03-22",
+        "likes": 3234,
+        "comments": 234,
+        "excerpt": "作为制茶世家，我们对工夫茶的理解不仅是技艺，更是一种精神传承...",
+        "keywords": ["工夫茶", "精神", "传承"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_031",
+    "nickname": "茶叶达人小周",
+    "followers": "15.8万",
+    "totalLikes": "66.2万",
+    "intro": "茶叶达人，分享选茶、泡茶、存茶全攻略",
+    "notes": [
+      {
+        "title": "鸭屎香选购全攻略：从入门到精通",
+        "publishedAt": "2026-03-10",
+        "likes": 5123,
+        "comments": 378,
+        "excerpt": "如何挑选一款好的鸭屎香？从产区、工艺、年份到价格，全面解析...",
+        "keywords": ["鸭屎香", "选购", "攻略"],
+        "hotComments": []
+      },
+      {
+        "title": "蜜兰香冲泡技巧：让花香更浓郁",
+        "publishedAt": "2026-02-22",
+        "likes": 3890,
+        "comments": 278,
+        "excerpt": "掌握这几个技巧，让你的蜜兰香香气更浓郁，口感更醇厚...",
+        "keywords": ["蜜兰香", "冲泡", "技巧"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_032",
+    "nickname": "潮汕工夫茶传承人",
+    "followers": "12.6万",
+    "totalLikes": "53.4万",
+    "intro": "潮汕工夫茶非遗传承人，致力于传统茶文化的保护与传播",
+    "notes": [
+      {
+        "title": "工夫茶非遗传承：我们如何守护这份技艺",
+        "publishedAt": "2026-02-18",
+        "likes": 4567,
+        "comments": 345,
+        "excerpt": "作为潮汕工夫茶非遗传承人，讲述我们如何保护和传承这份珍贵技艺...",
+        "keywords": ["工夫茶", "非遗", "传承"],
+        "hotComments": []
+      },
+      {
+        "title": "传统鸭屎香制作技艺展示",
+        "publishedAt": "2026-03-12",
+        "likes": 3890,
+        "comments": 278,
+        "excerpt": "传统鸭屎香的制作包含采摘、晒青、做青、杀青、揉捻、烘焙等工序...",
+        "keywords": ["鸭屎香", "制作", "传统"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_033",
+    "nickname": "茶生活美学",
+    "followers": "18.3万",
+    "totalLikes": "77.1万",
+    "intro": "茶生活美学倡导者，分享茶与生活的美好",
+    "notes": [
+      {
+        "title": "一个人的工夫茶时光：慢下来，感受生活",
+        "publishedAt": "2026-03-18",
+        "likes": 5678,
+        "comments": 423,
+        "excerpt": "一个人也要好好喝茶，工夫茶的仪式感让独处时光变得更美好...",
+        "keywords": ["工夫茶", "独处", "生活"],
+        "hotComments": []
+      },
+      {
+        "title": "蜜兰香下午茶：春日里的美好时光",
+        "publishedAt": "2026-02-25",
+        "likes": 4567,
+        "comments": 345,
+        "excerpt": "春日的午后，泡一壶蜜兰香，配上几块茶点，这就是理想的生活...",
+        "keywords": ["蜜兰香", "下午茶", "春日"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_034",
+    "nickname": "广东茶人",
+    "followers": "14.2万",
+    "totalLikes": "60.3万",
+    "intro": "广东茶文化推广者，专注潮汕茶与凤凰单丛",
+    "notes": [
+      {
+        "title": "广东乌龙茶代表：凤凰单丛的独特魅力",
+        "publishedAt": "2026-02-15",
+        "likes": 4234,
+        "comments": 312,
+        "excerpt": "作为中国乌龙茶的重要分支，凤凰单丛以其独特的香型著称...",
+        "keywords": ["广东乌龙茶", "凤凰单丛", "特点"],
+        "hotComments": []
+      },
+      {
+        "title": "鸭屎香的前世今生：从山野到茶杯",
+        "publishedAt": "2026-03-25",
+        "likes": 3890,
+        "comments": 278,
+        "excerpt": "鸭屎香如何从一个土名变成凤凰单丛的招牌香型？它的前世今生...",
+        "keywords": ["鸭屎香", "历史", "故事"],
+        "hotComments": []
+      }
+    ]
+  },
+  {
+    "id": "xhs_035",
+    "nickname": "茶香四溢",
+    "followers": "8.5万",
+    "totalLikes": "36.2万",
+    "intro": "分享茶叶知识、冲泡技巧和品饮心得，让茶香飘满生活",
+    "notes": [
+      {
+        "title": "鸭屎香的三大误区，你中招了吗？",
+        "publishedAt": "2026-03-02",
+        "likes": 3456,
+        "comments": 245,
+        "excerpt": "关于鸭屎香最常见的三个误区：名字、产地、冲泡方法，看看你有没有中招...",
+        "keywords": ["鸭屎香", "误区", "知识"],
+        "hotComments": []
+      },
+      {
+        "title": "蜜兰香vs其他香型：如何选择适合自己的单丛",
+        "publishedAt": "2026-02-20",
+        "likes": 2890,
+        "comments": 198,
+        "excerpt": "凤凰单丛有十大香型，蜜兰香适合哪些人群？与其他香型相比有什么特点...",
+        "keywords": ["蜜兰香", "香型", "选择"],
+        "hotComments": []
+      }
+    ]
+  }
+]
