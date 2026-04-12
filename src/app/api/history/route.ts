@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-const TIKHUB_KEY = process.env.TIKHub_API_KEY
+const TIKHUB_KEY = process.env.TIKHUB_API_KEY || process.env.TIKHub_API_KEY
 const TIKHUB_BASE = 'https://api.tikhub.dev'
 
 // 茶关键词过滤
