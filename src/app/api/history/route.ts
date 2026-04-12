@@ -1,7 +1,20 @@
 import { NextResponse } from 'next/server'
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs'
+import { join } from 'path'
 
-// 20个茶账号 uid（来源：TikHub API / 浏览器采集）
-const ACCOUNTS_UIDS = [
+// ============================================================
+// 配置
+// ============================================================
+const CACHE_DIR = '/tmp/teatrend'
+const CACHE_FILE = join(CACHE_DIR, 'cache.json')
+const CACHE_TTL_MS = 6 * 60 * 60 * 1000   // 6 小时
+const TIKHUB_KEY = process.env.TIKHUB_API_KEY || ''
+const TIKHUB_BASE = 'https://api.tikhub.io/api/v1'  // Vercel 在海外用 .io
+const PARALLEL = 6   // 每批并发数
+const TIME_CUTOFF = '2025-12-01'
+
+// 20个茶账号 uid
+const ACCOUNTS = [
   { uid: '66ce81a7000000000d027f12', nickname: '陈韵堂茶百科' },
   { uid: '57bbd2487fc5b868bce8c009', nickname: '凤凰单丛茶百科' },
   { uid: '62b4688e000000001b025836', nickname: '光屿茶集' },
@@ -24,179 +37,218 @@ const ACCOUNTS_UIDS = [
   { uid: '68ea40c1000000003201fcbe', nickname: '茶小满的私享茶叶' },
 ]
 
-const TIKHUB_KEY = process.env.TIKHUB_API_KEY || ''
-const TIKHUB_BASE = 'https://api.tikhub.io/api/v1'  // 免费接口用 io
-const TIMEOUT_MS = 8000
-const TIME_CUTOFF = '2025-12-01'
-
-interface TikHubNote {
-  note_id: string
-  title: string
-  desc: string
-  liked_count: number
-  comment_count: number
-  collected_count: number
-  share_count: number
-  time: string  // unix timestamp
+// ============================================================
+// 缓存读写
+// ============================================================
+function loadCache(): any | null {
+  try {
+    if (!existsSync(CACHE_FILE)) return null
+    return JSON.parse(readFileSync(CACHE_FILE, 'utf-8'))
+  } catch { return null }
 }
 
-interface TikHubUser {
-  user_id: string
-  nickname: string
-  avatar: string
-  fans: number
-  intro: string
+function saveCache(data: any) {
+  try {
+    mkdirSync(CACHE_DIR, { recursive: true })
+    writeFileSync(CACHE_FILE, JSON.stringify(data, null, 2), 'utf-8')
+  } catch (e) {
+    console.error('[teatrend] cache write failed', e)
+  }
 }
 
-function tiktokFetch(path: string): Promise<any> {
-  return new Promise((resolve, reject) => {
-    const url = `${TIKHUB_BASE}${path}`
-    const timer = setTimeout(() => reject(new Error('timeout')), TIMEOUT_MS)
-    const https = require('https')
-    https.get(url, {
-      headers: {
-        'Authorization': `Bearer ${TIKHUB_KEY}`,
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
-      }
-    }, (res: any) => {
-      clearTimeout(timer)
-      let data = ''
-      res.on('data', (c: string) => data += c)
-      res.on('end', () => {
-        try { resolve(JSON.parse(data)) }
-        catch { reject(new Error('parse error')) }
-      })
-    }).on('error', reject)
+function isFresh(cache: any): boolean {
+  return !!(cache && Date.now() - (cache.cachedAt || 0) < CACHE_TTL_MS)
+}
+
+// ============================================================
+// TikHub 请求
+// ============================================================
+async function tkFetch(path: string): Promise<any> {
+  if (!TIKHUB_KEY) throw new Error('no api key')
+
+  const url = `${TIKHUB_BASE}${path}`
+  const res = await fetch(url, {
+    headers: {
+      'Authorization': `Bearer ${TIKHUB_KEY}`,
+      'User-Agent': 'Mozilla/5.0 (compatible; teatrend/1.0)',
+    },
+    signal: AbortSignal.timeout(10000),
   })
+
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status}`)
+  }
+
+  return res.json()
 }
 
-async function fetchUserInfo(uid: string): Promise<TikHubUser | null> {
-  try {
-    const d = await tiktokFetch(`/xiaohongshu/web_v2/fetch_user_info?user_id=${uid}`)
-    const u = d?.data?.user
-    if (!u) return null
-    return {
-      user_id: uid,
-      nickname: u.nickname || '',
-      avatar: u.image_list?.[0]?.url_default || u.avatar || '',
-      fans: u.fans || 0,
-      intro: u.desc || u.intro || '',
-    }
-  } catch {
-    return null
+async function getUserInfo(uid: string): Promise<any> {
+  const share = `https://www.xiaohongshu.com/user/profile/${uid}`
+  const qs = `user_id=${uid}&share_text=${encodeURIComponent(share)}`
+  const d = await tkFetch(`/xiaohongshu/web/get_user_info_v2?${qs}`)
+  if (d?.code !== 200) return null
+
+  const interactions = d?.data?.interactions || []
+  const find = (type: string) => {
+    const item = interactions.find((i: any) => i.type === type)
+    return item ? String(item.count) : '—'
+  }
+
+  return {
+    fans: find('fans'),
+    follows: find('follows'),
+    likes: find('interaction'),
   }
 }
 
-async function fetchUserNotes(uid: string): Promise<TikHubNote[]> {
-  try {
-    const d = await tiktokFetch(`/xiaohongshu/web_v2/fetch_home_notes?user_id=${uid}`)
-    const notes: TikHubNote[] = d?.data?.notes || []
-    return notes.map((n: any) => ({
-      note_id: n.note_id || n.id || '',
-      title: n.title || '',
-      desc: (n.desc || '').replace(/http\S+/g, '').slice(0, 120),
-      liked_count: n.interaction?.liked_count || n.liked_count || 0,
-      comment_count: n.interaction?.comment_count || n.comment_count || 0,
-      collected_count: n.interaction?.collected_count || n.collected_count || 0,
-      share_count: n.interaction?.share_count || n.share_count || 0,
-      time: n.time || n.publish_time || 0,
-    }))
-  } catch {
-    return []
-  }
+async function getUserNotes(uid: string): Promise<any[]> {
+  const share = `https://www.xiaohongshu.com/user/profile/${uid}`
+  const qs = `user_id=${uid}&share_text=${encodeURIComponent(share)}&page=1`
+  const d = await tkFetch(`/xiaohongshu/web/get_user_notes_v2?${qs}`)
+  if (d?.code !== 200) return []
+
+  const notes: any[] = d?.data?.notes || d?.data?.items || []
+  return notes.slice(0, 20).map((n: any) => ({
+    id: n.note_id || n.id || '',
+    title: n.title || '',
+    desc: (n.desc || '').replace(/http\S+/g, '').slice(0, 150),
+    likes: n.interaction?.liked_count ?? n.liked_count ?? 0,
+    comments: n.interaction?.comment_count ?? n.comment_count ?? 0,
+    collected: n.interaction?.collected_count ?? n.collected_count ?? 0,
+    share: n.interaction?.share_count ?? n.share_count ?? 0,
+    time: n.time || n.publish_time || 0,
+  }))
 }
 
+// ============================================================
+// 数据处理
+// ============================================================
 function tsToDate(ts: number | string): string {
   const n = typeof ts === 'string' ? parseInt(ts) : ts
   if (!n || n < 1e9) return ''
   return new Date(n * 1000).toISOString().split('T')[0]
 }
 
-// 综合权重排序，取 Top3
-function top3Notes(notes: TikHubNote[]): TikHubNote[] {
-  return [...notes]
-    .filter(n => {
-      const date = tsToDate(n.time)
-      return date >= TIME_CUTOFF
-    })
-    .sort((a, b) => {
-      const scoreA = (a.liked_count * 1) + (a.comment_count * 3) + (a.collected_count * 2) + (a.share_count * 5)
-      const scoreB = (b.liked_count * 1) + (b.comment_count * 3) + (b.collected_count * 2) + (b.share_count * 5)
-      return scoreB - scoreA
-    })
-    .slice(0, 3)
+function score(n: any): number {
+  return (n.likes || 0) + (n.comments || 0) * 3 + (n.collected || 0) * 2 + (n.share || 0) * 5
 }
 
-// 提取关键词（简单分词）
-function extractKeywords(title: string, desc: string): string[] {
-  const text = `${title} ${desc}`
-  const stopWords = new Set(['的', '了', '和', '是', '在', '我', '有', '个', '就', '不', '也', '都', '这', '上', '下', '里', '又', '很', '会', '可以', '这个', '那个', '一个', '什么', '怎么', '为什么', '因为', '所以', '但是', '而且', '或者', '如果', '虽然'])
-  const words: string[] = []
-  const re = /[\u4e00-\u9fa5]{2,6}/g
+function top3(notes: any[]) {
+  return [...notes]
+    .filter(n => tsToDate(n.time) >= TIME_CUTOFF)
+    .sort((a, b) => score(b) - score(a))
+    .slice(0, 3)
+    .map(n => ({
+      title: n.title,
+      excerpt: n.desc.slice(0, 100),
+      publishedAt: tsToDate(n.time),
+      likes: n.likes,
+      comments: n.comments,
+      collected: n.collected,
+    }))
+}
+
+const STOP_WORDS = new Set(['的', '了', '和', '是', '在', '我', '有', '个', '就', '不', '也', '都', '这', '上', '下', '里', '很', '会', '可以', '一个', '什么', '怎么', '为什么', '因为', '所以', '但是', '而且', '或者', '如果', '虽然', '这个', '那个', '自己', '没有', '就是', '这样', '那样', '还是'])
+
+function keywords(text: string): string[] {
+  const re = /[\u4e00-\u9fa5]{2,5}/g
+  const freq: Record<string, number> = {}
   let m
   while ((m = re.exec(text)) !== null) {
     const w = m[0]
-    if (!stopWords.has(w) && w.length >= 2) words.push(w)
+    if (!STOP_WORDS.has(w)) freq[w] = (freq[w] || 0) + 1
   }
-  const freq: Record<string, number> = {}
-  for (const w of words) freq[w] = (freq[w] || 0) + 1
-  return Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, 5).map(([w]) => w)
+  return Object.entries(freq)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5)
+    .map(([w]) => w)
 }
 
-async function fetchAccountData(uid: string, nickname: string) {
-  const [user, notes] = await Promise.all([
-    fetchUserInfo(uid),
-    fetchUserNotes(uid),
-  ])
+// ============================================================
+// 主采集
+// ============================================================
+async function fetchAll() {
+  const out: any[] = []
 
-  const top3 = top3Notes(notes)
-
-  return {
-    id: uid,
-    nickname: nickname,
-    avatar: user?.avatar || '',
-    sourceUrl: `https://www.xiaohongshu.com/user/profile/${uid}`,
-    followers: user ? formatFans(user.fans) : '未知',
-    followersNum: user?.fans || 0,
-    intro: user?.intro || '',
-    notes: top3.map(n => ({
-      id: n.note_id,
-      title: n.title,
-      excerpt: n.desc.slice(0, 100),
-      keywords: extractKeywords(n.title, n.desc),
-      publishedAt: tsToDate(n.time),
-      likes: n.liked_count,
-      comments: n.comment_count,
-      collected: n.collected_count,
-      hotComments: [],  // 热评由 /api/comments 单独提供
-    })),
-    _raw: user ? { fans: user.fans, notesCount: notes.length } : null,
-  }
-}
-
-function formatFans(n: number): string {
-  if (n >= 10000) return `${(n / 10000).toFixed(1)}万`
-  return n.toString()
-}
-
-export async function GET() {
-  // 并发拉取所有账号（10 QPS 限制，20个账号串行约2-3秒）
-  const results = await Promise.all(
-    ACCOUNTS_UIDS.map(({ uid, nickname }) =>
-      fetchAccountData(uid, nickname).catch(() => null)
+  for (let i = 0; i < ACCOUNTS.length; i += PARALLEL) {
+    const batch = ACCOUNTS.slice(i, i + PARALLEL)
+    const settled = await Promise.allSettled(
+      batch.map(async ({ uid, nickname }) => {
+        const share = `https://www.xiaohongshu.com/user/profile/${uid}`
+        const [info, notes] = await Promise.all([
+          getUserInfo(uid).catch(() => null),
+          getUserNotes(uid).catch(() => []),
+        ])
+        const t3 = top3(notes)
+        return {
+          id: uid,
+          nickname,
+          sourceUrl: share,
+          avatar: '',
+          followers: info?.fans || '—',
+          followersNum: parseFans(info?.fans),
+          intro: '',
+          notes: t3.map((n: any) => ({ ...n, keywords: keywords(n.title + ' ' + n.excerpt), hotComments: [] })),
+          _tikhub: !!info,
+        }
+      })
     )
-  )
+    for (const r of settled) {
+      out.push(r.status === 'fulfilled' ? r.value : null)
+    }
+    if (i + PARALLEL < ACCOUNTS.length) await new Promise(r => setTimeout(r, 600))
+  }
+  return out
+}
 
-  const accounts = results.filter(Boolean)
-  const fetchedAt = new Date().toISOString()
+function parseFans(s: string | undefined): number {
+  if (!s || s === '—') return 0
+  if (s.includes('万')) return Math.round(parseFloat(s) * 10000)
+  if (s.includes('千')) return Math.round(parseFloat(s) * 1000)
+  return parseInt(s) || 0
+}
 
-  const resp = NextResponse.json({
-    accounts,
-    fetchedAt,
-    total: accounts.length,
-    note: '数据直接从 TikHub API 实时拉取，每请求刷新',
+// ============================================================
+// 入口
+// ============================================================
+export async function GET() {
+  const cache = loadCache()
+
+  // 缓存新鲜（< 6小时）：直接返回
+  if (isFresh(cache)) {
+    return NextResponse.json({ ...cache, fresh: true, stale: false })
+  }
+
+  // 尝试调 TikHub
+  if (TIKHUB_KEY) {
+    try {
+      const accounts = await fetchAll()
+      const payload = {
+        accounts,
+        fetchedAt: new Date().toISOString(),
+        cachedAt: Date.now(),
+        source: 'tikhub',
+      }
+      saveCache(payload)
+      return NextResponse.json({ ...payload, fresh: true, stale: false })
+    } catch (e: any) {
+      console.warn('[teatrend] TikHub failed, using cache', e?.message)
+    }
+  }
+
+  // TikHub 不可用或失败：回退缓存（即使过期也用）
+  if (cache?.accounts?.length) {
+    return NextResponse.json({ ...cache, fresh: false, stale: true })
+  }
+
+  // 彻底无数据：返回空列表 + 说明
+  return NextResponse.json({
+    accounts: [],
+    fetchedAt: new Date().toISOString(),
+    cachedAt: 0,
+    source: 'empty',
+    fresh: false,
+    stale: true,
+    message: 'TikHub API 暂时不可用，数据将在恢复后更新',
   })
-
-  resp.headers.set('Cache-Control', 'no-store')
-  return resp
 }
