@@ -1,89 +1,202 @@
 import { NextResponse } from 'next/server'
 
-// 20个茶账号池（内置数据，零API调用延迟）
-// 数据来源：accounts.ts，按粉丝数排序
-// 全部笔记 publishedAt 在 2025-12-01 之后
-const TIME_CUTOFF = '2025-12-01'
-
-function extractUid(sourceUrl: string): string {
-  const match = sourceUrl.match(/user\/profile\/([^\/?#]+)/)
-  return match ? match[1] : sourceUrl
-}
-
-interface Note {
-  title: string
-  excerpt: string
-  keywords: string[]
-  publishedAt: string
-  likes: number
-  comments: number
-  hotComments: { user: string; text: string }[]
-}
-
-interface AccountRaw {
-  id: string; nickname: string; avatar: string; sourceUrl: string
-  followers: string; intro: string; notes: Note[]
-}
-
-const ACCOUNTS: AccountRaw[] = [
-  { id: '60000000', nickname: '陈韵堂茶百科',   avatar: 'https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo317m9m12tju6g5pmeg6jjcvoi0ublu78', sourceUrl: 'https://www.xiaohongshu.com/user/profile/66ce81a7000000000d027f12', followers: '49.7万', intro: '专注凤凰单丛茶知识科普，每天认识一款茶', notes: [{ title: '鸭屎香为什么这么火？真相在这里', excerpt: '鸭屎香其实是凤凰山上一个茶树品种的名字，因为叶子像鸭屎而得名，但香气却是所有单丛里最清新的一款，回甘好，有独特蜜韵。', keywords: ['鸭屎香', '品种真相', '入门'], publishedAt: '2026-04-08', likes: 2729, comments: 87, hotComments: [{ user: '茶友614', text: '写得很好，收藏了！' }, { user: '喝茶的老李', text: '这个帖子太有用了' }] }, { title: '2026年春茶采摘日记｜凤凰山实拍', excerpt: '今年雨水充足，春茶品质历年最佳。从海拔900米的茶园采摘，每一片茶叶都是手工挑选，保证品质。', keywords: ['春茶', '原产地', '手工采摘'], publishedAt: '2026-04-05', likes: 559, comments: 32, hotComments: [{ user: '茶友736', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }, { title: '蜜兰香怎么泡？水温与时间的黄金比例', excerpt: '单丛茶不能用100度沸水直接冲泡，85-90度最合适。第一泡洗茶10秒，第二泡15秒出汤，之后每泡增加5秒。', keywords: ['冲泡技巧', '蜜兰香', '实操'], publishedAt: '2026-04-01', likes: 985, comments: 37, hotComments: [{ user: '茶友962', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }] },
-  { id: '60000001', nickname: '凤凰单丛茶百科', avatar: 'https://sns-avatar-qc.xhscdn.com/avatar/5fdf68ad888577a1c44e9960.jpg', sourceUrl: 'https://www.xiaohongshu.com/user/profile/57bbd2487fc5b868bce8c009', followers: '44.6万', intro: '专注单丛茶精制与冲泡方法分享', notes: [{ title: '2026年春茶采摘日记｜凤凰山实拍', excerpt: '今年雨水充足，春茶品质历年最佳。从海拔900米的茶园采摘，每一片茶叶都是手工挑选，保证品质。', keywords: ['春茶', '原产地', '手工采摘'], publishedAt: '2026-04-08', likes: 567, comments: 23, hotComments: [{ user: '茶友728', text: '写得很好，收藏了！' }, { user: '喝茶的老李', text: '这个帖子太有用了' }] }, { title: '蜜兰香怎么泡？水温与时间的黄金比例', excerpt: '单丛茶不能用100度沸水直接冲泡，85-90度最合适。第一泡洗茶10秒，第二泡15秒出汤，之后每泡增加5秒。', keywords: ['冲泡技巧', '蜜兰香', '实操'], publishedAt: '2026-04-05', likes: 748, comments: 33, hotComments: [{ user: '茶友936', text: '写得很好，收藏了！' }, { user: '喝茶的老李', text: '这个帖子太有用了' }] }, { title: '乌岽单丛凭什么比普通单丛贵十倍？', excerpt: '乌岽村海拔1000米以上，茶树年龄普遍超过50年，最老的达300年。土壤、气候、生态都决定了茶叶的品质上限。', keywords: ['乌岽', '产区', '价格差异'], publishedAt: '2026-04-01', likes: 564, comments: 17, hotComments: [{ user: '茶友934', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }] },
-  { id: '60000002', nickname: '光屿茶集',       avatar: 'https://sns-avatar-qc.xhscdn.com/avatar/634fb702dc86410001666176.jpg', sourceUrl: 'https://www.xiaohongshu.com/user/profile/62b4688e000000001b025836', followers: '19.9万', intro: '凤凰山本地茶商，原产地直发', notes: [{ title: '蜜兰香怎么泡？水温与时间的黄金比例', excerpt: '单丛茶不能用100度沸水直接冲泡，85-90度最合适。第一泡洗茶10秒，第二泡15秒出汤，之后每泡增加5秒。', keywords: ['冲泡技巧', '蜜兰香', '实操'], publishedAt: '2026-04-08', likes: 820, comments: 34, hotComments: [{ user: '茶友465', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }, { title: '乌岽单丛凭什么比普通单丛贵十倍？', excerpt: '乌岽村海拔1000米以上，茶树年龄普遍超过50年，最老的达300年。土壤、气候、生态都决定了茶叶的品质上限。', keywords: ['乌岽', '产区', '价格差异'], publishedAt: '2026-04-05', likes: 715, comments: 25, hotComments: [{ user: '茶友753', text: '写得很好，收藏了！' }, { user: '喝茶的老李', text: '这个帖子太有用了' }] }, { title: '一文读懂凤凰单丛入门到精通', excerpt: '很多人第一次喝凤凰单丛就被「鸭屎香」的名字劝退，其实这是凤凰山上的一个茶树品种名字，香气却是最清新的。', keywords: ['鸭屎香', '品种科普', '入门指南'], publishedAt: '2026-04-01', likes: 1270, comments: 38, hotComments: [{ user: '茶友191', text: '写得很好，收藏了！' }, { user: '喝茶的老张', text: '这个帖子太有用了' }] }] },
-  { id: '60000003', nickname: '胶泥吃茶',       avatar: 'https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo30q6qfnhlng0g415l8vg7vrjfbb471vg', sourceUrl: 'https://www.xiaohongshu.com/user/profile/55f6607f67bc656da2a5ee6f', followers: '8.9万',  intro: '专注硬核茶知识！茶是一种生活，有苦有乐', notes: [{ title: '乌岽单丛凭什么比普通单丛贵十倍？', excerpt: '乌岽村海拔1000米以上，茶树年龄普遍超过50年，最老的达300年。土壤、气候、生态都决定了茶叶的品质上限。', keywords: ['乌岽', '产区', '价格差异'], publishedAt: '2026-04-08', likes: 492, comments: 17, hotComments: [{ user: '茶友968', text: '写得很好，收藏了！' }, { user: '喝茶的老张', text: '这个帖子太有用了' }] }, { title: '一文读懂凤凰单丛入门到精通', excerpt: '很多人第一次喝凤凰单丛就被「鸭屎香」的名字劝退，其实这是凤凰山上的一个茶树品种名字，香气却是最清新的。', keywords: ['鸭屎香', '品种科普', '入门指南'], publishedAt: '2026-04-05', likes: 1086, comments: 40, hotComments: [{ user: '茶友532', text: '写得很好，收藏了！' }, { user: '喝茶的老李', text: '这个帖子太有用了' }] }, { title: '蜜兰香：蜂蜜甜香与兰花幽香的完美结合', excerpt: '蜜兰香是凤凰单丛里最经典的一款，既有蜂蜜的甜香，又有兰花的幽香，冲泡时满屋飘香，回甘明显。', keywords: ['蜜兰香', '经典香型', '冲泡'], publishedAt: '2026-04-01', likes: 1775, comments: 56, hotComments: [{ user: '茶友667', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }] },
-  { id: '60000004', nickname: '茶博士（凤凰单丛茶友会）', avatar: 'https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo31e4ai11o0u005p96d76qocuaioegm0o', sourceUrl: 'https://www.xiaohongshu.com/user/profile/652669cd000000002b0033ca', followers: '4.8万',  intro: '专注凤凰单丛香型科普，茶知识分享', notes: [{ title: '一文读懂凤凰单丛入门到精通', excerpt: '很多人第一次喝凤凰单丛就被「鸭屎香」的名字劝退，其实这是凤凰山上的一个茶树品种名字，香气却是最清新的。', keywords: ['鸭屎香', '品种科普', '入门指南'], publishedAt: '2026-04-08', likes: 1151, comments: 39, hotComments: [{ user: '茶友637', text: '写得很好，收藏了！' }, { user: '喝茶的老张', text: '这个帖子太有用了' }] }, { title: '蜜兰香：蜂蜜甜香与兰花幽香的完美结合', excerpt: '蜜兰香是凤凰单丛里最经典的一款，既有蜂蜜的甜香，又有兰花的幽香，冲泡时满屋飘香，回甘明显。', keywords: ['蜜兰香', '经典香型', '冲泡'], publishedAt: '2026-04-05', likes: 1786, comments: 56, hotComments: [{ user: '茶友590', text: '写得很好，收藏了！' }, { user: '喝茶的老李', text: '这个帖子太有用了' }] }, { title: '凤凰单丛为什么这么香？制茶工艺大揭秘', excerpt: '单丛茶的香气来自做青环节，通过反复摇青让茶叶边缘碰撞发酵，才能产生独特的花果香。', keywords: ['制茶工艺', '做青', '香气来源'], publishedAt: '2026-04-01', likes: 1436, comments: 39, hotComments: [{ user: '茶友884', text: '写得很好，收藏了！' }, { user: '喝茶的老王', text: '这个帖子太有用了' }] }] },
-  { id: '60000005', nickname: '一时灬一幕',     avatar: 'https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo31ikrcjvb0e5g5ofnp5mk1n839vc1r78', sourceUrl: 'https://www.xiaohongshu.com/user/profile/61f7c96d000000001000dd03', followers: '44.8万', intro: '专业单丛茶供应商，批发零售', notes: [{ title: '蜜兰香：蜂蜜甜香与兰花幽香的完美结合', excerpt: '蜜兰香是凤凰单丛里最经典的一款，既有蜂蜜的甜香，又有兰花的幽香，冲泡时满屋飘香，回甘明显。', keywords: ['蜜兰香', '经典香型', '冲泡'], publishedAt: '2026-04-08', likes: 1914, comments: 48, hotComments: [{ user: '茶友834', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }, { title: '凤凰单丛为什么这么香？制茶工艺大揭秘', excerpt: '单丛茶的香气来自做青环节，通过反复摇青让茶叶边缘碰撞发酵，才能产生独特的花果香。', keywords: ['制茶工艺', '做青', '香气来源'], publishedAt: '2026-04-05', likes: 1382, comments: 38, hotComments: [{ user: '茶友593', text: '写得很好，收藏了！' }, { user: '喝茶的老王', text: '这个帖子太有用了' }] }, { title: '凤凰单丛十大香型，一次说清楚', excerpt: '很多人分不清凤凰单丛的香型，主要就是十大香型：蜜兰香、芝兰香、玉兰香、桂花香、夜来香、茉莉香、杏仁香、肉桂香、柚花香、姜花香。', keywords: ['香型', '十大香型', '入门科普'], publishedAt: '2026-04-01', likes: 1065, comments: 50, hotComments: [{ user: '茶友817', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }] },
-  { id: '60000006', nickname: '茶与班 Tea & Work', avatar: 'https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo31q57jedn746g5o2bgspgbs0dpsfpjo0', sourceUrl: 'https://www.xiaohongshu.com/user/profile/604b8733000000000101f00d', followers: '2955',   intro: '专注单丛茶知识分享，带你深入了解单丛茶魅力', notes: [{ title: '凤凰单丛为什么这么香？制茶工艺大揭秘', excerpt: '单丛茶的香气来自做青环节，通过反复摇青让茶叶边缘碰撞发酵，才能产生独特的花果香。', keywords: ['制茶工艺', '做青', '香气来源'], publishedAt: '2026-04-08', likes: 1270, comments: 44, hotComments: [{ user: '茶友511', text: '写得很好，收藏了！' }, { user: '喝茶的老张', text: '这个帖子太有用了' }] }, { title: '凤凰单丛十大香型，一次说清楚', excerpt: '很多人分不清凤凰单丛的香型，主要就是十大香型：蜜兰香、芝兰香、玉兰香、桂花香、夜来香、茉莉香、杏仁香、肉桂香、柚花香、姜花香。', keywords: ['香型', '十大香型', '入门科普'], publishedAt: '2026-04-05', likes: 1283, comments: 50, hotComments: [{ user: '茶友613', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }, { title: '鸭屎香为什么这么火？真相在这里', excerpt: '鸭屎香其实是凤凰山上一个茶树品种的名字，因为叶子像鸭屎而得名，但香气却是所有单丛里最清新的一款，回甘好，有独特蜜韵。', keywords: ['鸭屎香', '品种真相', '入门'], publishedAt: '2026-04-01', likes: 2874, comments: 88, hotComments: [{ user: '茶友307', text: '写得很好，收藏了！' }, { user: '喝茶的老张', text: '这个帖子太有用了' }] }] },
-  { id: '60000007', nickname: '茶叶百科',       avatar: 'https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo30u29o89l4q005p85jv70iar78mdphd8', sourceUrl: 'https://www.xiaohongshu.com/user/profile/65059fce0000000002012b67', followers: '28.0万', intro: '分享凤凰单丛茶生活，记录每一道好茶', notes: [{ title: '凤凰单丛十大香型，一次说清楚', excerpt: '很多人分不清凤凰单丛的香型，主要就是十大香型：蜜兰香、芝兰香、玉兰香、桂花香、夜来香、茉莉香、杏仁香、肉桂香、柚花香、姜花香。', keywords: ['香型', '十大香型', '入门科普'], publishedAt: '2026-04-08', likes: 1338, comments: 49, hotComments: [{ user: '茶友569', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }, { title: '鸭屎香为什么这么火？真相在这里', excerpt: '鸭屎香其实是凤凰山上一个茶树品种的名字，因为叶子像鸭屎而得名，但香气却是所有单丛里最清新的一款，回甘好，有独特蜜韵。', keywords: ['鸭屎香', '品种真相', '入门'], publishedAt: '2026-04-05', likes: 2853, comments: 85, hotComments: [{ user: '茶友366', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }, { title: '2026年春茶采摘日记｜凤凰山实拍', excerpt: '今年雨水充足，春茶品质历年最佳。从海拔900米的茶园采摘，每一片茶叶都是手工挑选，保证品质。', keywords: ['春茶', '原产地', '手工采摘'], publishedAt: '2026-04-01', likes: 683, comments: 31, hotComments: [{ user: '茶友885', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }] },
-  { id: '60000008', nickname: '要吃葱姜蒜',   avatar: 'https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo31r43hbkm7o0040m8lnd9p15m6bogvb8', sourceUrl: 'https://www.xiaohongshu.com/user/profile/5562da9cc2bdeb13dd6584b6', followers: '5.7万',  intro: '专注凤凰单丛茶知识科普，每天认识一款茶', notes: [{ title: '鸭屎香为什么这么火？真相在这里', excerpt: '鸭屎香其实是凤凰山上一个茶树品种的名字，因为叶子像鸭屎而得名，但香气却是所有单丛里最清新的一款，回甘好，有独特蜜韵。', keywords: ['鸭屎香', '品种真相', '入门'], publishedAt: '2026-04-08', likes: 2817, comments: 87, hotComments: [{ user: '茶友568', text: '写得很好，收藏了！' }, { user: '喝茶的老李', text: '这个帖子太有用了' }] }, { title: '2026年春茶采摘日记｜凤凰山实拍', excerpt: '今年雨水充足，春茶品质历年最佳。从海拔900米的茶园采摘，每一片茶叶都是手工挑选，保证品质。', keywords: ['春茶', '原产地', '手工采摘'], publishedAt: '2026-04-05', likes: 669, comments: 31, hotComments: [{ user: '茶友365', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }, { title: '蜜兰香怎么泡？水温与时间的黄金比例', excerpt: '单丛茶不能用100度沸水直接冲泡，85-90度最合适。第一泡洗茶10秒，第二泡15秒出汤，之后每泡增加5秒。', keywords: ['冲泡技巧', '蜜兰香', '实操'], publishedAt: '2026-04-01', likes: 785, comments: 35, hotComments: [{ user: '茶友962', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }] },
-  { id: '60000009', nickname: '小包包',         avatar: 'https://sns-avatar-qc.xhscdn.com/avatar/5e887ee60000000001009526.jpg', sourceUrl: 'https://www.xiaohongshu.com/user/profile/5e887ee60000000001009526', followers: '40.3万', intro: '专注单丛茶精制与冲泡方法分享', notes: [{ title: '2026年春茶采摘日记｜凤凰山实拍', excerpt: '今年雨水充足，春茶品质历年最佳。从海拔900米的茶园采摘，每一片茶叶都是手工挑选，保证品质。', keywords: ['春茶', '原产地', '手工采摘'], publishedAt: '2026-04-08', likes: 634, comments: 24, hotComments: [{ user: '茶友299', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }, { title: '蜜兰香怎么泡？水温与时间的黄金比例', excerpt: '单丛茶不能用100度沸水直接冲泡，85-90度最合适。第一泡洗茶10秒，第二泡15秒出汤，之后每泡增加5秒。', keywords: ['冲泡技巧', '蜜兰香', '实操'], publishedAt: '2026-04-05', likes: 766, comments: 36, hotComments: [{ user: '茶友114', text: '写得很好，收藏了！' }, { user: '喝茶的老李', text: '这个帖子太有用了' }] }, { title: '乌岽单丛凭什么比普通单丛贵十倍？', excerpt: '乌岽村海拔1000米以上，茶树年龄普遍超过50年，最老的达300年。土壤、气候、生态都决定了茶叶的品质上限。', keywords: ['乌岽', '产区', '价格差异'], publishedAt: '2026-04-01', likes: 334, comments: 24, hotComments: [{ user: '茶友694', text: '写得很好，收藏了！' }, { user: '喝茶的老李', text: '这个帖子太有用了' }] }] },
-  { id: '60000010', nickname: '奇奇醉茶中', avatar: 'https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo31gdnka56jo005pvpqin3jqrnrv82eq8', sourceUrl: 'https://www.xiaohongshu.com/user/profile/67f9d4ae000000000e01eb77', followers: '45.2万', intro: '凤凰山本地茶商，原产地直发', notes: [{ title: '蜜兰香怎么泡？水温与时间的黄金比例', excerpt: '单丛茶不能用100度沸水直接冲泡，85-90度最合适。第一泡洗茶10秒，第二泡15秒出汤，之后每泡增加5秒。', keywords: ['冲泡技巧', '蜜兰香', '实操'], publishedAt: '2026-04-08', likes: 753, comments: 38, hotComments: [{ user: '茶友145', text: '写得很好，收藏了！' }, { user: '喝茶的老张', text: '这个帖子太有用了' }] }, { title: '乌岽单丛凭什么比普通单丛贵十倍？', excerpt: '乌岽村海拔1000米以上，茶树年龄普遍超过50年，最老的达300年。土壤、气候、生态都决定了茶叶的品质上限。', keywords: ['乌岽', '产区', '价格差异'], publishedAt: '2026-04-05', likes: 676, comments: 27, hotComments: [{ user: '茶友465', text: '写得很好，收藏了！' }, { user: '喝茶的老王', text: '这个帖子太有用了' }] }, { title: '一文读懂凤凰单丛入门到精通', excerpt: '很多人第一次喝凤凰单丛就被「鸭屎香」的名字劝退，其实这是凤凰山上的一个茶树品种名字，香气却是最清新的。', keywords: ['鸭屎香', '品种科普', '入门指南'], publishedAt: '2026-04-01', likes: 902, comments: 38, hotComments: [{ user: '茶友780', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }] },
-  { id: '60000011', nickname: '见见茶生活',   avatar: 'https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo319ipo1s37e605ok0o1doch55h07hi70', sourceUrl: 'https://www.xiaohongshu.com/user/profile/6280c05b00000000210244a5', followers: '38.6万', intro: '专注硬核茶知识！茶是一种生活，有苦有乐', notes: [{ title: '乌岽单丛凭什么比普通单丛贵十倍？', excerpt: '乌岽村海拔1000米以上，茶树年龄普遍超过50年，最老的达300年。土壤、气候、生态都决定了茶叶的品质上限。', keywords: ['乌岽', '产区', '价格差异'], publishedAt: '2026-04-08', likes: 613, comments: 20, hotComments: [{ user: '茶友584', text: '写得很好，收藏了！' }, { user: '喝茶的老王', text: '这个帖子太有用了' }] }, { title: '一文读懂凤凰单丛入门到精通', excerpt: '很多人第一次喝凤凰单丛就被「鸭屎香」的名字劝退，其实这是凤凰山上的一个茶树品种名字，香气却是最清新的。', keywords: ['鸭屎香', '品种科普', '入门指南'], publishedAt: '2026-04-05', likes: 1206, comments: 41, hotComments: [{ user: '茶友397', text: '写得很好，收藏了！' }, { user: '喝茶的老李', text: '这个帖子太有用了' }] }, { title: '蜜兰香：蜂蜜甜香与兰花幽香的完美结合', excerpt: '蜜兰香是凤凰单丛里最经典的一款，既有蜂蜜的甜香，又有兰花的幽香，冲泡时满屋飘香，回甘明显。', keywords: ['蜜兰香', '经典香型', '冲泡'], publishedAt: '2026-04-01', likes: 1784, comments: 57, hotComments: [{ user: '茶友263', text: '写得很好，收藏了！' }, { user: '喝茶的老王', text: '这个帖子太有用了' }] }] },
-  { id: '60000012', nickname: '小清茶日记l单丛茶', avatar: 'https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo31iqtvtrngs705ogs62ik0l4jvh8vaf0', sourceUrl: 'https://www.xiaohongshu.com/user/profile/621c30a50000000010005493', followers: '42.0万', intro: '专注凤凰单丛香型科普，茶知识分享', notes: [{ title: '一文读懂凤凰单丛入门到精通', excerpt: '很多人第一次喝凤凰单丛就被「鸭屎香」的名字劝退，其实这是凤凰山上的一个茶树品种名字，香气却是最清新的。', keywords: ['鸭屎香', '品种科普', '入门指南'], publishedAt: '2026-04-08', likes: 1099, comments: 35, hotComments: [{ user: '茶友632', text: '写得很好，收藏了！' }, { user: '喝茶的老王', text: '这个帖子太有用了' }] }, { title: '蜜兰香：蜂蜜甜香与兰花幽香的完美结合', excerpt: '蜜兰香是凤凰单丛里最经典的一款，既有蜂蜜的甜香，又有兰花的幽香，冲泡时满屋飘香，回甘明显。', keywords: ['蜜兰香', '经典香型', '冲泡'], publishedAt: '2026-04-05', likes: 1763, comments: 47, hotComments: [{ user: '茶友208', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }, { title: '凤凰单丛为什么这么香？制茶工艺大揭秘', excerpt: '单丛茶的香气来自做青环节，通过反复摇青让茶叶边缘碰撞发酵，才能产生独特的花果香。', keywords: ['制茶工艺', '做青', '香气来源'], publishedAt: '2026-04-01', likes: 1179, comments: 36, hotComments: [{ user: '茶友953', text: '写得很好，收藏了！' }, { user: '喝茶的老张', text: '这个帖子太有用了' }] }] },
-  { id: '60000013', nickname: '江南茶语',     avatar: 'https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo31q1mgks3n2005nrs0bc0bp8c16b9le8', sourceUrl: 'https://www.xiaohongshu.com/user/profile/5f7c02d8000000000101e50c', followers: '10.3万', intro: '专业单丛茶供应商，批发零售', notes: [{ title: '蜜兰香：蜂蜜甜香与兰花幽香的完美结合', excerpt: '蜜兰香是凤凰单丛里最经典的一款，既有蜂蜜的甜香，又有兰花的幽香，冲泡时满屋飘香，回甘明显。', keywords: ['蜜兰香', '经典香型', '冲泡'], publishedAt: '2026-04-08', likes: 1584, comments: 55, hotComments: [{ user: '茶友587', text: '写得很好，收藏了！' }, { user: '喝茶的老张', text: '这个帖子太有用了' }] }, { title: '凤凰单丛为什么这么香？制茶工艺大揭秘', excerpt: '单丛茶的香气来自做青环节，通过反复摇青让茶叶边缘碰撞发酵，才能产生独特的花果香。', keywords: ['制茶工艺', '做青', '香气来源'], publishedAt: '2026-04-05', likes: 1491, comments: 40, hotComments: [{ user: '茶友560', text: '写得很好，收藏了！' }, { user: '喝茶的老张', text: '这个帖子太有用了' }] }, { title: '凤凰单丛十大香型，一次说清楚', excerpt: '很多人分不清凤凰单丛的香型，主要就是十大香型：蜜兰香、芝兰香、玉兰香、桂花香、夜来香、茉莉香、杏仁香、肉桂香、柚花香、姜花香。', keywords: ['香型', '十大香型', '入门科普'], publishedAt: '2026-04-01', likes: 1065, comments: 47, hotComments: [{ user: '茶友577', text: '写得很好，收藏了！' }, { user: '喝茶的老王', text: '这个帖子太有用了' }] }] },
-  { id: '60000014', nickname: '壹城大雅',     avatar: 'https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo31icd8fm3nq005ou2d6fpt3rk5lsqhu0', sourceUrl: 'https://www.xiaohongshu.com/user/profile/63c2699f0000000027028f74', followers: '42.0万', intro: '专注单丛茶知识分享，带你深入了解单丛茶魅力', notes: [{ title: '凤凰单丛为什么这么香？制茶工艺大揭秘', excerpt: '单丛茶的香气来自做青环节，通过反复摇青让茶叶边缘碰撞发酵，才能产生独特的花果香。', keywords: ['制茶工艺', '做青', '香气来源'], publishedAt: '2026-04-08', likes: 1364, comments: 45, hotComments: [{ user: '茶友444', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }, { title: '凤凰单丛十大香型，一次说清楚', excerpt: '很多人分不清凤凰单丛的香型，主要就是十大香型：蜜兰香、芝兰香、玉兰香、桂花香、夜来香、茉莉香、杏仁香、肉桂香、柚花香、姜花香。', keywords: ['香型', '十大香型', '入门科普'], publishedAt: '2026-04-05', likes: 1309, comments: 43, hotComments: [{ user: '茶友794', text: '写得很好，收藏了！' }, { user: '喝茶的老李', text: '这个帖子太有用了' }] }, { title: '鸭屎香为什么这么火？真相在这里', excerpt: '鸭屎香其实是凤凰山上一个茶树品种的名字，因为叶子像鸭屎而得名，但香气却是所有单丛里最清新的一款，回甘好，有独特蜜韵。', keywords: ['鸭屎香', '品种真相', '入门'], publishedAt: '2026-04-01', likes: 2949, comments: 88, hotComments: [{ user: '茶友134', text: '写得很好，收藏了！' }, { user: '喝茶的老王', text: '这个帖子太有用了' }] }] },
-  { id: '60000015', nickname: '落欢',          avatar: 'https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo31t46f32blk5g5o4872sgbmlfuno0618', sourceUrl: 'https://www.xiaohongshu.com/user/profile/608838b9000000000101daaf', followers: '9.3万',  intro: '分享凤凰单丛茶生活，记录每一道好茶', notes: [{ title: '凤凰单丛十大香型，一次说清楚', excerpt: '很多人分不清凤凰单丛的香型，主要就是十大香型：蜜兰香、芝兰香、玉兰香、桂花香、夜来香、茉莉香、杏仁香、肉桂香、柚花香、姜花香。', keywords: ['香型', '十大香型', '入门科普'], publishedAt: '2026-04-08', likes: 1334, comments: 48, hotComments: [{ user: '茶友959', text: '写得很好，收藏了！' }, { user: '喝茶的老李', text: '这个帖子太有用了' }] }, { title: '鸭屎香为什么这么火？真相在这里', excerpt: '鸭屎香其实是凤凰山上一个茶树品种的名字，因为叶子像鸭屎而得名，但香气却是所有单丛里最清新的一款，回甘好，有独特蜜韵。', keywords: ['鸭屎香', '品种真相', '入门'], publishedAt: '2026-04-05', likes: 2900, comments: 92, hotComments: [{ user: '茶友293', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }, { title: '2026年春茶采摘日记｜凤凰山实拍', excerpt: '今年雨水充足，春茶品质历年最佳。从海拔900米的茶园采摘，每一片茶叶都是手工挑选，保证品质。', keywords: ['春茶', '原产地', '手工采摘'], publishedAt: '2026-04-01', likes: 809, comments: 33, hotComments: [{ user: '茶友998', text: '写得很好，收藏了！' }, { user: '喝茶的老李', text: '这个帖子太有用了' }] }] },
-  { id: '60000016', nickname: '茶小满的私享茶叶', avatar: 'https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo31nhlnfjlmm6g5q7a830sjv5ui6bsln8', sourceUrl: 'https://www.xiaohongshu.com/user/profile/68ea40c1000000003201fcbe', followers: '8100',   intro: '专注凤凰单丛茶知识科普，每天认识一款茶', notes: [{ title: '鸭屎香为什么这么火？真相在这里', excerpt: '鸭屎香其实是凤凰山上一个茶树品种的名字，因为叶子像鸭屎而得名，但香气却是所有单丛里最清新的一款，回甘好，有独特蜜韵。', keywords: ['鸭屎香', '品种真相', '入门'], publishedAt: '2026-04-08', likes: 2933, comments: 84, hotComments: [{ user: '茶友264', text: '写得很好，收藏了！' }, { user: '喝茶的老王', text: '这个帖子太有用了' }] }, { title: '2026年春茶采摘日记｜凤凰山实拍', excerpt: '今年雨水充足，春茶品质历年最佳。从海拔900米的茶园采摘，每一片茶叶都是手工挑选，保证品质。', keywords: ['春茶', '原产地', '手工采摘'], publishedAt: '2026-04-05', likes: 644, comments: 27, hotComments: [{ user: '茶友535', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }, { title: '蜜兰香怎么泡？水温与时间的黄金比例', excerpt: '单丛茶不能用100度沸水直接冲泡，85-90度最合适。第一泡洗茶10秒，第二泡15秒出汤，之后每泡增加5秒。', keywords: ['冲泡技巧', '蜜兰香', '实操'], publishedAt: '2026-04-01', likes: 732, comments: 35, hotComments: [{ user: '茶友412', text: '写得很好，收藏了！' }, { user: '喝茶的老王', text: '这个帖子太有用了' }] }] },
-  { id: '60000017', nickname: 'WISTFUL',       avatar: 'https://sns-avatar-qc.xhscdn.com/avatar/63bd9f10154e208e8557bbee.jpg', sourceUrl: 'https://www.xiaohongshu.com/user/profile/6121ec940000000001009d28', followers: '7.3万',  intro: '专注单丛茶精制与冲泡方法分享', notes: [{ title: '2026年春茶采摘日记｜凤凰山实拍', excerpt: '今年雨水充足，春茶品质历年最佳。从海拔900米的茶园采摘，每一片茶叶都是手工挑选，保证品质。', keywords: ['春茶', '原产地', '手工采摘'], publishedAt: '2026-04-08', likes: 699, comments: 29, hotComments: [{ user: '茶友394', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }, { title: '蜜兰香怎么泡？水温与时间的黄金比例', excerpt: '单丛茶不能用100度沸水直接冲泡，85-90度最合适。第一泡洗茶10秒，第二泡15秒出汤，之后每泡增加5秒。', keywords: ['冲泡技巧', '蜜兰香', '实操'], publishedAt: '2026-04-05', likes: 782, comments: 34, hotComments: [{ user: '茶友631', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }, { title: '乌岽单丛凭什么比普通单丛贵十倍？', excerpt: '乌岽村海拔1000米以上，茶树年龄普遍超过50年，最老的达300年。土壤、气候、生态都决定了茶叶的品质上限。', keywords: ['乌岽', '产区', '价格差异'], publishedAt: '2026-04-01', likes: 561, comments: 18, hotComments: [{ user: '茶友639', text: '写得很好，收藏了！' }, { user: '喝茶的老张', text: '这个帖子太有用了' }] }] },
-  { id: '60000018', nickname: '陈表情',        avatar: 'https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo31jh73c0gig005pl4s9mne0v29tq0h10', sourceUrl: 'https://www.xiaohongshu.com/user/profile/66a4e26d000000001d0303e2', followers: '23.9万', intro: '凤凰山本地茶商，原产地直发', notes: [{ title: '蜜兰香怎么泡？水温与时间的黄金比例', excerpt: '单丛茶不能用100度沸水直接冲泡，85-90度最合适。第一泡洗茶10秒，第二泡15秒出汤，之后每泡增加5秒。', keywords: ['冲泡技巧', '蜜兰香', '实操'], publishedAt: '2026-04-08', likes: 694, comments: 30, hotComments: [{ user: '茶友999', text: '写得很好，收藏了！' }, { user: '喝茶的老陈', text: '这个帖子太有用了' }] }, { title: '乌岽单丛凭什么比普通单丛贵十倍？', excerpt: '乌岽村海拔1000米以上，茶树年龄普遍超过50年，最老的达300年。土壤、气候、生态都决定了茶叶的品质上限。', keywords: ['乌岽', '产区', '价格差异'], publishedAt: '2026-04-05', likes: 664, comments: 22, hotComments: [{ user: '茶友517', text: '写得很好，收藏了！' }, { user: '喝茶的老王', text: '这个帖子太有用了' }] }, { title: '一文读懂凤凰单丛入门到精通', excerpt: '很多人第一次喝凤凰单丛就被「鸭屎香」的名字劝退，其实这是凤凰山上的一个茶树品种名字，香气却是最清新的。', keywords: ['鸭屎香', '品种科普', '入门指南'], publishedAt: '2026-04-01', likes: 913, comments: 38, hotComments: [{ user: '茶友966', text: '写得很好，收藏了！' }, { user: '喝茶的老王', text: '这个帖子太有用了' }] }] },
-  { id: '60000019', nickname: '炼茶宇宙编辑部', avatar: 'https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo31p2g14bg2u005ovjd1f51grn4ficlq8', sourceUrl: 'https://www.xiaohongshu.com/user/profile/63f3685e000000001400c377', followers: '43.1万', intro: '专注硬核茶知识！茶是一种生活，有苦有乐', notes: [{ title: '乌岽单丛凭什么比普通单丛贵十倍？', excerpt: '乌岽村海拔1000米以上，茶树年龄普遍超过50年，最老的达300年。土壤、气候、生态都决定了茶叶的品质上限。', keywords: ['乌岽', '产区', '价格差异'], publishedAt: '2026-04-08', likes: 609, comments: 20, hotComments: [{ user: '茶友212', text: '写得很好，收藏了！' }, { user: '喝茶的老张', text: '这个帖子太有用了' }] }, { title: '一文读懂凤凰单丛入门到精通', excerpt: '很多人第一次喝凤凰单丛就被「鸭屎香」的名字劝退，其实这是凤凰山上的一个茶树品种名字，香气却是最清新的。', keywords: ['鸭屎香', '品种科普', '入门指南'], publishedAt: '2026-04-05', likes: 1184, comments: 42, hotComments: [{ user: '茶友848', text: '写得很好，收藏了！' }, { user: '喝茶的老王', text: '这个帖子太有用了' }] }, { title: '蜜兰香：蜂蜜甜香与兰花幽香的完美结合', excerpt: '蜜兰香是凤凰单丛里最经典的一款，既有蜂蜜的甜香，又有兰花的幽香，冲泡时满屋飘香，回甘明显。', keywords: ['蜜兰香', '经典香型', '冲泡'], publishedAt: '2026-04-01', likes: 1862, comments: 51, hotComments: [{ user: '茶友676', text: '写得很好，收藏了！' }, { user: '喝茶的老张', text: '这个帖子太有用了' }] }] },
+// 20个茶账号 uid（来源：TikHub API / 浏览器采集）
+const ACCOUNTS_UIDS = [
+  { uid: '66ce81a7000000000d027f12', nickname: '陈韵堂茶百科' },
+  { uid: '57bbd2487fc5b868bce8c009', nickname: '凤凰单丛茶百科' },
+  { uid: '62b4688e000000001b025836', nickname: '光屿茶集' },
+  { uid: '55f6607f67bc656da2a5ee6f', nickname: '胶泥吃茶' },
+  { uid: '61f7c96d000000001000dd03', nickname: '一时灬一幕' },
+  { uid: '65059fce0000000002012b67', nickname: '茶叶百科' },
+  { uid: '67f9d4ae000000000e01eb77', nickname: '奇奇醉茶中' },
+  { uid: '6280c05b00000000210244a5', nickname: '见见茶生活' },
+  { uid: '621c30a50000000010005493', nickname: '小清茶日记l单丛茶' },
+  { uid: '63c2699f0000000027028f74', nickname: '壹城大雅' },
+  { uid: '5f7c02d8000000000101e50c', nickname: '江南茶语' },
+  { uid: '63f3685e000000001400c377', nickname: '炼茶宇宙编辑部' },
+  { uid: '608838b9000000000101daaf', nickname: '落欢' },
+  { uid: '5e887ee60000000001009526', nickname: '小包包' },
+  { uid: '66a4e26d000000001d0303e2', nickname: '陈表情' },
+  { uid: '604b8733000000000101f00d', nickname: '茶与班 Tea & Work' },
+  { uid: '652669cd000000002b0033ca', nickname: '茶博士（凤凰单丛茶友会）' },
+  { uid: '5562da9cc2bdeb13dd6584b6', nickname: '要吃葱姜蒜' },
+  { uid: '6121ec940000000001009d28', nickname: 'WISTFUL' },
+  { uid: '68ea40c1000000003201fcbe', nickname: '茶小满的私享茶叶' },
 ]
 
-function parseFollowersNum(s: string): number {
-  const m = s.match(/^([\d.]+)万$/)
-  if (m) return parseFloat(m[1])
-  const n = parseInt(s.replace(/,/g, ''))
-  return isNaN(n) ? 0 : n / 10000
+const TIKHUB_KEY = process.env.TIKHUB_API_KEY || ''
+const TIKHUB_BASE = 'https://api.tikhub.io/api/v1'  // 免费接口用 io
+const TIMEOUT_MS = 8000
+const TIME_CUTOFF = '2025-12-01'
+
+interface TikHubNote {
+  note_id: string
+  title: string
+  desc: string
+  liked_count: number
+  comment_count: number
+  collected_count: number
+  share_count: number
+  time: string  // unix timestamp
 }
 
-function filterRecentNotes(notes: Note[]): Note[] {
-  return notes.filter(n => n.publishedAt >= TIME_CUTOFF)
+interface TikHubUser {
+  user_id: string
+  nickname: string
+  avatar: string
+  fans: number
+  intro: string
+}
+
+function tiktokFetch(path: string): Promise<any> {
+  return new Promise((resolve, reject) => {
+    const url = `${TIKHUB_BASE}${path}`
+    const timer = setTimeout(() => reject(new Error('timeout')), TIMEOUT_MS)
+    const https = require('https')
+    https.get(url, {
+      headers: {
+        'Authorization': `Bearer ${TIKHUB_KEY}`,
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+      }
+    }, (res: any) => {
+      clearTimeout(timer)
+      let data = ''
+      res.on('data', (c: string) => data += c)
+      res.on('end', () => {
+        try { resolve(JSON.parse(data)) }
+        catch { reject(new Error('parse error')) }
+      })
+    }).on('error', reject)
+  })
+}
+
+async function fetchUserInfo(uid: string): Promise<TikHubUser | null> {
+  try {
+    const d = await tiktokFetch(`/xiaohongshu/web_v2/fetch_user_info?user_id=${uid}`)
+    const u = d?.data?.user
+    if (!u) return null
+    return {
+      user_id: uid,
+      nickname: u.nickname || '',
+      avatar: u.image_list?.[0]?.url_default || u.avatar || '',
+      fans: u.fans || 0,
+      intro: u.desc || u.intro || '',
+    }
+  } catch {
+    return null
+  }
+}
+
+async function fetchUserNotes(uid: string): Promise<TikHubNote[]> {
+  try {
+    const d = await tiktokFetch(`/xiaohongshu/web_v2/fetch_home_notes?user_id=${uid}`)
+    const notes: TikHubNote[] = d?.data?.notes || []
+    return notes.map((n: any) => ({
+      note_id: n.note_id || n.id || '',
+      title: n.title || '',
+      desc: (n.desc || '').replace(/http\S+/g, '').slice(0, 120),
+      liked_count: n.interaction?.liked_count || n.liked_count || 0,
+      comment_count: n.interaction?.comment_count || n.comment_count || 0,
+      collected_count: n.interaction?.collected_count || n.collected_count || 0,
+      share_count: n.interaction?.share_count || n.share_count || 0,
+      time: n.time || n.publish_time || 0,
+    }))
+  } catch {
+    return []
+  }
+}
+
+function tsToDate(ts: number | string): string {
+  const n = typeof ts === 'string' ? parseInt(ts) : ts
+  if (!n || n < 1e9) return ''
+  return new Date(n * 1000).toISOString().split('T')[0]
+}
+
+// 综合权重排序，取 Top3
+function top3Notes(notes: TikHubNote[]): TikHubNote[] {
+  return [...notes]
+    .filter(n => {
+      const date = tsToDate(n.time)
+      return date >= TIME_CUTOFF
+    })
+    .sort((a, b) => {
+      const scoreA = (a.liked_count * 1) + (a.comment_count * 3) + (a.collected_count * 2) + (a.share_count * 5)
+      const scoreB = (b.liked_count * 1) + (b.comment_count * 3) + (b.collected_count * 2) + (b.share_count * 5)
+      return scoreB - scoreA
+    })
+    .slice(0, 3)
+}
+
+// 提取关键词（简单分词）
+function extractKeywords(title: string, desc: string): string[] {
+  const text = `${title} ${desc}`
+  const stopWords = new Set(['的', '了', '和', '是', '在', '我', '有', '个', '就', '不', '也', '都', '这', '上', '下', '里', '又', '很', '会', '可以', '这个', '那个', '一个', '什么', '怎么', '为什么', '因为', '所以', '但是', '而且', '或者', '如果', '虽然'])
+  const words: string[] = []
+  const re = /[\u4e00-\u9fa5]{2,6}/g
+  let m
+  while ((m = re.exec(text)) !== null) {
+    const w = m[0]
+    if (!stopWords.has(w) && w.length >= 2) words.push(w)
+  }
+  const freq: Record<string, number> = {}
+  for (const w of words) freq[w] = (freq[w] || 0) + 1
+  return Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, 5).map(([w]) => w)
+}
+
+async function fetchAccountData(uid: string, nickname: string) {
+  const [user, notes] = await Promise.all([
+    fetchUserInfo(uid),
+    fetchUserNotes(uid),
+  ])
+
+  const top3 = top3Notes(notes)
+
+  return {
+    id: uid,
+    nickname: nickname,
+    avatar: user?.avatar || '',
+    sourceUrl: `https://www.xiaohongshu.com/user/profile/${uid}`,
+    followers: user ? formatFans(user.fans) : '未知',
+    followersNum: user?.fans || 0,
+    intro: user?.intro || '',
+    notes: top3.map(n => ({
+      id: n.note_id,
+      title: n.title,
+      excerpt: n.desc.slice(0, 100),
+      keywords: extractKeywords(n.title, n.desc),
+      publishedAt: tsToDate(n.time),
+      likes: n.liked_count,
+      comments: n.comment_count,
+      collected: n.collected_count,
+      hotComments: [],  // 热评由 /api/comments 单独提供
+    })),
+    _raw: user ? { fans: user.fans, notesCount: notes.length } : null,
+  }
+}
+
+function formatFans(n: number): string {
+  if (n >= 10000) return `${(n / 10000).toFixed(1)}万`
+  return n.toString()
 }
 
 export async function GET() {
-  const today = new Date().toISOString().slice(0, 10)
+  // 并发拉取所有账号（10 QPS 限制，20个账号串行约2-3秒）
+  const results = await Promise.all(
+    ACCOUNTS_UIDS.map(({ uid, nickname }) =>
+      fetchAccountData(uid, nickname).catch(() => null)
+    )
+  )
 
-  const results = ACCOUNTS
-    .map(acc => {
-      const recentNotes = filterRecentNotes(acc.notes)
-      if (!recentNotes.length) return null
-      const totalLikes = recentNotes.reduce((s, n) => s + n.likes, 0)
-      return {
-        id: acc.id,
-        uid: extractUid(acc.sourceUrl),
-        nickname: acc.nickname,
-        avatar: acc.avatar,
-        followers: acc.followers,
-        totalLikes: String(totalLikes),
-        intro: acc.intro,
-        notes: recentNotes.slice(0, 5),
-      }
-    })
-    .filter(Boolean)
-    .sort((a, b) => parseFollowersNum(b!.followers) - parseFollowersNum(a!.followers))
+  const accounts = results.filter(Boolean)
+  const fetchedAt = new Date().toISOString()
 
-  return NextResponse.json({
-    accounts: results,
-    lastUpdated: today,
-    count: results.length,
+  const resp = NextResponse.json({
+    accounts,
+    fetchedAt,
+    total: accounts.length,
+    note: '数据直接从 TikHub API 实时拉取，每请求刷新',
   })
+
+  resp.headers.set('Cache-Control', 'no-store')
+  return resp
 }
